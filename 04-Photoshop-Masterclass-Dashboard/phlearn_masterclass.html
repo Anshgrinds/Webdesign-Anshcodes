@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHLEARN 30 Days of Photoshop — Agent Reference & Curriculum Dashboard</title>
+  <style>
+    :root {
+      --bg: #0d0f12;
+      --card-bg: #15181e;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.2);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --code-bg: #090a0d;
+      --tag-green: #34d399;
+      --tag-yellow: #fbbf24;
+      --tag-purple: #c084fc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Montserrat, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      padding: 36px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-size: 15px;
+    }
+
+    /* Core Principles Banner */
+    .principles-banner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .p-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .p-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .p-num {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .p-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .p-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Tabs / Sections */
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--card-border);
+    }
+
+    /* 30 Days Grid */
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .day-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+      transition: all 0.2s ease;
+    }
+
+    .day-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .day-tag {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .phase-badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .phase-1 { background: rgba(52, 211, 153, 0.15); color: var(--tag-green); }
+    .phase-2 { background: rgba(251, 191, 36, 0.15); color: var(--tag-yellow); }
+    .phase-3 { background: rgba(192, 132, 252, 0.15); color: var(--tag-purple); }
+    .phase-4 { background: rgba(56, 189, 248, 0.15); color: var(--accent); }
+
+    .day-name {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .day-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .hotkey-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .hotkey {
+      background: var(--code-bg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+      color: #e2e8f0;
+    }
+
+    /* Formulas & Pro Cheatsheets */
+    .cheatsheet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .code-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .code-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 14px;
+      border-radius: 8px;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #cbd5e1;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="header">
+      <div>
+        <div class="badge">Masterclass Curriculum • PHLEARN (Aaron Nace)</div>
+        <h1>30 Days of Photoshop System</h1>
+        <div class="subtitle">Complete technical reference, layer stack architecture, and automation directives for Antigravity CLI</div>
+      </div>
+      <div>
+        <a href="https://www.youtube.com/playlist?list=PL7JpMMpENaD3KL_lvmw4eS5U5AD746yKB" target="_blank" style="text-decoration:none; color: var(--accent); font-weight:700; font-size:13px; border:1px solid rgba(56,189,248,0.3); padding:8px 16px; border-radius:8px;">▶ Watch Playlist</a>
+      </div>
+    </div>
+
+    <!-- Core Non-Destructive Principles -->
+    <div class="principles-banner">
+      <div class="p-card">
+        <div class="p-num">Rule 01</div>
+        <div class="p-title">Never Delete Pixels</div>
+        <div class="p-desc">Black conceals, white reveals. Always attach Layer Masks instead of using the destructive Eraser tool.</div>
+      </div>
+      <div class="p-card">
+        <div class="p-num">Rule 02</div>
+        <div class="p-title">Smart Objects First</div>
+        <div class="p-desc">Convert layers to Smart Objects before transforms or filters to retain full raw resolution and editable Smart Filters.</div>
+      </div>
+      <div class="p-card">
+        <div class="p-num">Rule 03</div>
+        <div class="p-title">Frequency Split</div>
+        <div class="p-desc">Never blur skin. Split High Frequency (Pores/Texture) from Low Frequency (Skin Tone/Color) using Apply Image math.</div>
+      </div>
+      <div class="p-card">
+        <div class="p-num">Rule 04</div>
+        <div class="p-title">5 Pillars Compositing</div>
+        <div class="p-desc">Match Perspective, Scale, Luminance range, Color temperature, and Uniform film grain across every composite.</div>
+      </div>
+    </div>
+
+    <!-- 30 Days Curriculum Highlights -->
+    <div class="section-title">The 30-Day Masterclass Roadmap</div>
+
+    <div class="days-grid">
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 1–3</span>
+          <span class="phase-badge phase-1">Foundations</span>
+        </div>
+        <div class="day-name">Interface, Workspaces &amp; Layers</div>
+        <div class="day-desc">Panels, toolbar customization, document color profiles (sRGB vs ProPhoto), and non-destructive layer stack mechanics.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">Tab: Hide Panels</span>
+          <span class="hotkey">Ctrl + J: Duplicate</span>
+          <span class="hotkey">Ctrl + G: Group</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 4–6</span>
+          <span class="phase-badge phase-1">Masking</span>
+        </div>
+        <div class="day-name">Masks &amp; Select and Mask</div>
+        <div class="day-desc">Soft vs hard edge masks, brush density, Select Subject AI, and Refine Edge Brush for fine hair strands.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">\ : Quick Mask</span>
+          <span class="hotkey">Ctrl + Alt + R: Select &amp; Mask</span>
+          <span class="hotkey">B: Brush</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 7–9</span>
+          <span class="phase-badge phase-2">Tonal Control</span>
+        </div>
+        <div class="day-name">Levels, Curves &amp; HSL</div>
+        <div class="day-desc">Reading histograms, clipping warnings, S-curve contrast mapping, and individual RGB channel color balance.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">Ctrl + M: Curves</span>
+          <span class="hotkey">Ctrl + L: Levels</span>
+          <span class="hotkey">Ctrl + U: Hue/Sat</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 10–12</span>
+          <span class="phase-badge phase-2">Dynamics</span>
+        </div>
+        <div class="day-name">Brush Dynamics &amp; Blending Modes</div>
+        <div class="day-desc">Flow vs Opacity mechanics, pressure sensitivity, Multiply vs Screen vs Overlay, and Clipping Masks.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">Shift + Alt + M: Multiply</span>
+          <span class="hotkey">Shift + Alt + S: Screen</span>
+          <span class="hotkey">Ctrl + Alt + G: Clip</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 13–15</span>
+          <span class="phase-badge phase-3">Manipulation</span>
+        </div>
+        <div class="day-name">Smart Objects, Warp &amp; Clean-up</div>
+        <div class="day-desc">Perspective warp, Puppet warp, Spot Healing, Clone Stamp, and Content-Aware Fill removal.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">Ctrl + T: Free Transform</span>
+          <span class="hotkey">J: Healing Brush</span>
+          <span class="hotkey">S: Clone Stamp</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 16–18</span>
+          <span class="phase-badge phase-3">Sculpting</span>
+        </div>
+        <div class="day-name">Dodge &amp; Burn and Color LUTs</div>
+        <div class="day-desc">Light sculpting with 1-3% Flow on masked Curves, Color Lookup Tables, and split-toning gradients.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">Shift + [ / ]: Hardness</span>
+          <span class="hotkey">X: Swap B/W</span>
+          <span class="hotkey">0–9: Opacity</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 19–21</span>
+          <span class="phase-badge phase-4">Vector &amp; Raw</span>
+        </div>
+        <div class="day-name">Pen Tool &amp; Camera Raw Filter</div>
+        <div class="day-desc">Bezier curves, clipping paths, Camera Raw texture/clarity/dehaze, and Face-Aware Liquify.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">P: Pen Tool</span>
+          <span class="hotkey">Ctrl + Shift + A: Camera Raw</span>
+          <span class="hotkey">Ctrl + Shift + X: Liquify</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 22–26</span>
+          <span class="phase-badge phase-4">Retouching</span>
+        </div>
+        <div class="day-name">Frequency Separation &amp; Hair</div>
+        <div class="day-desc">High/Low frequency split, Mixer Brush skin smoothing without losing pores, and Channel masking.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">Apply Image: Subtract/Add</span>
+          <span class="hotkey">Blend: Linear Light</span>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-tag">Day 27–30</span>
+          <span class="phase-badge phase-4">Final Master</span>
+        </div>
+        <div class="day-name">Compositing, Actions &amp; Export</div>
+        <div class="day-desc">Environmental blending, uniform grain binding, recording Actions, JSX batch scripting, and sRGB export.</div>
+        <div class="hotkey-list">
+          <span class="hotkey">Ctrl + Alt + Shift + S: Export</span>
+          <span class="hotkey">Alt + F9: Actions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Formulas -->
+    <div class="section-title">Technical Retouching Mathematics</div>
+
+    <div class="cheatsheet-grid">
+      <div class="code-box">
+        <div class="code-title">Frequency Separation Math (8-Bit vs 16-Bit)</div>
+        <pre>// 8-BIT IMAGES:
+1. Low Frequency: Filter > Blur > Gaussian Blur (Radius: ~3.0px)
+2. High Frequency: Image > Apply Image:
+   - Layer: Low Frequency
+   - Blending: Subtract
+   - Scale: 2
+   - Offset: 128
+3. High Frequency Blend Mode: Linear Light
+
+// 16-BIT IMAGES:
+1. Low Frequency: Gaussian Blur (Radius: ~3.0px)
+2. High Frequency: Image > Apply Image:
+   - Layer: Low Frequency
+   - Invert: CHECKED
+   - Blending: Add
+   - Scale: 2
+   - Offset: 0
+3. High Frequency Blend Mode: Linear Light</pre>
+      </div>
+
+      <div class="code-box">
+        <div class="code-title">Antigravity CLI Automation &amp; ExtendScript</div>
+        <pre># Launch Photoshop Detached (Workspace Rule):
+Invoke-CimMethod -ClassName Win32_Process -MethodName Create `
+  -Arguments @{ CommandLine = '"C:\Program Files\Adobe\Adobe Photoshop 2026\Photoshop.exe"' }
+
+# Execute Automated Stack Builder via CLI:
+& "C:\Program Files\Adobe\Adobe Photoshop 2026\Photoshop.exe" `
+  -r "C:\Users\LEGION\Documents\Ai\photoshop\scripts\setup_pro_pipeline.jsx"</pre>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

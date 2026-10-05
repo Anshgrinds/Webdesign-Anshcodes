@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPoint Design Masterclass — Slides by Sander Interactive Demo</title>
+  <style>
+    :root {
+      --bg-dark: #121316;
+      --bg-dark-accent: #1e2025;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #ffd15c;
+      --accent-glow: rgba(255, 209, 92, 0.25);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Montserrat, sans-serif;
+      user-select: none;
+    }
+
+    body {
+      background: #0b0c0e;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      overflow-x: hidden;
+    }
+
+    /* Header & Controls */
+    .top-bar {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .badge-tag {
+      background: rgba(255, 209, 92, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(255, 209, 92, 0.25);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn.active {
+      background: var(--accent);
+      color: #0b0c0e;
+      border-color: var(--accent);
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+
+    /* Presentation Slide Stage (16:9) */
+    .stage-wrapper {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #121316 0%, #1e2025 100%);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      padding: 70px 80px;
+    }
+
+    /* Left Content Column */
+    .content-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 10;
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide-kicker {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide-kicker::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .slide-title {
+      font-size: 54px;
+      line-height: 1.08;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+      color: #ffffff;
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .slide-title span {
+      background: linear-gradient(90deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-desc {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 440px;
+      margin-bottom: 36px;
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 24px;
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .stat-chip {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 12px 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-num {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stat-lbl {
+      font-size: 11px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 2px;
+    }
+
+    /* Right Visual Column (Compound Angled Pill Cutouts) */
+    .visual-col {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Compound Angled Cutout Container */
+    .cutout-stage {
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Individual Angled Pills */
+    .pill {
+      height: 100%;
+      border-radius: 9999px;
+      position: relative;
+      overflow: hidden;
+      background: #1a1c22;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      transition: all 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pill-1 { width: 90px; height: 380px; }
+    .pill-2 { width: 110px; height: 560px; }
+    .pill-3 { width: 100px; height: 460px; }
+    .pill-4 { width: 75px; height: 300px; }
+
+    /* The Continuous Inner Image Mask Effect */
+    .pill-img {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      transform: rotate(-45deg);
+      background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      pointer-events: none;
+    }
+
+    /* Precise image alignment for each cutout segment to simulate Boolean Intersect */
+    .pill-1 .pill-img { top: -140px; left: -100px; }
+    .pill-2 .pill-img { top: -50px; left: -200px; }
+    .pill-3 .pill-img { top: -100px; left: -310px; }
+    .pill-4 .pill-img { top: -180px; left: -410px; }
+
+    /* The Secret Inner Shadow from Slides by Sander Tutorial */
+    .pill::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 24px 8px rgba(0, 0, 0, 0.65), inset 0 0 4px 1px rgba(0, 0, 0, 0.9);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    /* State 1: "Deconstructed Off-Screen" (Morph Origin) */
+    .stage-wrapper.state-origin .content-col {
+      transform: translateX(-120px);
+      opacity: 0;
+    }
+
+    .stage-wrapper.state-origin .cutout-stage {
+      transform: translateY(-50%) rotate(75deg) translate(300px, -200px);
+      opacity: 0;
+    }
+
+    .stage-wrapper.state-origin .pill-1 { transform: translateY(-160px); }
+    .stage-wrapper.state-origin .pill-2 { transform: translateY(220px); }
+    .stage-wrapper.state-origin .pill-3 { transform: translateY(-180px); }
+    .stage-wrapper.state-origin .pill-4 { transform: translateY(140px); }
+
+    /* Floating Accent Badge */
+    .floating-badge {
+      position: absolute;
+      bottom: 60px;
+      right: 280px;
+      background: rgba(18, 19, 22, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+      padding: 12px 20px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      z-index: 20;
+      transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    }
+
+    .stage-wrapper.state-origin .floating-badge {
+      transform: translateY(80px) scale(0.85);
+      opacity: 0;
+    }
+
+    .floating-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    /* Explanation Cards Footer */
+    .technique-grid {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .tech-card {
+      background: #121316;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .tech-step {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .tech-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .tech-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="badge-tag">
+      <span>★</span> Slides by Sander Technique Showcase
+    </div>
+    <div class="controls">
+      <button class="btn" id="toggleShadowBtn">Toggle Inner Shadow</button>
+      <button class="btn" id="toggleSlideBtn">State: Slide 1 (Offscreen)</button>
+      <button class="btn active" id="playMorphBtn">▶ Trigger Morph Transition</button>
+    </div>
+  </div>
+
+  <!-- The 16:9 Presentation Slide Canvas -->
+  <div class="stage-wrapper" id="slideStage">
+    
+    <!-- Left: Editorial Typography -->
+    <div class="content-col">
+      <div class="slide-kicker">Alpine Horizons • Edition 2026</div>
+      <h1 class="slide-title">Explore Beyond<br><span>Boundaries.</span></h1>
+      <p class="slide-desc">
+        Experience the majesty of high-altitude summits through cinematic compositions, tactile depth framing, and fluent motion choreography.
+      </p>
+      <div class="stats-row">
+        <div class="stat-chip">
+          <div class="stat-num">4,810m</div>
+          <div class="stat-lbl">Summit Peak</div>
+        </div>
+        <div class="stat-chip">
+          <div class="stat-num">98.4%</div>
+          <div class="stat-lbl">Expedition Index</div>
+        </div>
+        <div class="stat-chip">
+          <div class="stat-num">04</div>
+          <div class="stat-lbl">Key Passes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Angled Compound Cutout (Slides by Sander Method) -->
+    <div class="visual-col">
+      <div class="cutout-stage" id="cutoutContainer">
+        <!-- Staggered Capsules with Inner Image Offset -->
+        <div class="pill pill-1">
+          <div class="pill-img"></div>
+        </div>
+        <div class="pill pill-2">
+          <div class="pill-img"></div>
+        </div>
+        <div class="pill pill-3">
+          <div class="pill-img"></div>
+        </div>
+        <div class="pill pill-4">
+          <div class="pill-img"></div>
+        </div>
+      </div>
+
+      <!-- Floating Micro-Badge -->
+      <div class="floating-badge">
+        <div class="floating-dot"></div>
+        <div>
+          <div style="font-size: 13px; font-weight: 700; color: #fff;">Chamonix Trail Head</div>
+          <div style="font-size: 11px; color: var(--text-dim);">Live Route Conditions: Optimal</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Techniques Breakdown from Video -->
+  <div class="technique-grid">
+    <div class="tech-card">
+      <div class="tech-step">Step 01</div>
+      <div class="tech-title">Max Rounded Pills</div>
+      <div class="tech-desc">Draw rounded rectangles, drag yellow corner radius handle to 100%, and rotate to a dynamic 45° angle.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-step">Step 02</div>
+      <div class="tech-title">Union Fuse</div>
+      <div class="tech-desc">Stagger capsules at varying lengths and fuse them into one compound vector with Merge Shapes &gt; Union.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-step">Step 03</div>
+      <div class="tech-title">Picture Intersect</div>
+      <div class="tech-desc">Select hero photo first, then compound shape, and run Merge Shapes &gt; Intersect to cleanly punch the image into the silhouette.</div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-step">Step 04</div>
+      <div class="tech-title">Depth &amp; Morph</div>
+      <div class="tech-desc">Apply an Inner Shadow for physical recessed depth, duplicate slide, stagger off-screen, and apply the Morph transition.</div>
+    </div>
+  </div>
+
+  <script>
+    const stage = document.getElementById('slideStage');
+    const playMorphBtn = document.getElementById('playMorphBtn');
+    const toggleSlideBtn = document.getElementById('toggleSlideBtn');
+    const toggleShadowBtn = document.getElementById('toggleShadowBtn');
+    let isOriginState = false;
+    let shadowsEnabled = true;
+
+    function triggerMorph() {
+      isOriginState = !isOriginState;
+      if (isOriginState) {
+        stage.classList.add('state-origin');
+        toggleSlideBtn.textContent = 'State: Slide 1 (Pre-Arrival)';
+      } else {
+        stage.classList.remove('state-origin');
+        toggleSlideBtn.textContent = 'State: Slide 2 (Hero Arrival)';
+      }
+    }
+
+    playMorphBtn.addEventListener('click', () => {
+      // Toggle back and forth to demonstrate Morph
+      if (!isOriginState) {
+        stage.classList.add('state-origin');
+        toggleSlideBtn.textContent = 'State: Slide 1 (Pre-Arrival)';
+        setTimeout(() => {
+          stage.classList.remove('state-origin');
+          toggleSlideBtn.textContent = 'State: Slide 2 (Hero Arrival)';
+          isOriginState = false;
+        }, 500);
+      } else {
+        stage.classList.remove('state-origin');
+        toggleSlideBtn.textContent = 'State: Slide 2 (Hero Arrival)';
+        isOriginState = false;
+      }
+    });
+
+    toggleSlideBtn.addEventListener('click', triggerMorph);
+
+    toggleShadowBtn.addEventListener('click', () => {
+      shadowsEnabled = !shadowsEnabled;
+      document.querySelectorAll('.pill').forEach(pill => {
+        pill.style.setProperty('--shadow-op', shadowsEnabled ? '1' : '0');
+        pill.classList.toggle('no-inner-shadow', !shadowsEnabled);
+      });
+      toggleShadowBtn.textContent = shadowsEnabled ? 'Inner Shadow: Active' : 'Inner Shadow: Hidden';
+    });
+
+    // Keyboard navigation (Space or Arrow keys)
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' || e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        triggerMorph();
+      }
+    });
+  </script>
+</body>
+</html>

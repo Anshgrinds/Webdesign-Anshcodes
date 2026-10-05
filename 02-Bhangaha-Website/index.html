@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhangaha & Sitapur (VV8Q+WXC) | Mahottari, Nepal</title>
+  <meta name="description" content="Explore Sitapur, Ward 5, Bhangaha Municipality (Postal Code 45700 / 20405), Mahottari, Madhesh Province, Nepal. Home of the historic Nepal Railway terminus and rich Mithila culture.">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="brand-wrapper">
+        <div class="brand-emblem">भ</div>
+        <div class="brand-text">
+          <h1>Bhangaha & Sitapur</h1>
+          <span class="nepali-sub">भँगाहा नगरपालिका - ५, सीतापुर (महोत्तरी)</span>
+        </div>
+      </div>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#map">Interactive Map</a></li>
+          <li><a href="#history">History & Heritage</a></li>
+          <li><a href="#railway">Railway Heritage</a></li>
+          <li><a href="#culture">Mithila Culture</a></li>
+          <li><a href="#distance">Connectivity</a></li>
+        </ul>
+      </nav>
+
+      <button class="plus-code-pill" id="headerCodeBtn" title="Click to copy Plus Code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        <span>VV8Q+WXC</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="about">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="location-tag-banner">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          Mithila Terai Heart &bull; Madhesh Province, Nepal
+        </div>
+
+        <div class="hero-nepali-lead">मिथिलाको लोकसंस्कृति, ऐतिहासिक रेलमार्ग र हरियालीको संगम</div>
+        <h2 class="hero-title">
+          Discover <span class="highlight">Bhangaha & Sitapur</span>
+        </h2>
+        <p class="hero-desc">
+          Situated along the historic Rato River basin in Mahottari District, <strong>Sitapur (Ward 5, Bhangaha Municipality)</strong> represents the authentic soul of the Terai. Famed as the terminus of Nepal’s historic cross-border railway line and steeped in centuries-old Mithila cultural traditions.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#map" class="btn btn-primary">
+            <span>Explore on Live Map</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=26.86731,85.88994" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            Open in Google Maps &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Live Geographic Coordinates Card -->
+      <div class="geo-data-card">
+        <div class="geo-card-header">
+          <div class="geo-title">
+            <h3>Geographic Registry</h3>
+            <p>Official Digital Address & Coordinates</p>
+          </div>
+          <div class="geo-badge-live">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #059669;"></span>
+            Verified Pin
+          </div>
+        </div>
+
+        <div class="geo-rows">
+          <div class="geo-row">
+            <span class="label">Google Plus Code</span>
+            <span class="value">
+              <span id="displayPlusCode">VV8Q+WXC</span>
+              <button class="copy-btn" id="copyCodeBtn">Copy</button>
+            </span>
+          </div>
+
+          <div class="geo-row">
+            <span class="label">Full Global Code</span>
+            <span class="value">7MR7VV8Q+WXC</span>
+          </div>
+
+          <div class="geo-row">
+            <span class="label">Exact Coordinates</span>
+            <span class="value">
+              <span id="displayCoords">26.86731° N, 85.88994° E</span>
+              <button class="copy-btn" id="copyCoordsBtn">Copy</button>
+            </span>
+          </div>
+
+          <div class="geo-row">
+            <span class="label">Hamlet & Ward</span>
+            <span class="value">Sitapur (सीतापुर), Ward 05</span>
+          </div>
+
+          <div class="geo-row">
+            <span class="label">Municipality</span>
+            <span class="value">Bhangaha (भँगाहा नगरपालिका)</span>
+          </div>
+
+          <div class="geo-row">
+            <span class="label">District & Province</span>
+            <span class="value">Mahottari, Madhesh Province</span>
+          </div>
+
+          <div class="geo-row">
+            <span class="label">Postal Code</span>
+            <span class="value">45700 / 20405</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="map-section" id="map">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Geographic Explorer</span>
+        <h2 class="section-title">Live Satellite & Street View</h2>
+        <p class="section-desc">Interactive OpenStreetMap centered directly on Plus Code <strong>VV8Q+WXC</strong> (Sitapur, Bhangaha). Navigate nearby landmarks, roads, and rail lines.</p>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="leafletMap"></div>
+      </div>
+
+      <div class="map-controls-bar">
+        <span style="font-weight: 700; font-size: 0.88rem; color: var(--color-primary);">Quick Landmark Jump:</span>
+        <div class="map-poi-buttons">
+          <button class="poi-btn active" data-lat="26.86731" data-lng="85.88994" data-zoom="16">📍 VV8Q+WXC (Sitapur)</button>
+          <button class="poi-btn" data-lat="26.8830" data-lng="85.8920" data-zoom="15">🛕 Siddhanath Mahadev (Bhangaha-6)</button>
+          <button class="poi-btn" data-lat="26.8655" data-lng="85.8980" data-zoom="15">🚂 Bhangaha Railway Station</button>
+          <button class="poi-btn" data-lat="26.8720" data-lng="85.8750" data-zoom="14">🌊 Rato River (रातो खोला)</button>
+          <button class="poi-btn" data-lat="26.7271" data-lng="85.9244" data-zoom="12">🛕 Janakpurdham (18km S)</button>
+          <button class="poi-btn" data-lat="26.9740" data-lng="85.8920" data-zoom="12">🛣️ Bardibas (16km N)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Highlights / Pillars -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Local Tapestry</span>
+        <h2 class="section-title">What Makes Bhangaha Unique</h2>
+        <p class="section-desc">From historic transportation links to serene agrarian living and rich folk festivals.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <article class="feature-box">
+          <div class="feature-img">
+            <img src="https://images.unsplash.com/photo-1541447271487-09612b3f49f7?w=600&auto=format&fit=crop&q=80" alt="Nepal Railway train line" loading="lazy">
+            <span class="feature-badge">Rail Terminus</span>
+          </div>
+          <div class="feature-body">
+            <h3>Historic Railway Heritage</h3>
+            <p>Bhangaha is famous as a vital terminal of the historic Jayanagar–Janakpur–Bhangaha railway line, an iconic cross-border link connecting the Terai of Nepal with India.</p>
+            <ul class="feature-bullets">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Broad-gauge rail connecting to Janakpurdham
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Upcoming extension towards Bardibas & East-West line
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="feature-box">
+          <div class="feature-img">
+            <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600&auto=format&fit=crop&q=80" alt="Mithila art and culture" loading="lazy">
+            <span class="feature-badge">Mithila Sanskar</span>
+          </div>
+          <div class="feature-body">
+            <h3>Mithila Art & Celebrations</h3>
+            <p>The streets of Bhangaha and Sitapur resonate with traditional Maithili hospitality. Village courtyards are adorned with handmade geometric Aripana art and clay murals.</p>
+            <ul class="feature-bullets">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Sacred Chhath Puja worship by traditional Pokharis
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Sama Chakeva, Jitiya, & Jhijhiya cultural dances
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="feature-box">
+          <div class="feature-img">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&auto=format&fit=crop&q=80" alt="Lush agricultural fields in Terai" loading="lazy">
+            <span class="feature-badge">Agriculture</span>
+          </div>
+          <div class="feature-body">
+            <h3>Lush Alluvial Agrarian Heartland</h3>
+            <p>Nourished by the Rato River, Bhangaha boasts fertile soils producing abundant paddy, golden mustard fields, mango orchards (Malda & Bambai), and fresh fishery ponds.</p>
+            <ul class="feature-bullets">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Bustling weekly village Haat Bazaars
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Sweet Terai sugarcane, fresh curd (Dahi) & organic produce
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historical Chronicle & Heritage Timeline -->
+  <section class="history-section" id="history">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Historical Chronicle &bull; इतिहास र विरासत</span>
+        <h2 class="section-title">The Living Heritage of Bhangaha & Sitapur</h2>
+        <p class="section-desc">
+          From the ancient Vedic kingdom of Videha to medieval Maithili dynasties and the pioneering 1937 Nepal Railway, discover the profound epochs that shaped this sacred Terai land.
+        </p>
+      </div>
+
+      <!-- Intro Highlights Card -->
+      <div class="history-intro-card">
+        <div class="history-intro-icon">📜</div>
+        <div class="history-intro-text">
+          <h3>The Etymology: How Bhangaha & Sitapur Received Their Names</h3>
+          <p>
+            In ancient Maithili folklore, the name <strong>Bhangaha</strong> stems from the dynamic geological shifting and breaking (<em>"Bhanga"</em>) of the alluvial river channels created by the Ratu (Rato) and Badahari rivers, alongside the historical abundance of wild medicinal herbs along the fertile riverbanks. <strong>Sitapur (Ward 5)</strong> was consecrated in devotion to Goddess Sita (Janaki), directly honoring the spiritual heritage of neighboring Janakpurdham, the ancient capital of Mithila.
+          </p>
+        </div>
+      </div>
+
+      <!-- Chronological Timeline -->
+      <div class="timeline-container">
+        <!-- Milestone 1 -->
+        <div class="timeline-card">
+          <div class="timeline-bullet"></div>
+          <span class="timeline-era-tag">Antiquity &bull; c. 1000 BCE – 600 CE</span>
+          <h3 class="timeline-title">The Videha Realm & Ramayana Pilgrimage Trails</h3>
+          <p class="timeline-desc">
+            Bhangaha lay squarely within the sacred realm of the ancient Videha kingdom ruled by King Janaka. According to regional puranic lore, the forested riverbanks along the Ratu River served as quiet hermitages (<em>Ashrams</em>) for meditating sages, poets, and pilgrims travelling between northern holy Himalayan foothills and the royal court of Janakpurdham.
+          </p>
+          <div class="timeline-highlight-box">
+            <strong>Archaeological Legacy:</strong> Reverence for ancient confluences (<em>Triveni/Sangams</em>) where Vedic morning ablutions and sun rituals were performed for over two millennia.
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="timeline-card">
+          <div class="timeline-bullet"></div>
+          <span class="timeline-era-tag">Sacred Architecture &bull; Ancient Epoch</span>
+          <h3 class="timeline-title">Siddhanath Mahadev Sanctuary (सिद्धनाथ महादेव)</h3>
+          <p class="timeline-desc">
+            Situated at the sacred river confluence of the Ratu and Badahari rivers in Bhangaha-6, the <strong>Siddhanath Mahadev Temple</strong> represents the paramount archaeological and religious landmark of the municipality. Centuries of devotees have gathered here during Maha Shivaratri and Shrawan to offer holy river waters to Lord Shiva, seeking agricultural fertility and protection from river floods.
+          </p>
+          <div class="timeline-highlight-box">
+            <strong>Heritage Status:</strong> A prioritized heritage conservation site in Mahottari District, celebrated for its ancient stone Shivalinga and historical confluence shrines.
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="timeline-card">
+          <div class="timeline-bullet"></div>
+          <span class="timeline-era-tag">Hydraulic Wisdom &bull; 14th – 18th Century</span>
+          <h3 class="timeline-title">The Sacred Pokhari Matrix & Mithila Renaissance</h3>
+          <p class="timeline-desc">
+            During the Karnat and Oiniwar dynasties of Mithila, the agrarian communities of Bhangaha and Sitapur engineered a sophisticated network of community ponds (<em>Pokharis</em>) and brick step-wells. These water reservoirs captured monsoonal runoff from the Siwalik hills, mitigated sudden inundation, supported freshwater fish farming, and formed the sacred amphitheatres for the worship of the Sun God during Chhath Puja.
+          </p>
+          <div class="timeline-highlight-box">
+            <strong>Living Culture:</strong> The timeless folk art of <em>Mithila Painting</em> (Madhubani) and geometric rice-paste courtyard art (<em>Aripana</em>) flourished across every household.
+          </div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="timeline-card">
+          <div class="timeline-bullet"></div>
+          <span class="timeline-era-tag">Colonial & Industrial Dawn &bull; 1937 CE</span>
+          <h3 class="timeline-title">Commissioning of the Historic Nepal Railway</h3>
+          <p class="timeline-desc">
+            In 1937, under the administration of Rana Prime Minister Juddha Shumsher and the British Indian Railways, the <strong>Nepal Janakpur-Jaynagar Railway (NJJR)</strong> was constructed. Bhangaha (Bijalpura) was selected as the crucial northern terminal railhead. Steam locomotives connected the agricultural yields and timber of Mahottari straight to the broader Indian trade network in Bihar, transforming Bhangaha into a buzzing regional commercial depot.
+          </p>
+          <div class="timeline-highlight-box">
+            <strong>Historic Feat:</strong> The 52-kilometer narrow-gauge (2 ft 6 in) line carried thousands of pilgrims, traders, and agricultural goods daily across the border for over six decades.
+          </div>
+        </div>
+
+        <!-- Milestone 5 -->
+        <div class="timeline-card">
+          <div class="timeline-bullet"></div>
+          <span class="timeline-era-tag">Trial by Nature &bull; 2001 CE</span>
+          <h3 class="timeline-title">The Great Monsoon Flood & Bridge Washout</h3>
+          <p class="timeline-desc">
+            In the devastating monsoon of 2001, unprecedented flash floods along the Dhudhmati and Bighi river tributaries swept away critical railway bridges, severing the railway line between Kurtha and Bhangaha. For 22 years, rail transportation was cut off, isolating the northern villages and leaving the historic terminal dormant while local residents petitioned for its resurrection.
+          </p>
+          <div class="timeline-highlight-box">
+            <strong>Resilience:</strong> Sitapur and Bhangaha farmers adapted by establishing vibrant road transit corridors linking northward to the East-West Mahendra Highway at Bardibas.
+          </div>
+        </div>
+
+        <!-- Milestone 6 -->
+        <div class="timeline-card">
+          <div class="timeline-bullet"></div>
+          <span class="timeline-era-tag">Modern Rebirth &bull; 2016 – 2023 CE</span>
+          <h3 class="timeline-title">Municipal Unification & Broad-Gauge Railway Resurgence</h3>
+          <p class="timeline-desc">
+            In 2016–2017, Nepal's federal restructuring unified the historic Village Development Committees of Bhangaha, Sitapur, Singyahi, Dharampur, and Hariharpur into <strong>Bhangaha Municipality</strong>. In 2023, the Indian Government-assisted reconstruction was completed, and modern diesel-electric broad-gauge (1,676 mm) train services made their triumphant return to Bhangaha Station, inaugurating a brand new era of regional connectivity and tourism.
+          </p>
+          <div class="timeline-highlight-box">
+            <strong>Present Horizon:</strong> Ongoing track extension northward to Bardibas to link directly into Nepal's planned National East-West Electric Railway Network.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Railway Corridor Strip -->
+  <section class="railway-banner-section" id="railway">
+    <div class="container railway-grid">
+      <div class="railway-info">
+        <span class="location-tag-banner" style="background: rgba(255,255,255,0.12); color: #FBBF24;">Cross-Border Heritage</span>
+        <h2>The Storied Jayanagar &ndash; Janakpur &ndash; Bhangaha Railway</h2>
+        <p>
+          First engineered in the 1930s as a narrow-gauge logging and passenger railroad, the line has been rebuilt into a modern broad-gauge network. Bhangaha serves as a crucial junction linking travelers and traders from northern Mahottari directly into Janakpurdham and across the Indian border into Bihar.
+        </p>
+
+        <!-- Interactive Visual Route Map -->
+        <div class="route-strip">
+          <div class="station-node">
+            <div class="station-dot"></div>
+            <span class="station-name">Jayanagar (IN)</span>
+          </div>
+          <div class="station-line"></div>
+          <div class="station-node">
+            <div class="station-dot"></div>
+            <span class="station-name">Inaruwa</span>
+          </div>
+          <div class="station-line"></div>
+          <div class="station-node">
+            <div class="station-dot"></div>
+            <span class="station-name">Kurtha</span>
+          </div>
+          <div class="station-line"></div>
+          <div class="station-node">
+            <div class="station-dot" style="background: #EF4444;"></div>
+            <span class="station-name" style="color: #FBBF24; font-weight: 800;">Bhangaha (Terminus)</span>
+          </div>
+          <div class="station-line" style="border-top: 2px dashed rgba(255,255,255,0.4); background: none;"></div>
+          <div class="station-node">
+            <div class="station-dot" style="background: #94A3B8;"></div>
+            <span class="station-name" style="opacity: 0.7;">Bardibas (Planned)</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="background: rgba(255,255,255,0.06); padding: 32px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.12);">
+          <h4 style="font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 14px; color: #FBBF24;">Key Railway Facts:</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: #E2E8F0;">
+            <li style="display: flex; gap: 10px;">
+              <span style="color: #F59E0B;">&bull;</span>
+              <strong>Track Gauge:</strong> 1,676 mm (5 ft 6 in) Indian broad gauge
+            </li>
+            <li style="display: flex; gap: 10px;">
+              <span style="color: #F59E0B;">&bull;</span>
+              <strong>Operator:</strong> Nepal Railway Company Limited (NRCL)
+            </li>
+            <li style="display: flex; gap: 10px;">
+              <span style="color: #F59E0B;">&bull;</span>
+              <strong>Distance to Janakpur:</strong> Approx. 17.5 km (35 min rail journey)
+            </li>
+            <li style="display: flex; gap: 10px;">
+              <span style="color: #F59E0B;">&bull;</span>
+              <strong>Regional Significance:</strong> Connects agrarian producers to major city hubs.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Distance & Travel Route Calculator -->
+  <section class="calc-section" id="distance">
+    <div class="container">
+      <div class="calc-card">
+        <div class="calc-inputs">
+          <h3>Distance & Travel Calculator</h3>
+          <p>Find out travel distances and estimated journey times from <strong>Sitapur (VV8Q+WXC, Bhangaha)</strong> to major regional destinations in Nepal.</p>
+
+          <div class="calc-select-group">
+            <label for="destinationSelect">Select Destination City:</label>
+            <select id="destinationSelect" class="calc-select">
+              <option value="janakpur">Janakpurdham (Provincial Capital)</option>
+              <option value="bardibas">Bardibas (East-West Highway Junction)</option>
+              <option value="jaleshwor">Jaleshwor (District HQ, Mahottari)</option>
+              <option value="sindhuli">Sindhuli Madi (via BP Highway)</option>
+              <option value="kathmandu">Kathmandu (Capital via BP Highway)</option>
+              <option value="birgunj">Birgunj (Commercial Hub)</option>
+            </select>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--color-text-muted);">Calculated using road networks via Hulaki Highway and BP/East-West Highway.</span>
+        </div>
+
+        <div class="calc-result-pane">
+          <div class="result-distance-number" id="calcDistance">18 km</div>
+          <div class="result-time-label" id="calcTime">~ 35 mins via Janakpur-Bhangaha Road</div>
+          <div class="result-route-note" id="calcRouteNote">Frequent public buses, magic autos, and local rail connections available.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visitor Guide & Essentials -->
+  <section class="features-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-tag">Travel Information</span>
+        <h2 class="section-title">Visiting Bhangaha & Sitapur</h2>
+        <p class="section-desc">Practical tips for researchers, travelers, and cultural visitors.</p>
+      </div>
+
+      <div class="features-grid">
+        <div style="background: #FFFFFF; padding: 32px; border-radius: 18px; border: 1px solid var(--color-border);">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); margin-bottom: 12px;">🌤️ Best Time to Visit</h4>
+          <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6;">
+            <strong>October to March:</strong> Pleasant sunny days with cool evenings (18°C – 26°C). Perfect for witnessing Chhath Puja festivals, vibrant mustard fields, and village explorations.
+          </p>
+        </div>
+
+        <div style="background: #FFFFFF; padding: 32px; border-radius: 18px; border: 1px solid var(--color-border);">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); margin-bottom: 12px;">🚗 How to Reach</h4>
+          <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6;">
+            <strong>From Janakpur Airport:</strong> Regular domestic flights from Kathmandu (25 min flight), followed by a 35-minute taxi or local vehicle ride northward to Sitapur / Bhangaha.
+          </p>
+        </div>
+
+        <div style="background: #FFFFFF; padding: 32px; border-radius: 18px; border: 1px solid var(--color-border);">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-primary); margin-bottom: 12px;">🍲 Local Delicacies</h4>
+          <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6;">
+            Sample authentic Mithila flavors: <em>Mauri machha</em> (river fish curry), fresh <em>Bariya</em>, local sweet <em>Dahi</em>, and handmade litti chokha in village tea stalls.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Bhangaha & Sitapur (भँगाहा)</h4>
+          <p>An educational and cultural digital showcase of Sitapur, Ward 5, Bhangaha Municipality, Mahottari District, Madhesh Province, Nepal.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Geographic References</h5>
+          <ul>
+            <li><strong>Plus Code:</strong> VV8Q+WXC</li>
+            <li><strong>Coordinates:</strong> 26.86731° N, 85.88994° E</li>
+            <li><strong>Postal Code:</strong> 45700 (Mahottari) / 20405</li>
+            <li><strong>Elevation:</strong> ~82 m above sea level</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Administrative Links</h5>
+          <ul>
+            <li><a href="https://bhangahamun.gov.np/" target="_blank" rel="noopener noreferrer">Bhangaha Municipality Official</a></li>
+            <li><a href="https://madhesh.gov.np/" target="_blank" rel="noopener noreferrer">Madhesh Province Portal</a></li>
+            <li><a href="https://nepalpostalcodes.com" target="_blank" rel="noopener noreferrer">Nepal Postal Code Index</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bhangaha Regional Information Portal. Open Data & Heritage Initiative.</p>
+        <p>Location: Sitapur, Ward 05, Bhangaha Municipality, Nepal.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>

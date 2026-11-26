@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 General Knowledge Examination Paper - Goodwill's GK</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 11mm 13mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.4;
+      font-size: 9.5pt;
+      background: #ffffff;
+      padding: 2px;
+    }
+    .header-box {
+      border: 2px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: #eff6ff;
+      margin-bottom: 10px;
+    }
+    .header-title {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-sub {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #2563eb;
+      margin-top: 2px;
+    }
+    .student-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px dashed #93c5fd;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #334155;
+    }
+    .meta-fill {
+      border-bottom: 1px dotted #475569;
+      display: inline-block;
+      min-width: 120px;
+      height: 14px;
+    }
+    .chapters-banner {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      font-size: 8.5pt;
+      color: #0f172a;
+      border-radius: 0 4px 4px 0;
+    }
+    .section-title {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-size: 10pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+    .q-group {
+      margin-bottom: 10px;
+      page-break-inside: avoid;
+    }
+    .q-title {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 5px;
+      font-size: 9.5pt;
+    }
+    .word-bank {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      margin-bottom: 8px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .blank-line {
+      display: inline-block;
+      min-width: 130px;
+      border-bottom: 1.5px solid #64748b;
+      margin: 0 4px;
+      vertical-align: bottom;
+      height: 16px;
+    }
+    .question-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .question-list li {
+      margin-bottom: 7px;
+      padding-left: 20px;
+      text-indent: -20px;
+    }
+    .mcq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .mcq-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      padding: 7px 9px;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+    .mcq-card p {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .mcq-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      font-size: 8.5pt;
+      color: #334155;
+    }
+    .match-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      margin-bottom: 6px;
+    }
+    .match-table th {
+      background: #f1f5f9;
+      color: #1e293b;
+      padding: 5px 8px;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+      font-weight: 700;
+    }
+    .match-table td {
+      border: 1px solid #cbd5e1;
+      padding: 4px 8px;
+      vertical-align: middle;
+    }
+    .match-input {
+      border: 1px solid #94a3b8;
+      border-radius: 3px;
+      width: 40px;
+      height: 20px;
+      text-align: center;
+      display: inline-block;
+    }
+    .tf-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      margin-bottom: 6px;
+    }
+    .tf-table th {
+      background: #f1f5f9;
+      padding: 5px 8px;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+      font-weight: 700;
+    }
+    .tf-table td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+    }
+    .tf-box {
+      border: 1px dashed #64748b;
+      width: 46px;
+      height: 22px;
+      display: inline-block;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    /* Crossword Styles */
+    .crossword-container {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 16px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px;
+      margin-top: 6px;
+      page-break-inside: avoid;
+    }
+    .cw-grid-table {
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+    .cw-grid-table td {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #334155;
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+      font-size: 10pt;
+      font-weight: 700;
+      background: #ffffff;
+    }
+    .cw-grid-table td.black-cell {
+      background: #1e293b !important;
+      border-color: #0f172a;
+    }
+    .cw-cell-num {
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      line-height: 1;
+    }
+    .cw-clues {
+      font-size: 8.5pt;
+      line-height: 1.35;
+    }
+    .cw-clues h4 {
+      font-size: 9pt;
+      color: #1e3a8a;
+      border-bottom: 1.5px solid #93c5fd;
+      padding-bottom: 2px;
+      margin-bottom: 4px;
+    }
+    .cw-clues ol {
+      padding-left: 18px;
+      margin-bottom: 6px;
+    }
+    .cw-clues li {
+      margin-bottom: 3px;
+    }
+    .answer-line {
+      border-bottom: 1px dotted #94a3b8;
+      height: 22px;
+      margin-top: 4px;
+      width: 100%;
+    }
+    .badge {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #e0e7ff;
+      color: #3730a3;
+      margin-right: 4px;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 8pt;
+      color: #64748b;
+      margin-top: 14px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="header-box">
+    <div class="header-title">Goodwill's General Knowledge (GK) - Class 5</div>
+    <div class="header-sub">Comprehensive Student Mock Assessment & Diagnostic Test Paper</div>
+    <div class="student-meta">
+      <div><strong>Student Name:</strong> <span class="meta-fill"></span></div>
+      <div><strong>Roll No:</strong> <span class="meta-fill" style="min-width:60px;"></span></div>
+      <div><strong>Date:</strong> <span class="meta-fill" style="min-width:80px;"></span></div>
+      <div><strong>Time Allowed:</strong> 1 Hour 30 Mins</div>
+      <div><strong>Full Marks:</strong> 50 | <strong>Pass Marks:</strong> 20</div>
+    </div>
+  </div>
+
+  <div class="chapters-banner">
+    <strong>Syllabus Coverage:</strong> Nepali Literature • Culture & Ethnicity • Eminent Poets • Music & Films • Games & Sports • Crossword Puzzles • Science (True or False) • Health & Hygiene • Tourist Spots (Nepal & Japan)
+  </div>
+
+  <!-- SECTION A -->
+  <div class="section-title">
+    <span>SECTION A: Nepali Literature & Eminent Poets</span>
+    <span>[6 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q1. Fill in the blanks using the appropriate names/terms from the Word Bank given below:</div>
+    <div class="word-bank">
+      <strong>Word Bank:</strong> [ Bhanubhakta Acharya | Laxmi Prasad Devkota | Parijat | Lekhnath Paudyal | Muna Madan | Byakul Maila ]
+    </div>
+    <ul class="question-list">
+      <li><strong>a)</strong> <span class="blank-line"></span> is honored with the title <em>'Aadikavi'</em> for translating the epic Ramayana into simple Nepali.</li>
+      <li><strong>b)</strong> The most loved poetic masterpiece (khandakavya) in Nepali literature that tells the story of a traveler and his beloved is <span class="blank-line"></span>.</li>
+      <li><strong>c)</strong> Great poet <span class="blank-line"></span> is revered as <em>'Mahakavi'</em> and composed the epic <em>Shakuntala</em> in just three months.</li>
+      <li><strong>d)</strong> The prestigious title of <em>'Kabi Shiromani'</em> (Crest-Jewel Poet) was bestowed upon the classical nature poet <span class="blank-line"></span>.</li>
+      <li><strong>e)</strong> The renowned feminist novel <em>'Shiris ko Phool'</em> (The Blue Mimosa) was penned by the celebrated writer <span class="blank-line"></span>.</li>
+      <li><strong>f)</strong> The lyrics of Nepal's current national anthem <em>'Sayaun Thunga Phoolka'</em> were written by Pradeep Kumar Rai, famously known as <span class="blank-line"></span>.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION B -->
+  <div class="section-title">
+    <span>SECTION B: Culture, Ethnicity & Festivals</span>
+    <span>[6 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q2. Match Column 'A' (Ethnic Group / Cultural Term) with Column 'B' (Festivals & Attributes):</div>
+    <table class="match-table">
+      <thead>
+        <tr>
+          <th style="width: 38%;">Column A</th>
+          <th style="width: 14%; text-align: center;">Answer</th>
+          <th style="width: 48%;">Column B</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Sherpa Community</strong></td>
+          <td style="text-align: center;"><span class="match-input"></span></td>
+          <td>A. Celebrates <em>Maghi</em> as their primary New Year & harvesting festival.</td>
+        </tr>
+        <tr>
+          <td><strong>2. Newar Community</strong></td>
+          <td style="text-align: center;"><span class="match-input"></span></td>
+          <td>B. Worshippers of the Sun God (Surya) along river banks for peace and health.</td>
+        </tr>
+        <tr>
+          <td><strong>3. Tharu Community</strong></td>
+          <td style="text-align: center;"><span class="match-input"></span></td>
+          <td>C. High-altitude mountain dwellers celebrated for mountaineering & <em>Gyalpo Lhosar</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>4. Kirat (Rai & Limbu)</strong></td>
+          <td style="text-align: center;"><span class="match-input"></span></td>
+          <td>D. Deepawali celebration honoring crows, dogs, cows, oxen, Goddess Laxmi, and brothers.</td>
+        </tr>
+        <tr>
+          <td><strong>5. Chhath Parva</strong></td>
+          <td style="text-align: center;"><span class="match-input"></span></td>
+          <td>E. Rich heritage of Kathmandu Valley; celebrates <em>Indra Jatra</em> and <em>Mha Puja</em>.</td>
+        </tr>
+        <tr>
+          <td><strong>6. Tihar (Yama Panchak)</strong></td>
+          <td style="text-align: center;"><span class="match-input"></span></td>
+          <td>F. Nature worshippers celebrating <em>Udhauli</em> and <em>Ubhauli</em> with Chandi dance.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION C -->
+  <div class="section-title">
+    <span>SECTION C: Music, Films & Traditional Instruments</span>
+    <span>[6 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q3. Choose the correct option [A, B, C, or D] for each question:</div>
+    <div class="mcq-grid">
+      <div class="mcq-card">
+        <p>1. Which bowed string instrument is traditionally played by the Gandharva (Gaine) community to tell musical tales?</p>
+        <div class="mcq-options">
+          <div>[A] Madal</div>
+          <div>[B] Sarangi</div>
+          <div>[C] Damphu</div>
+          <div>[D] Tungna</div>
+        </div>
+      </div>
+      <div class="mcq-card">
+        <p>2. Legendary musician Narayan Gopal is honored in Nepal with which royal cultural title?</p>
+        <div class="mcq-options">
+          <div>[A] Swor Samrat</div>
+          <div>[B] Aadikavi</div>
+          <div>[C] Swor Kinnari</div>
+          <div>[D] Kabi Shiromani</div>
+        </div>
+      </div>
+      <div class="mcq-card">
+        <p>3. What was the first full-length Nepali feature film produced entirely inside the territory of Nepal (1964)?</p>
+        <div class="mcq-options">
+          <div>[A] Maitighar</div>
+          <div>[B] Kumari</div>
+          <div>[C] Aama</div>
+          <div>[D] Satya Harishchandra</div>
+        </div>
+      </div>
+      <div class="mcq-card">
+        <p>4. Which traditional percussion drum has two leather heads tightened by leather straps and is played across Nepal?</p>
+        <div class="mcq-options">
+          <div>[A] Bansuri</div>
+          <div>[B] Madal</div>
+          <div>[C] Murchunga</div>
+          <div>[D] Shankha</div>
+        </div>
+      </div>
+      <div class="mcq-card">
+        <p>5. The traditional circular frame drum associated closely with Tamang folk music and dance is called:</p>
+        <div class="mcq-options">
+          <div>[A] Damphu</div>
+          <div>[B] Dhime</div>
+          <div>[C] Tabla</div>
+          <div>[D] Dholak</div>
+        </div>
+      </div>
+      <div class="mcq-card">
+        <p>6. Tara Devi, who sang over 4,000 melodious Nepali songs, was affectionately known as:</p>
+        <div class="mcq-options">
+          <div>[A] Melody King</div>
+          <div>[B] Swor Kinnari</div>
+          <div>[C] Mountain Nightingale</div>
+          <div>[D] Geet Devi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK FOR CLEAN PRINTING -->
+  <div class="page-break"></div>
+
+  <!-- SECTION D -->
+  <div class="section-title">
+    <span>SECTION D: Games and Sports Arena</span>
+    <span>[6 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q4. Answer the following sports questions concisely:</div>
+    <ul class="question-list">
+      <li>
+        <strong>a)</strong> What was officially declared as the <strong>National Game of Nepal</strong> by the government in May 2017?<br>
+        <strong>Answer:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>b)</strong> Name the traditional ancient Nepali game played with a long wooden stick and a smaller pointed wooden peg.<br>
+        <strong>Answer:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>c)</strong> How many active players play on the court at a time for one team in a standard <strong>Volleyball</strong> match?<br>
+        <strong>Answer:</strong> <span class="blank-line" style="min-width: 140px;"></span> players.
+      </li>
+      <li>
+        <strong>d)</strong> Which prestigious Japanese combat martial sport involves two heavy wrestlers fighting in a circular ring (dohyo)?<br>
+        <strong>Answer:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>e)</strong> Where is the famous <strong>Dasharath Rangasala</strong> (Nepal's largest multi-purpose stadium) located?<br>
+        <strong>Answer:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>f)</strong> How many players are on the field for each team during an official match of <strong>Football (Soccer)</strong>?<br>
+        <strong>Answer:</strong> <span class="blank-line" style="min-width: 140px;"></span> players.
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION E -->
+  <div class="section-title">
+    <span>SECTION E: Science - True or False Challenge</span>
+    <span>[8 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q5. Write 'T' for True and 'F' for False in the boxes provided:</div>
+    <table class="tf-table">
+      <thead>
+        <tr>
+          <th style="width: 82%;">Scientific Statement</th>
+          <th style="width: 18%; text-align: center;">T / F</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1.</strong> The Sun is a giant luminous star located at the center of our Solar System.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+        <tr>
+          <td><strong>2.</strong> Sound travels faster through empty air than it does through solid steel or liquids.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+        <tr>
+          <td><strong>3.</strong> Green plants use sunlight, water, and carbon dioxide to prepare food through photosynthesis.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+        <tr>
+          <td><strong>4.</strong> The Moon emits its own independent bright light just like the Sun.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+        <tr>
+          <td><strong>5.</strong> Water boils at 100°C (Celsius) and freezes into solid ice at 0°C under normal atmospheric pressure.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+        <tr>
+          <td><strong>6.</strong> The invisible force of attraction that pulls objects down toward the center of Earth is called gravity.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+        <tr>
+          <td><strong>7.</strong> Rubber and dry plastic are excellent electrical conductors that allow current to pass freely.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+        <tr>
+          <td><strong>8.</strong> The human adult skeletal system consists of 206 bones that protect delicate internal organs.</td>
+          <td style="text-align: center;"><span class="tf-box"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION F -->
+  <div class="section-title">
+    <span>SECTION F: Health & Hygiene Awareness</span>
+    <span>[6 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q6. Short answer / concept evaluation questions:</div>
+    <ul class="question-list">
+      <li>
+        <strong>a)</strong> For at least how many seconds should we lather and scrub our hands with soap and water to kill germs effectively?<br>
+        <strong>Answer:</strong> At least <span class="blank-line" style="min-width: 100px;"></span> seconds.
+      </li>
+      <li>
+        <strong>b)</strong> State TWO crucial times when handwashing is mandatory to protect against infectious diseases.<br>
+        <strong>1.</strong> <span class="blank-line" style="min-width: 280px;"></span><br>
+        <strong>2.</strong> <span class="blank-line" style="min-width: 280px;"></span>
+      </li>
+      <li>
+        <strong>c)</strong> Why is drinking boiled or filtered water strictly recommended instead of raw tap/river water?<br>
+        <div class="answer-line"></div>
+      </li>
+      <li>
+        <strong>d)</strong> How many times a day should a student brush their teeth to prevent tooth decay and cavities?<br>
+        <strong>Answer:</strong> At least <span class="blank-line" style="min-width: 80px;"></span> times a day (morning and night).
+      </li>
+    </ul>
+  </div>
+
+  <!-- PAGE BREAK FOR CLEAN PRINTING -->
+  <div class="page-break"></div>
+
+  <!-- SECTION G -->
+  <div class="section-title">
+    <span>SECTION G: Tourist Spots Explorer (Nepal & Japan)</span>
+    <span>[6 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q7. Identify the world-famous tourist destinations from their descriptions:</div>
+    <div class="word-bank">
+      <strong>Options Bank:</strong> [ Lumbini | Pokhara | Mount Everest (Sagarmatha) | Mount Fuji | Chitwan National Park | Tokyo Skytree ]
+    </div>
+    <ul class="question-list">
+      <li>
+        <strong>a)</strong> The highest mountain peak in the world (8,848.86 meters above sea level) located in the Solukhumbu district of Nepal:<br>
+        <strong>Destination:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>b)</strong> The sacred UNESCO World Heritage site in Rupandehi district, revered worldwide as the holy birthplace of Lord Buddha (Siddhartha Gautama):<br>
+        <strong>Destination:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>c)</strong> The famous Japanese snow-capped symmetrical volcanic mountain that stands at 3,776 meters and is considered sacred in Japan:<br>
+        <strong>Destination:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>d)</strong> The picturesque scenic city in Nepal renowned for Phewa Lake, Tal Barahi Temple, and spectacular views of the Annapurna mountain range:<br>
+        <strong>Destination:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>e)</strong> The magnificent 634-meter broadcasting and observation tower in Sumida, Tokyo, that is one of the tallest towers in the world:<br>
+        <strong>Destination:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+      <li>
+        <strong>f)</strong> The famous southern lowland national park in Nepal home to the endangered One-Horned Rhinoceros and Royal Bengal Tigers:<br>
+        <strong>Destination:</strong> <span class="blank-line" style="min-width: 320px;"></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION H -->
+  <div class="section-title">
+    <span>SECTION H: General Knowledge Crossword Puzzle</span>
+    <span>[6 Marks]</span>
+  </div>
+  <div class="q-group">
+    <div class="q-title">Q8. Solve the interlocking 7×7 crossword puzzle below using the clues provided:</div>
+    <div class="crossword-container">
+      <div>
+        <table class="cw-grid-table">
+          <!-- Row 0: B H A N U . . -->
+          <tr>
+            <td><span class="cw-cell-num">1</span></td>
+            <td><span class="cw-cell-num">2</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+          </tr>
+          <!-- Row 1: U E . . . . . -->
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+          </tr>
+          <!-- Row 2: D A S H A I N (Down 4 at N) -->
+          <tr>
+            <td><span class="cw-cell-num">3</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span class="cw-cell-num">4</span></td>
+          </tr>
+          <!-- Row 3: D L . . . . E -->
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td></td>
+          </tr>
+          <!-- Row 4: H T . . . . P -->
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td></td>
+          </tr>
+          <!-- Row 5: A H . . . . A -->
+          <tr>
+            <td></td>
+            <td></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td></td>
+          </tr>
+          <!-- Row 6: . . M A D A L -->
+          <tr>
+            <td class="black-cell"></td>
+            <td class="black-cell"></td>
+            <td><span class="cw-cell-num">5</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+        <div style="font-size:7.5pt; text-align:center; color:#64748b; margin-top:6px;">
+          (Fill capital letters in white boxes. Black boxes are inactive.)
+        </div>
+      </div>
+
+      <div class="cw-clues">
+        <h4>ACROSS CLUES</h4>
+        <ol>
+          <li><strong>[1 Across - 5 Letters]:</strong> The revered Aadikavi of Nepal who translated the Ramayana into Nepali. (B _ _ _ _)</li>
+          <li><strong>[3 Across - 7 Letters]:</strong> The grandest 15-day festival celebrated across Nepal honoring Goddess Durga. (D _ _ _ _ _ _)</li>
+          <li><strong>[5 Across - 5 Letters]:</strong> Popular traditional Nepali hand drum beaten on two sides. (M _ _ _ _)</li>
+        </ol>
+
+        <h4>DOWN CLUES</h4>
+        <ol>
+          <li><strong>[1 Down - 6 Letters]:</strong> The Enlightened Teacher born in Lumbini, Nepal as Prince Siddhartha. (B _ _ _ _ _)</li>
+          <li><strong>[2 Down - 6 Letters]:</strong> The state of complete physical, mental, and social wellness. (H _ _ _ _ _)</li>
+          <li><strong>[4 Down - 5 Letters]:</strong> The Himalayan country known for Mount Everest and rich cultural harmony. (N _ _ _ _)</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    ★ Goodwill's General Knowledge Diagnostic Assessment • Class 5 Level • End of Examination Paper ★
+  </div>
+
+</body>
+</html>

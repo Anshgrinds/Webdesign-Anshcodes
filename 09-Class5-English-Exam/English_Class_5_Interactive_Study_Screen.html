@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 5 English Interactive Study &amp; Teaching Screen &bull; Oxford Curriculum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --primary-dark: #1e3a8a;
+      --primary-light: #eff6ff;
+      --accent: #059669;
+      --accent-light: #ecfdf5;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --danger: #dc2626;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --radius: 10px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f8fafc;
+      color: var(--slate-800);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* TOP NAVBAR */
+    .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--slate-200);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-badge {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2);
+    }
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      letter-spacing: -0.2px;
+    }
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--slate-700);
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .tag-nepal {
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.72rem;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 8px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-outline {
+      border-color: var(--slate-300);
+      background: white;
+      color: var(--slate-700);
+    }
+    .btn-outline:hover {
+      background: var(--slate-100);
+      color: var(--slate-900);
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    /* NAVIGATION TABS */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--slate-200);
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .tab-btn {
+      padding: 10px 18px;
+      border: none;
+      background: transparent;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--slate-700);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .tab-btn:hover {
+      color: var(--primary);
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      background: var(--primary-light);
+      border-radius: 6px 6px 0 0;
+    }
+
+    /* TAB CONTENTS */
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+      animation: fadeIn 0.25s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CARDS */
+    .card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* STORY TILES */
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .story-card {
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-top: 4px solid var(--primary);
+    }
+    .story-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+    .story-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .story-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+    .story-summary {
+      font-size: 0.85rem;
+      color: var(--slate-700);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    /* REVEAL BUTTON & DRAWER */
+    .reveal-box {
+      background: var(--slate-50);
+      border: 1px dashed var(--slate-300);
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-top: 8px;
+    }
+    .reveal-toggle {
+      background: #ffffff;
+      border: 1px solid var(--slate-300);
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .reveal-toggle:hover {
+      background: var(--primary-light);
+    }
+    .reveal-content {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: var(--slate-800);
+      line-height: 1.45;
+      padding-top: 8px;
+      border-top: 1px solid var(--slate-200);
+    }
+
+    /* VERBS MATRIX */
+    .filter-input {
+      width: 100%;
+      max-width: 380px;
+      padding: 8px 12px;
+      border: 1px solid var(--slate-300);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    table.data-table th {
+      background: var(--slate-100);
+      padding: 10px 14px;
+      font-weight: 700;
+      color: var(--slate-800);
+      border-bottom: 1px solid var(--slate-200);
+    }
+    table.data-table td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--slate-200);
+      color: var(--slate-700);
+    }
+    table.data-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    /* INTERACTIVE QUIZ CARDS */
+    .quiz-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .quiz-q {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--slate-900);
+      margin-bottom: 10px;
+    }
+    .quiz-options {
+      display: grid;
+      gap: 8px;
+    }
+    .opt-btn {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .opt-btn:hover {
+      background: var(--primary-light);
+      border-color: #93c5fd;
+    }
+    .opt-btn.correct {
+      background: #dcfce7 !important;
+      border-color: #86efac !important;
+      color: #166534;
+      font-weight: 700;
+    }
+    .opt-btn.wrong {
+      background: #fee2e2 !important;
+      border-color: #fca5a5 !important;
+      color: #991b1b;
+    }
+    .quiz-feedback {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: none;
+    }
+
+    /* REPORTED SPEECH CHEAT SHEET */
+    .rule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .rule-card {
+      border: 1px solid var(--slate-200);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .rule-title {
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+    .rule-desc {
+      font-size: 0.82rem;
+      color: var(--slate-700);
+      line-height: 1.4;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: var(--slate-700);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-group">
+        <div class="logo-badge">ENG 5</div>
+        <div class="brand-text">
+          <h1>Class 5 English Interactive Study &amp; Teaching Screen</h1>
+          <p>
+            <span>Oxford: New Learning to Communicate</span>
+            <span class="tag-nepal">Nepali Curriculum (EISJ Japan)</span>
+          </p>
+        </div>
+      </div>
+      <div class="action-group">
+        <a href="English_Class_5_Student_Mock_Test_Paper.pdf" target="_blank" class="btn btn-outline">&darr; Student Test PDF</a>
+        <a href="English_Class_5_Exam_Study_Guide_And_Solutions.pdf" target="_blank" class="btn btn-primary">&check; Teacher Solutions PDF</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- NAVIGATION TABS -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('tab-stories')">&book; Literature Lessons (3 Chapters)</button>
+      <button class="tab-btn" onclick="switchTab('tab-verbs')">&infin; Forms of Verbs Master Matrix</button>
+      <button class="tab-btn" onclick="switchTab('tab-speech')">&lrarr; Reported Speech Trainer</button>
+      <button class="tab-btn" onclick="switchTab('tab-mock')">&star; 50-Mark Mock Paper Quick Screen</button>
+    </div>
+
+    <!-- ================= TAB 1: LITERATURE LESSONS ================= -->
+    <div id="tab-stories" class="tab-pane active">
+      <div class="card">
+        <div class="card-title">
+          <span>Oxford Coursebook &amp; Workbook &bull; Prescribed Stories Breakdown</span>
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--accent);">&#9679; Ready for Screen Share</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--slate-700); margin-bottom: 16px;">
+          Use these lesson cards to review plot points, character actions, and key vocabulary with the student before administering the mock test.
+        </p>
+
+        <div class="story-grid">
+          <!-- STORY 1 -->
+          <div class="story-card">
+            <div class="story-tag">Chapter 1 &bull; Ruskin Bond</div>
+            <h3 class="story-title">Grandpa Tickles a Tiger</h3>
+            <p class="story-summary">
+              Grandfather finds a shivering tiger cub named <strong>Timothy</strong> in the Dehra forest. Raised with puppy Toto, Timothy eventually grows wild and is sent to Lucknow Zoo. Months later, Grandfather visits and lovingly pets a tiger in the cage, smacking its jaw when it growls. The keeper rushes over in horror: Timothy had died of pneumonia two months ago&mdash;this was a fierce wild tiger trapped last month!
+            </p>
+            <div class="reveal-box">
+              <button class="reveal-toggle" onclick="toggleReveal('reveal-t1')">&plus; Key Questions &amp; Moral Insight</button>
+              <div id="reveal-t1" class="reveal-content">
+                <strong>Q: Why did Grandfather smack the tiger?</strong><br>
+                It was his old gentle trick to keep Timothy quiet when he growled.<br><br>
+                <strong>Q: What is the twist in the ending?</strong><br>
+                Grandfather risked his life without realizing it, yet kindness calmed a dangerous wild predator.
+              </div>
+            </div>
+          </div>
+
+          <!-- STORY 2 -->
+          <div class="story-card" style="border-top-color: #d97706;">
+            <div class="story-tag" style="color: #d97706;">Chapter 2 &bull; Folktale</div>
+            <h3 class="story-title">A Giant and His Magic Goat</h3>
+            <p class="story-summary">
+              A poor, honest boy encounters a towering giant. Instead of terror, the boy shows respect and humility. In return, the giant rewards him with a magic goat that produces gold coins when spoken to truthfully. A greedy innkeeper swaps the goat for a normal one. The boy returns to the giant, who gives him an enchanted staff to retrieve the stolen goat and punish greed.
+            </p>
+            <div class="reveal-box">
+              <button class="reveal-toggle" onclick="toggleReveal('reveal-t2')">&plus; Key Questions &amp; Moral Insight</button>
+              <div id="reveal-t2" class="reveal-content">
+                <strong>Core Theme:</strong> Honesty, courage, and true justice triumph over deception.<br><br>
+                <strong>Rule for the Magic Goat:</strong> It must never be struck or lied to, representing respect for blessings.
+              </div>
+            </div>
+          </div>
+
+          <!-- STORY 3 -->
+          <div class="story-card" style="border-top-color: #8b5cf6;">
+            <div class="story-tag" style="color: #8b5cf6;">Chapter 3 &bull; Mystery &amp; Suspense</div>
+            <h3 class="story-title">The Locked Room</h3>
+            <p class="story-summary">
+              At the far end of an old country house sits a heavy oak door that has been locked for generations. Curious children find an antique brass key in a secret desk. Whispers and creaking floorboards build intense suspense. When the door finally opens, they do not find monsters or cobwebs&mdash;but their great-grandfather's breathtaking workshop of clockwork birds, miniature trains, and musical inventions!
+            </p>
+            <div class="reveal-box">
+              <button class="reveal-toggle" onclick="toggleReveal('reveal-t3')">&plus; Key Questions &amp; Moral Insight</button>
+              <div id="reveal-t3" class="reveal-content">
+                <strong>Atmosphere Words:</strong> Creak, shadows, brass key, suspense, antique, mechanical.<br><br>
+                <strong>Key Takeaway:</strong> Curiosity accompanied by respect turns irrational fear into wonder and discovery.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 2: VERB FORMS MATRIX ================= -->
+    <div id="tab-verbs" class="tab-pane">
+      <div class="card">
+        <div class="card-title">
+          <span>Forms of Verbs (V1 to V5) &bull; Oxford Class 5 Curriculum</span>
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--primary);">20 Essential High-Frequency Verbs</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--slate-700); margin-bottom: 12px;">
+          Grade 5 students are expected to conjugate base verbs into <strong>Past (V2)</strong>, <strong>Past Participle (V3)</strong>, <strong>Continuous (V4 -ing)</strong>, and <strong>3rd Person Singular (V5 -s/-es)</strong>.
+        </p>
+
+        <input type="text" id="verbSearch" class="filter-input" placeholder="&subne; Filter by verb (e.g. freeze, speak, grow)..." onkeyup="filterVerbs()">
+
+        <div class="table-container">
+          <table class="data-table" id="verbsTable">
+            <thead>
+              <tr>
+                <th>V1 &bull; Base / Present</th>
+                <th>V2 &bull; Simple Past</th>
+                <th>V3 &bull; Past Participle</th>
+                <th>V4 &bull; Present Participle (-ing)</th>
+                <th>V5 &bull; 3rd Person (-s/-es)</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>freeze</strong></td><td>froze</td><td>frozen</td><td>freezing</td><td>freezes</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>grow</strong></td><td>grew</td><td>grown</td><td>growing</td><td>grows</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>hide</strong></td><td>hid</td><td>hidden</td><td>hiding</td><td>hides</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>speak</strong></td><td>spoke</td><td>spoken</td><td>speaking</td><td>speaks</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>catch</strong></td><td>caught</td><td>caught</td><td>catching</td><td>catches</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>choose</strong></td><td>chose</td><td>chosen</td><td>choosing</td><td>chooses</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>bring</strong></td><td>brought</td><td>brought</td><td>bringing</td><td>brings</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>find</strong></td><td>found</td><td>found</td><td>finding</td><td>finds</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>know</strong></td><td>knew</td><td>known</td><td>knowing</td><td>knows</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>stroke</strong></td><td>stroked</td><td>stroked</td><td>stroking</td><td>strokes</td><td><span style="color:green;font-weight:700;">Regular</span></td></tr>
+              <tr><td><strong>tickle</strong></td><td>tickled</td><td>tickled</td><td>tickling</td><td>tickles</td><td><span style="color:green;font-weight:700;">Regular</span></td></tr>
+              <tr><td><strong>unlock</strong></td><td>unlocked</td><td>unlocked</td><td>unlocking</td><td>unlocks</td><td><span style="color:green;font-weight:700;">Regular</span></td></tr>
+              <tr><td><strong>creak</strong></td><td>creaked</td><td>creaked</td><td>creaking</td><td>creaks</td><td><span style="color:green;font-weight:700;">Regular</span></td></tr>
+              <tr><td><strong>spring</strong></td><td>sprang</td><td>sprung</td><td>springing</td><td>springs</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>bite</strong></td><td>bit</td><td>bitten</td><td>biting</td><td>bites</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>wear</strong></td><td>wore</td><td>worn</td><td>wearing</td><td>wears</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>tear</strong></td><td>tore</td><td>torn</td><td>tearing</td><td>tears</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>fly</strong></td><td>flew</td><td>flown</td><td>flying</td><td>flies</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>swim</strong></td><td>swam</td><td>swum</td><td>swimming</td><td>swims</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+              <tr><td><strong>write</strong></td><td>wrote</td><td>written</td><td>writing</td><td>writes</td><td><span style="color:red;font-weight:700;">Irregular</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= TAB 3: REPORTED SPEECH TRAINER ================= -->
+    <div id="tab-speech" class="tab-pane">
+      <div class="card">
+        <div class="card-title">
+          <span>Reported Speech Transformation Rules &bull; Class 5 Direct to Indirect</span>
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--accent);">&#10003; 4 Cardinal Rules</span>
+        </div>
+
+        <div class="rule-grid" style="margin-bottom: 24px;">
+          <div class="rule-card">
+            <div class="rule-title">1. Tense Shift (Backshift)</div>
+            <div class="rule-desc">
+              &bull; Simple Present &rarr; Simple Past (<em>play &rarr; played</em>)<br>
+              &bull; Present Continuous &rarr; Past Continuous (<em>is walking &rarr; was walking</em>)<br>
+              &bull; Simple Past &rarr; Past Perfect (<em>saw &rarr; had seen</em>)<br>
+              &bull; Will / Can &rarr; Would / Could
+            </div>
+          </div>
+          <div class="rule-card" style="border-left-color: var(--primary);">
+            <div class="rule-title" style="color: var(--primary);">2. Pronoun Adjustment</div>
+            <div class="rule-desc">
+              Change pronouns according to the speaker and listener:<br>
+              &bull; "I" &rarr; he / she<br>
+              &bull; "we" &rarr; they<br>
+              &bull; "my" &rarr; his / her<br>
+              &bull; "you" &rarr; I / they / him / her
+            </div>
+          </div>
+          <div class="rule-card" style="border-left-color: var(--warning);">
+            <div class="rule-title" style="color: var(--warning);">3. Time &amp; Place Shifts</div>
+            <div class="rule-desc">
+              &bull; Now &rarr; Then<br>
+              &bull; Today &rarr; That day<br>
+              &bull; Yesterday &rarr; The previous day / day before<br>
+              &bull; Tomorrow &rarr; The next / following day<br>
+              &bull; Here &rarr; There | This &rarr; That
+            </div>
+          </div>
+          <div class="rule-card" style="border-left-color: #8b5cf6;">
+            <div class="rule-title" style="color: #8b5cf6;">4. Questions &amp; Commands</div>
+            <div class="rule-desc">
+              &bull; Yes/No Questions use <strong>if</strong> or <strong>whether</strong>.<br>
+              &bull; Remove question mark; convert to statement order.<br>
+              &bull; Commands use <strong>ordered to / told to / warned not to</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE PRACTICE TESTER -->
+        <h3 style="font-size: 1rem; font-weight: 800; color: var(--slate-900); margin-bottom: 12px;">
+          Live Interactive Reported Speech Drill (Ask the Student):
+        </h3>
+
+        <!-- QUIZ ITEM 1 -->
+        <div class="quiz-card" id="q-card-1">
+          <div class="quiz-q">1. Direct: Grandfather said, "I like this tiger cub."</div>
+          <div class="quiz-options">
+            <button class="opt-btn" onclick="checkQuiz(1, 0)">A. Grandfather said that he likes this tiger cub.</button>
+            <button class="opt-btn" onclick="checkQuiz(1, 1)">B. Grandfather said that he liked that tiger cub.</button>
+            <button class="opt-btn" onclick="checkQuiz(1, 2)">C. Grandfather told that I liked that tiger cub.</button>
+          </div>
+          <div class="quiz-feedback" id="fb-1"></div>
+        </div>
+
+        <!-- QUIZ ITEM 2 -->
+        <div class="quiz-card" id="q-card-2">
+          <div class="quiz-q">2. Direct: The zookeeper said to me, "Timothy died two months ago."</div>
+          <div class="quiz-options">
+            <button class="opt-btn" onclick="checkQuiz(2, 0)">A. The zookeeper told me that Timothy died two months ago.</button>
+            <button class="opt-btn" onclick="checkQuiz(2, 1)">B. The zookeeper said me that Timothy had died two months before.</button>
+            <button class="opt-btn" onclick="checkQuiz(2, 2)">C. The zookeeper told me that Timothy had died two months before.</button>
+          </div>
+          <div class="quiz-feedback" id="fb-2"></div>
+        </div>
+
+        <!-- QUIZ ITEM 3 -->
+        <div class="quiz-card" id="q-card-3">
+          <div class="quiz-q">3. Direct: Mother asked Rohan, "Did you open the locked room?"</div>
+          <div class="quiz-options">
+            <button class="opt-btn" onclick="checkQuiz(3, 0)">A. Mother asked Rohan if he had opened the locked room.</button>
+            <button class="opt-btn" onclick="checkQuiz(3, 1)">B. Mother asked Rohan that if did he open the locked room.</button>
+            <button class="opt-btn" onclick="checkQuiz(3, 2)">C. Mother said to Rohan if he opened the locked room.</button>
+          </div>
+          <div class="quiz-feedback" id="fb-3"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 4: MOCK PAPER SCREEN ================= -->
+    <div id="tab-mock" class="tab-pane">
+      <div class="card">
+        <div class="card-title">
+          <span>50-Mark Examination Paper &bull; Live Screen Viewer</span>
+          <div>
+            <a href="English_Class_5_Student_Mock_Test_Paper.html" target="_blank" class="btn btn-outline" style="font-size:0.75rem;">Open Full Printable HTML</a>
+          </div>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--slate-700); margin-bottom: 16px;">
+          Click "Show Solution" on any question to verify the student's oral or written response instantly on the shared screen.
+        </p>
+
+        <!-- SEC A -->
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 6px;">Section A: Reading Comprehension (8 Marks)</h4>
+          <p style="font-size: 0.85rem; color: var(--slate-700); margin-bottom: 8px;">
+            Extract: <em>Grandfather stroking and tickling the tiger in Lucknow Zoo until the keeper interrupts in panic...</em>
+          </p>
+          <button class="reveal-toggle" onclick="toggleReveal('sol-seca')">&check; Show Teacher Key for Section A</button>
+          <div id="sol-seca" class="reveal-content">
+            &bull; <strong>Actions:</strong> Put arms through railings, stroked forehead, tickled ears, playfully smacked mouth.<br>
+            &bull; <strong>Why tiger sprang back:</strong> Snarling leopard in adjacent cage.<br>
+            &bull; <strong>Zookeeper revelation:</strong> Timothy died of pneumonia 2 months ago; this tiger is a dangerous wild beast caught in the hills last month.<br>
+            &bull; <strong>Vocabulary:</strong> Relish (great enjoyment), Adjacent (next to).<br>
+            &bull; <strong>Antonym of fierce:</strong> Gentle / mild / tame.
+          </div>
+        </div>
+
+        <!-- SEC B -->
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 6px;">Section B: Oxford Literature (16 Marks)</h4>
+          <p style="font-size: 0.85rem; color: var(--slate-700); margin-bottom: 8px;">
+            Questions from <em>Grandpa Tickles a Tiger</em>, <em>A Giant and His Magic Goat</em>, and <em>The Locked Room</em>.
+          </p>
+          <button class="reveal-toggle" onclick="toggleReveal('sol-secb')">&check; Show Teacher Key for Section B</button>
+          <div id="sol-secb" class="reveal-content">
+            &bull; <strong>Q2 (Context):</strong> Grandpa said goodbye thinking it was Timothy. Giant gave the goat that produces wealth for honest truth.<br>
+            &bull; <strong>Q3 (Vocab):</strong> Creak &rarr; high-pitched door squeak | Pneumonia &rarr; lung illness | Stalk &rarr; pursue stealthily | Suspense &rarr; tense excitement/fear.<br>
+            &bull; <strong>Q4 (Short Answers):</strong> Timothy brought from Terai jungle, sent to zoo because he grew aggressive; Innkeeper swapped goat, boy retrieved it with magic stick; Locked room contained grandfather's clockwork inventions.
+          </div>
+        </div>
+
+        <!-- SEC C -->
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 6px;">Section C: Grammar &bull; Forms of Verbs &amp; Reported Speech (18 Marks)</h4>
+          <p style="font-size: 0.85rem; color: var(--slate-700); margin-bottom: 8px;">
+            Conjugations, tense blanks, direct-to-indirect transformations, and error spotting.
+          </p>
+          <button class="reveal-toggle" onclick="toggleReveal('sol-secc')">&check; Show Teacher Key for Section C</button>
+          <div id="sol-secc" class="reveal-content">
+            &bull; <strong>Verb Table:</strong> grow &rarr; grew; hide &rarr; hidden; speak &rarr; speaking; catch &rarr; caught; choose &rarr; chooses.<br>
+            &bull; <strong>Blanks:</strong> (a) known (b) brought (c) to creak / creaking (d) found.<br>
+            &bull; <strong>Reported Speech:</strong><br>
+            1. Grandfather said that he knew that tiger very well.<br>
+            2. The keeper told Grandfather that his Timothy had died two months before.<br>
+            3. The giant warned him not to betray his trust.<br>
+            4. Mother asked Rohan if he had seen anyone unlock that room.<br>
+            &bull; <strong>Errors:</strong> 'is reading... yesterday' &rarr; 'was reading... the previous day'; 'told to' &rarr; 'told'; 'that if' &rarr; 'if'.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    Class 5 English Examination Suite &bull; Oxford New Learning to Communicate &bull; Designed for Online Tuition Screen Sharing &bull; October 2026
+  </footer>
+
+  <script>
+    // Tab switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    // Toggle reveal drawers
+    function toggleReveal(id) {
+      const el = document.getElementById(id);
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+      }
+    }
+
+    // Filter verbs table
+    function filterVerbs() {
+      const query = document.getElementById('verbSearch').value.toLowerCase();
+      const rows = document.querySelectorAll('#verbsTable tbody tr');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+
+    // Interactive Quiz Handler
+    const answers = {
+      1: { correct: 1, explanation: "Correct! 'I' becomes 'he', 'like' backshifts to 'liked', and 'this' becomes 'that'." },
+      2: { correct: 2, explanation: "Correct! 'said to' becomes 'told', 'died' (past) backshifts to 'had died' (past perfect), and 'ago' becomes 'before'." },
+      3: { correct: 0, explanation: "Correct! Yes/No questions use 'if/whether' without 'that', and 'Did you open' backshifts to 'had opened'." }
+    };
+
+    function checkQuiz(qNum, optIdx) {
+      const card = document.getElementById('q-card-' + qNum);
+      const buttons = card.querySelectorAll('.opt-btn');
+      const fb = document.getElementById('fb-' + qNum);
+      const correctIdx = answers[qNum].correct;
+
+      buttons.forEach((btn, idx) => {
+        btn.classList.remove('correct', 'wrong');
+        if (idx === correctIdx) {
+          btn.classList.add('correct');
+        } else if (idx === optIdx && optIdx !== correctIdx) {
+          btn.classList.add('wrong');
+        }
+      });
+
+      fb.style.display = 'block';
+      if (optIdx === correctIdx) {
+        fb.style.background = '#dcfce7';
+        fb.style.color = '#166534';
+        fb.innerHTML = "<strong>&check; शाबाश! Well done!</strong> " + answers[qNum].explanation;
+      } else {
+        fb.style.background = '#fee2e2';
+        fb.style.color = '#991b1b';
+        fb.innerHTML = "<strong>&cross; Oops! Not quite right.</strong> " + answers[qNum].explanation;
+      }
+    }
+  </script>
+</body>
+</html>

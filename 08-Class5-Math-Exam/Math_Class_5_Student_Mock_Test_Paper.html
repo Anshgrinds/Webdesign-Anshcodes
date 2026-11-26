@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 Mathematics Examination - Perfect Mathematics (Fractions & Algebra)</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Liberation Sans", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.42;
+      font-size: 9.5pt;
+      background: #ffffff;
+      padding: 2px;
+    }
+
+    /* Math fraction styling */
+    .frac {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 0.92em;
+      padding: 0 2px;
+      line-height: 1.05;
+      font-weight: 600;
+    }
+    .frac .top {
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 1px;
+    }
+    .frac .bottom {
+      padding-top: 1px;
+    }
+    .mixed-frac {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      font-weight: 600;
+      font-size: 1em;
+    }
+    .math-sym {
+      font-family: "Cambria Math", "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* Exam Header */
+    .header-box {
+      border: 2px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: #eff6ff;
+      margin-bottom: 8px;
+    }
+    .school-title {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .exam-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-top: 2px;
+    }
+    .curriculum-tag {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .student-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px dashed #93c5fd;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .meta-fill {
+      border-bottom: 1px dotted #334155;
+      display: inline-block;
+      min-width: 110px;
+      height: 15px;
+    }
+    .marks-time-bar {
+      display: flex;
+      justify-content: space-between;
+      background: #dbeafe;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-top: 6px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    .chapters-banner {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      padding: 5px 10px;
+      margin-bottom: 8px;
+      font-size: 8.5pt;
+      color: #334155;
+      border-radius: 0 4px 4px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .instructions-box {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+      font-size: 8pt;
+      color: #92400e;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* Section Header */
+    .section-title {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-size: 9.5pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+
+    .q-group {
+      margin-bottom: 10px;
+      page-break-inside: avoid;
+    }
+    .q-title {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 5px;
+      font-size: 9pt;
+      display: flex;
+      justify-content: space-between;
+    }
+    .q-title .marks {
+      color: #2563eb;
+      font-weight: 700;
+    }
+
+    /* Grids & Columns */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .grid-3col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+    }
+    .grid-4col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 6px;
+    }
+
+    /* Fill in blanks & Match */
+    .blank-line {
+      display: inline-block;
+      min-width: 100px;
+      border-bottom: 1.2px solid #475569;
+      margin: 0 4px;
+      vertical-align: bottom;
+      height: 15px;
+    }
+    .sub-item {
+      margin-bottom: 6px;
+      padding-left: 18px;
+      text-indent: -18px;
+    }
+
+    /* Working Box */
+    .work-box {
+      border: 1px dashed #cbd5e1;
+      background: #f8fafc;
+      border-radius: 5px;
+      padding: 8px;
+      min-height: 85px;
+      position: relative;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+    .work-box-tall {
+      min-height: 115px;
+    }
+    .work-box .work-label {
+      position: absolute;
+      top: 3px;
+      right: 6px;
+      font-size: 7.5pt;
+      color: #94a3b8;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .work-box .ans-line {
+      position: absolute;
+      bottom: 5px;
+      left: 8px;
+      right: 8px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 6px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+    .work-box .ans-slot {
+      border-bottom: 1.5px solid #1e3a8a;
+      min-width: 110px;
+      display: inline-block;
+      height: 16px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0;
+      font-size: 8.5pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+      text-align: left;
+    }
+    th {
+      background: #e2e8f0;
+      color: #1e293b;
+      font-weight: 700;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    /* Watermark / Footer */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      margin-top: 10px;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: HEADER & SECTION A & PART OF B -->
+  <div class="header-box">
+    <div class="school-title">Nepali International School &bull; Japan</div>
+    <div class="exam-title">Terminal Examination &bull; Mathematics Mock Assessment</div>
+    <div class="curriculum-tag">Curriculum: CDC Nepal &bull; Textbook: Perfect Mathematics (Class 5)</div>
+    
+    <div class="student-meta">
+      <div>Student Name: <span class="meta-fill"></span></div>
+      <div>Roll No.: <span class="meta-fill" style="min-width: 60px;"></span></div>
+      <div>Section: <span class="meta-fill" style="min-width: 60px;"></span></div>
+      <div>Date: <span class="meta-fill" style="min-width: 90px;"></span></div>
+    </div>
+    
+    <div class="marks-time-bar">
+      <span>Class: 5 (Five)</span>
+      <span>Subject: Mathematics</span>
+      <span>Time Allowed: 2 Hours</span>
+      <span>Full Marks: 50 | Pass Marks: 20</span>
+    </div>
+  </div>
+
+  <div class="chapters-banner">
+    <div><strong>Prescribed Syllabus Units:</strong> Unit: Fractions (Types, Lowest Terms, LCM, Add/Sub/Mul/Div, Word Problems) &bull; Unit: Algebra (Variables, Like Terms, Polynomials, Substitution, Linear Equations)</div>
+  </div>
+
+  <div class="instructions-box">
+    <strong>Instructions to Candidate:</strong> Attempt all questions neatly. Show all rough working and intermediate steps clearly in the provided working space. Draw line breaks between questions. Rough calculations must not be erased.
+  </div>
+
+  <!-- ================= SECTION A: OBJECTIVE & CONCEPT CHECKS (12 MARKS) ================= -->
+  <div class="section-title">
+    <span>SECTION A: Multiple Choice & Core Concepts</span>
+    <span>[12 Marks]</span>
+  </div>
+
+  <!-- Q1. MCQs -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q1. Choose and write the correct option:</span>
+      <span class="marks">(4 &times; 1 = 4 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div class="sub-item">
+        <strong>(a)</strong> A fraction whose numerator is strictly less than its denominator is called a/an: <br>
+        [A] Improper fraction &nbsp;&nbsp; [B] Proper fraction <br>
+        [C] Mixed fraction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [D] Unit fraction <br>
+        <em>Answer:</em> [ <span class="blank-line" style="min-width: 50px;"></span> ]
+      </div>
+
+      <div class="sub-item">
+        <strong>(b)</strong> The reciprocal (multiplicative inverse) of the fraction <span class="frac"><span class="top">4</span><span class="bottom">7</span></span> is: <br>
+        [A] <span class="frac"><span class="top">7</span><span class="bottom">4</span></span> &nbsp;&nbsp;&nbsp;&nbsp; [B] <span class="frac"><span class="top">4</span><span class="bottom">7</span></span> &nbsp;&nbsp;&nbsp;&nbsp; [C] <span class="frac"><span class="top">1</span><span class="bottom">4</span></span> &nbsp;&nbsp;&nbsp;&nbsp; [D] <span class="frac"><span class="top">7</span><span class="bottom">1</span></span> <br>
+        <em>Answer:</em> [ <span class="blank-line" style="min-width: 50px;"></span> ]
+      </div>
+
+      <div class="sub-item">
+        <strong>(c)</strong> In the algebraic term <strong>&minus;7<span class="math-sym">x</span>&sup2;</strong>, the numerical coefficient is: <br>
+        [A] 7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [B] &minus;7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [C] <span class="math-sym">x</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [D] 2 <br>
+        <em>Answer:</em> [ <span class="blank-line" style="min-width: 50px;"></span> ]
+      </div>
+
+      <div class="sub-item">
+        <strong>(d)</strong> Which of the following pair consists of <strong>Like Terms</strong>? <br>
+        [A] 3<span class="math-sym">x</span> and 3<span class="math-sym">y</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [B] 5<span class="math-sym">a</span>&sup2;<span class="math-sym">b</span> and 5<span class="math-sym">a</span><span class="math-sym">b</span>&sup2; <br>
+        [C] 4<span class="math-sym">x</span><span class="math-sym">y</span> and &minus;9<span class="math-sym">y</span><span class="math-sym">x</span> &nbsp;&nbsp;&nbsp; [D] 6<span class="math-sym">m</span> and 6<span class="math-sym">m</span>&sup2; <br>
+        <em>Answer:</em> [ <span class="blank-line" style="min-width: 50px;"></span> ]
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2. Fill in the blanks -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q2. Fill in the blanks with the correct mathematical terms or values:</span>
+      <span class="marks">(4 &times; 1 = 4 Marks)</span>
+    </div>
+
+    <div class="sub-item">
+      <strong>(a)</strong> In algebra, a symbol or letter that can take different numerical values is known as a <span class="blank-line" style="min-width: 140px;"></span>.
+    </div>
+    <div class="sub-item">
+      <strong>(b)</strong> The improper fraction of the mixed number <span class="mixed-frac">3<span class="frac"><span class="top">2</span><span class="bottom">5</span></span></span> is equal to <span class="blank-line" style="min-width: 90px;"></span>.
+    </div>
+    <div class="sub-item">
+      <strong>(c)</strong> An algebraic expression containing exactly two unlike terms is called a <span class="blank-line" style="min-width: 140px;"></span>.
+    </div>
+    <div class="sub-item">
+      <strong>(d)</strong> The simplest (lowest) form of the fraction <span class="frac"><span class="top">18</span><span class="bottom">24</span></span> is <span class="blank-line" style="min-width: 90px;"></span>.
+    </div>
+  </div>
+
+  <!-- Q3. True / False & Matching -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q3. State whether the following statements are TRUE or FALSE:</span>
+      <span class="marks">(4 &times; 1 = 4 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div class="sub-item">
+        <strong>(a)</strong> When multiplying two fractions, we multiply numerators together and denominators together. &nbsp;&rarr; [ <span class="blank-line" style="min-width: 60px;"></span> ]
+      </div>
+      <div class="sub-item">
+        <strong>(b)</strong> The terms <strong>7<span class="math-sym">x</span></strong> and <strong>7</strong> are like terms because both contain the number 7. &nbsp;&rarr; [ <span class="blank-line" style="min-width: 60px;"></span> ]
+      </div>
+      <div class="sub-item">
+        <strong>(c)</strong> If <span class="frac"><span class="top"><span class="math-sym">x</span></span><span class="bottom">4</span></span> = 5, then the value of <span class="math-sym">x</span> is 20. &nbsp;&rarr; [ <span class="blank-line" style="min-width: 60px;"></span> ]
+      </div>
+      <div class="sub-item">
+        <strong>(d)</strong> <span class="frac"><span class="top">3</span><span class="bottom">7</span></span> is greater than <span class="frac"><span class="top">5</span><span class="bottom">7</span></span>. &nbsp;&rarr; [ <span class="blank-line" style="min-width: 60px;"></span> ]
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION B: SHORT CALCULATIONS & OPERATIONS (20 MARKS) ================= -->
+  <div class="section-title">
+    <span>SECTION B: Fractions & Algebra Working Problems</span>
+    <span>[20 Marks]</span>
+  </div>
+
+  <!-- Q4. Conversion & Equivalent Fractions -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q4. Fraction Simplification and Conversion:</span>
+      <span class="marks">(2 &times; 2 = 4 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div>
+        <div class="sub-item"><strong>(a)</strong> Convert the improper fraction <span class="frac"><span class="top">29</span><span class="bottom">6</span></span> into a <strong>Mixed Fraction</strong>.</div>
+        <div class="work-box">
+          <span class="work-label">Working Space</span>
+          <div class="ans-line">Answer: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sub-item"><strong>(b)</strong> Reduce <span class="frac"><span class="top">36</span><span class="bottom">48</span></span> to its <strong>lowest terms (simplest form)</strong> by finding the HCF.</div>
+        <div class="work-box">
+          <span class="work-label">Working Space</span>
+          <div class="ans-line">Answer: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q5. Comparison of Fractions -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q5. Compare the following fractions using &lt;, &gt;, or = with full working:</span>
+      <span class="marks">(2 &times; 2 = 4 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div>
+        <div class="sub-item"><strong>(a)</strong> Compare: &nbsp; <span class="frac"><span class="top">5</span><span class="bottom">8</span></span> &nbsp;&nbsp;<span style="border: 1px solid #94a3b8; padding: 1px 6px; border-radius: 3px;">&nbsp;?&nbsp;</span>&nbsp;&nbsp; <span class="frac"><span class="top">7</span><span class="bottom">12</span></span></div>
+        <div class="work-box">
+          <span class="work-label">LCM / Cross Multiply</span>
+          <div class="ans-line">Sign: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sub-item"><strong>(b)</strong> Arrange in <strong>Ascending Order</strong>: &nbsp; <span class="frac"><span class="top">2</span><span class="bottom">3</span></span>, &nbsp; <span class="frac"><span class="top">5</span><span class="bottom">6</span></span>, &nbsp; <span class="frac"><span class="top">7</span><span class="bottom">12</span></span></div>
+        <div class="work-box">
+          <span class="work-label">Find Common Denominator</span>
+          <div class="ans-line">Order: <span class="ans-slot" style="min-width: 140px;"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Perfect Mathematics - Class 5 Mock Examination Paper</span>
+    <span>Page 1 of 3</span>
+    <span>Nepali-Oriented School &bull; Japan</span>
+  </div>
+
+  <!-- ================= PAGE 2 ================= -->
+  <div class="page-break"></div>
+
+  <div class="header-box" style="padding: 6px 12px; margin-bottom: 8px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; font-weight: 700; color: #1e3a8a;">
+      <span>CLASS 5 MATHEMATICS &bull; TERMINAL EXAM</span>
+      <span>STUDENT NAME: ___________________________</span>
+      <span>ROLL NO: _______</span>
+    </div>
+  </div>
+
+  <!-- Q6. Addition & Subtraction of Fractions -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q6. Calculate the sum and difference (Give answers in simplest mixed form):</span>
+      <span class="marks">(2 &times; 2 = 4 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div>
+        <div class="sub-item"><strong>(a)</strong> Find the sum: &nbsp; <span class="frac"><span class="top">3</span><span class="bottom">4</span></span> + <span class="frac"><span class="top">5</span><span class="bottom">6</span></span></div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Step 1: LCM of 4 and 6 | Step 2: Add</span>
+          <div class="ans-line">Final Answer: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sub-item"><strong>(b)</strong> Subtract: &nbsp; <span class="mixed-frac">4<span class="frac"><span class="top">1</span><span class="bottom">2</span></span></span> &minus; <span class="mixed-frac">1<span class="frac"><span class="top">3</span><span class="bottom">5</span></span></span></div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Convert to improper &rarr; LCM &rarr; Subtract</span>
+          <div class="ans-line">Final Answer: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q7. Multiplication & Division of Fractions -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q7. Multiplication and Division of Fractions:</span>
+      <span class="marks">(2 &times; 2 = 4 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div>
+        <div class="sub-item"><strong>(a)</strong> Multiply and simplify: &nbsp; <span class="frac"><span class="top">15</span><span class="bottom">16</span></span> &times; <span class="frac"><span class="top">8</span><span class="bottom">25</span></span></div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Cross-cancellation steps</span>
+          <div class="ans-line">Product: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sub-item"><strong>(b)</strong> Divide: &nbsp; <span class="mixed-frac">3<span class="frac"><span class="top">3</span><span class="bottom">4</span></span></span> &divide; <span class="frac"><span class="top">5</span><span class="bottom">8</span></span></div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Improper &rarr; Multiply by reciprocal</span>
+          <div class="ans-line">Quotient: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8. Algebra: Like Terms & Simplification -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q8. Algebraic Expressions Operations:</span>
+      <span class="marks">(2 &times; 2 = 4 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div>
+        <div class="sub-item"><strong>(a)</strong> Simplify by combining like terms: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong>7<span class="math-sym">x</span> + 5<span class="math-sym">y</span> &minus; 3<span class="math-sym">x</span> + 4<span class="math-sym">y</span> + 8</strong></div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Group x terms &amp; y terms</span>
+          <div class="ans-line">Simplified: <span class="ans-slot" style="min-width: 140px;"></span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sub-item"><strong>(b)</strong> Subtract <strong>(3<span class="math-sym">a</span> &minus; 4<span class="math-sym">b</span>)</strong> from <strong>(8<span class="math-sym">a</span> + 2<span class="math-sym">b</span>)</strong>.</div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Remember to change signs of subtrahend</span>
+          <div class="ans-line">Difference: <span class="ans-slot" style="min-width: 140px;"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION C: EVALUATION, EQUATIONS & WORD PROBLEMS (18 MARKS) ================= -->
+  <div class="section-title">
+    <span>SECTION C: Long Answer, Equations & Word Problems</span>
+    <span>[18 Marks]</span>
+  </div>
+
+  <!-- Q9. Substitution & Evaluation -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q9. Substitution and Evaluation:</span>
+      <span class="marks">(2 &times; 2.5 = 5 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div>
+        <div class="sub-item">
+          <strong>(a)</strong> If <strong><span class="math-sym">p</span> = 4</strong> and <strong><span class="math-sym">q</span> = 3</strong>, find the numerical value of: <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>3<span class="math-sym">p</span>&sup2; &minus; 2<span class="math-sym">q</span> + 7</strong>
+        </div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Step 1: Substitute p and q | Step 2: Calculate</span>
+          <div class="ans-line">Value: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sub-item">
+          <strong>(b)</strong> If <strong><span class="math-sym">x</span> = 5</strong>, <strong><span class="math-sym">y</span> = 2</strong>, and <strong><span class="math-sym">z</span> = 1</strong>, find the value of: <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><span class="frac"><span class="top">4<span class="math-sym">x</span> + 6<span class="math-sym">y</span></span><span class="bottom">2<span class="math-sym">z</span></span></span></strong>
+        </div>
+        <div class="work-box work-box-tall">
+          <span class="work-label">Numerator calculation &rarr; Divide by denominator</span>
+          <div class="ans-line">Value: <span class="ans-slot"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Perfect Mathematics - Class 5 Mock Examination Paper</span>
+    <span>Page 2 of 3</span>
+    <span>Nepali-Oriented School &bull; Japan</span>
+  </div>
+
+  <!-- ================= PAGE 3 ================= -->
+  <div class="page-break"></div>
+
+  <div class="header-box" style="padding: 6px 12px; margin-bottom: 8px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; font-weight: 700; color: #1e3a8a;">
+      <span>CLASS 5 MATHEMATICS &bull; TERMINAL EXAM</span>
+      <span>STUDENT NAME: ___________________________</span>
+      <span>ROLL NO: _______</span>
+    </div>
+  </div>
+
+  <!-- Q10. Simple Linear Equations -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q10. Solve the following linear equations for the unknown variable:</span>
+      <span class="marks">(2 &times; 2.5 = 5 Marks)</span>
+    </div>
+
+    <div class="grid-2col">
+      <div>
+        <div class="sub-item">
+          <strong>(a)</strong> Solve and verify: &nbsp;&nbsp; <strong>4<span class="math-sym">x</span> &minus; 7 = 17</strong>
+        </div>
+        <div class="work-box" style="min-height: 125px;">
+          <span class="work-label">Solution &amp; Check (L.H.S = R.H.S)</span>
+          <div class="ans-line"><span class="math-sym">x</span> = <span class="ans-slot"></span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="sub-item">
+          <strong>(b)</strong> Solve for <span class="math-sym">m</span>: &nbsp;&nbsp; <strong><span class="frac"><span class="top">3<span class="math-sym">m</span> + 5</span><span class="bottom">2</span></span> = 10</strong>
+        </div>
+        <div class="work-box" style="min-height: 125px;">
+          <span class="work-label">Cross-multiplication / Balancing method</span>
+          <div class="ans-line"><span class="math-sym">m</span> = <span class="ans-slot"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q11. Algebraic Word Problem -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q11. Word Problem on Algebra:</span>
+      <span class="marks">(4 Marks)</span>
+    </div>
+    <div class="sub-item">
+      A mother is 3 times as old as her son. If the sum of their ages is 48 years, form an algebraic equation and find the present age of both the mother and the son.
+    </div>
+    <div class="work-box" style="min-height: 125px;">
+      <span class="work-label">Let son's age = x ...</span>
+      <div class="ans-line">
+        Son's Age: <span class="ans-slot" style="min-width: 80px;"></span> years &nbsp;&nbsp;|&nbsp;&nbsp; 
+        Mother's Age: <span class="ans-slot" style="min-width: 80px;"></span> years
+      </div>
+    </div>
+  </div>
+
+  <!-- Q12. Fraction Real-Life Word Problem -->
+  <div class="q-group">
+    <div class="q-title">
+      <span>Q12. Real-Life Word Problem on Fractions:</span>
+      <span class="marks">(4 Marks)</span>
+    </div>
+    <div class="sub-item">
+      Rohan received &yen;6,000 as his monthly allowance in Tokyo. He spent <span class="frac"><span class="top">2</span><span class="bottom">5</span></span> of the money on school stationery and books, and <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> of the total money on Japanese language manga and transportation. <br>
+      <strong>(i)</strong> What fraction of the total money did he spend altogether? <br>
+      <strong>(ii)</strong> What fraction of the money is left with him? <br>
+      <strong>(iii)</strong> How much actual amount in Japanese Yen (&yen;) does he save?
+    </div>
+    <div class="work-box" style="min-height: 145px;">
+      <span class="work-label">Working: (i) Total Fraction Spent &rarr; (ii) Fraction Left &rarr; (iii) Money Saved</span>
+      <div class="ans-line">
+        (i) Spent: <span class="ans-slot" style="min-width: 60px;"></span> &nbsp;|&nbsp; 
+        (ii) Remaining: <span class="ans-slot" style="min-width: 60px;"></span> &nbsp;|&nbsp; 
+        (iii) Saved: &yen; <span class="ans-slot" style="min-width: 80px;"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>&copy; Perfect Mathematics &bull; Class 5 Comprehensive Mock Examination</span>
+    <span>Page 3 of 3 &bull; END OF QUESTION PAPER</span>
+    <span>Best of Luck!</span>
+  </div>
+
+</body>
+</html>

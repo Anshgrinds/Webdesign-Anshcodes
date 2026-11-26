@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 English Examination - Oxford New Learning to Communicate</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Liberation Sans", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.45;
+      font-size: 9.5pt;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    /* Exam Header */
+    .header-box {
+      border: 2px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: #eff6ff;
+      margin-bottom: 8px;
+    }
+    .school-title {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .exam-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-top: 2px;
+    }
+    .curriculum-tag {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .student-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px dashed #93c5fd;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .meta-fill {
+      border-bottom: 1px dotted #334155;
+      display: inline-block;
+      min-width: 120px;
+      height: 15px;
+    }
+    .marks-time-bar {
+      display: flex;
+      justify-content: space-between;
+      background: #dbeafe;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-top: 6px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    /* Syllabus Ribbon */
+    .syllabus-ribbon {
+      background: #f1f5f9;
+      border-left: 4px solid #1e3a8a;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+      font-size: 8.5pt;
+      color: #1e293b;
+      border-radius: 0 4px 4px 0;
+    }
+    .syllabus-ribbon strong {
+      color: #0f172a;
+    }
+
+    /* Section Headers */
+    .section-header {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-size: 10pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+    .badge {
+      background: #ffffff;
+      color: #1e3a8a;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-size: 8.5pt;
+      font-weight: 800;
+    }
+
+    /* Question Blocks */
+    .q-item {
+      margin-bottom: 10px;
+      page-break-inside: avoid;
+    }
+    .q-text {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 9.5pt;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .marks-pill {
+      color: #1e40af;
+      font-weight: 700;
+      font-size: 8.5pt;
+      white-space: nowrap;
+    }
+
+    /* Comprehension passage */
+    .passage-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 9pt;
+      line-height: 1.5;
+      color: #334155;
+      margin-bottom: 8px;
+      text-align: justify;
+    }
+
+    /* Sub questions */
+    .sub-q {
+      margin-left: 12px;
+      margin-top: 4px;
+      font-size: 9pt;
+      color: #1e293b;
+    }
+    .sub-q-num {
+      font-weight: 700;
+      color: #1d4ed8;
+      display: inline-block;
+      width: 20px;
+    }
+
+    /* Writing Lines */
+    .write-line {
+      border-bottom: 1px dotted #94a3b8;
+      margin-top: 4px;
+      margin-bottom: 6px;
+      height: 17px;
+      width: 100%;
+    }
+    .write-box {
+      border: 1px dashed #cbd5e1;
+      border-radius: 4px;
+      background: #fafafa;
+      padding: 6px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* Tables */
+    .exam-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0;
+      font-size: 8.8pt;
+    }
+    .exam-table th {
+      background: #e2e8f0;
+      border: 1px solid #94a3b8;
+      padding: 4px 6px;
+      text-align: left;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .exam-table td {
+      border: 1px solid #cbd5e1;
+      padding: 4px 6px;
+      color: #334155;
+    }
+    .exam-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* Word bank */
+    .word-bank {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin: 4px 0 6px 0;
+      font-size: 8.5pt;
+      color: #92400e;
+      font-weight: 600;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header-box">
+    <div class="school-title">Everest International School / Nepali Curriculum Division</div>
+    <div class="exam-title">Mid-Term Assessment Examination &bull; Grade 5 English</div>
+    <div class="curriculum-tag">Prescribed Textbooks: Oxford New Learning to Communicate (Coursebook &amp; Workbook)</div>
+    
+    <div class="student-meta">
+      <div><strong>Student's Full Name:</strong> <span class="meta-fill"></span></div>
+      <div><strong>Roll No:</strong> <span class="meta-fill" style="min-width: 60px;"></span></div>
+      <div><strong>Section:</strong> <span class="meta-fill" style="min-width: 60px;"></span></div>
+      <div><strong>Date:</strong> <span class="meta-fill" style="min-width: 80px;"></span></div>
+    </div>
+
+    <div class="marks-time-bar">
+      <span>TIME ALLOWED: 1 Hour 30 Minutes</span>
+      <span>FULL MARKS: 50</span>
+      <span>PASS MARKS: 20</span>
+    </div>
+  </div>
+
+  <!-- SYLLABUS DETAILS -->
+  <div class="syllabus-ribbon">
+    <strong>Covered Syllabus:</strong> 
+    <strong>Coursebook &amp; Workbook:</strong> Chapter 1: <em>Grandpa Tickles a Tiger</em> | Chapter 2: <em>A Giant and His Magic Goat</em> | Chapter 3: <em>The Locked Room</em> &bull; 
+    <strong>Grammar &amp; Structure:</strong> Forms of Verbs (V1, V2, V3, V4, V5 &amp; Regular/Irregular) &bull; Reported Speech (Direct to Indirect Speech)
+  </div>
+
+  <!-- ================= SECTION A: READING COMPREHENSION ================= -->
+  <div class="section-header">
+    <span>SECTION A: READING COMPREHENSION</span>
+    <span class="badge">8 Marks</span>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q1. Read the following extract adapted from Ruskin Bond's story and answer the questions below:</span>
+      <span class="marks-pill">[8 Marks]</span>
+    </div>
+
+    <div class="passage-box">
+      When Grandfather visited the Lucknow Zoo six months later, he went straight to the large cage where Timothy had been lodged. Inside the cage was a magnificent full-grown tiger, pacing back and forth. Grandfather approached the iron bars without fear. He put both his arms through the railings, stroked the tiger’s forehead, and tickled its ears. Whenever the tiger gave a low growl, Grandfather playfully smacked him across the mouth—which was his old way of keeping Timothy quiet.<br><br>
+      The tiger licked Grandfather’s hands with relish and purred loudly, springing back only when a noisy leopard in the adjacent cage snarled. A crowd began to gather, watching this daring old gentleman with wide eyes. Presently, a zoo keeper who remembered Grandfather came rushing over in utter panic. "What are you doing, sir?" shouted the keeper breathlessly. "Step back! That is not your tiger! Your Timothy died two months ago of pneumonia. This beast was trapped in the hills only last month, and he is fierce and dangerous!"
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">a.</span> How did Grandfather treat the tiger inside the cage? Name two actions he did. <span class="marks-pill">(2)</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">b.</span> Why did the tiger spring back occasionally from the bars? <span class="marks-pill">(1)</span>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">c.</span> What shocking truth did the zoo keeper reveal to Grandfather? <span class="marks-pill">(2)</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">d.</span> Find words from the passage that mean: <span class="marks-pill">(2)</span><br>
+      (i) Great pleasure or enjoyment: ____________________________<br>
+      (ii) Next to or adjoining: ____________________________
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">e.</span> Write the <strong>antonym (opposite)</strong> of the word <em>"fierce"</em> from your vocabulary: _____________________ <span class="marks-pill">(1)</span>
+    </div>
+  </div>
+
+  <!-- ================= SECTION B: LITERATURE & COURSEBOOK ================= -->
+  <div class="section-header">
+    <span>SECTION B: LITERATURE (OXFORD COURSEBOOK &amp; WORKBOOK)</span>
+    <span class="badge">16 Marks</span>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q2. Reference to Context &mdash; "Who said to whom and why?"</span>
+      <span class="marks-pill">[4 Marks]</span>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">a.</span> <em>"Goodnight, Timothy... and may you live happily here."</em> <span class="marks-pill">(2)</span><br>
+      (i) Who said these words? ____________________________________________________________________<br>
+      (ii) To whom were they spoken, and why did the speaker say this? <br>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">b.</span> <em>"Take this goat, but remember never to strike it or utter false words in its presence!"</em> <span class="marks-pill">(2)</span><br>
+      (i) Who gave the magic goat and to whom? _____________________________________________________<br>
+      (ii) What special power did this magic goat possess? <br>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q3. Vocabulary &amp; Phrasal Meanings (Match the columns):</span>
+      <span class="marks-pill">[4 Marks]</span>
+    </div>
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th style="width: 28%;">Word / Phrase</th>
+          <th style="width: 42%;">Definition / Meaning</th>
+          <th style="width: 30%;">Your Matching Letter</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Creak</strong></td>
+          <td>A. A disease caused by severe lung inflammation</td>
+          <td>1 &rarr; [ _____ ]</td>
+        </tr>
+        <tr>
+          <td><strong>2. Pneumonia</strong></td>
+          <td>B. High-pitched harsh squeak made by an old wooden door</td>
+          <td>2 &rarr; [ _____ ]</td>
+        </tr>
+        <tr>
+          <td><strong>3. Stalk</strong></td>
+          <td>C. An intense feeling of curiosity and sudden fear</td>
+          <td>3 &rarr; [ _____ ]</td>
+        </tr>
+        <tr>
+          <td><strong>4. Suspense</strong></td>
+          <td>D. To pursue or stealthily approach prey or an object</td>
+          <td>4 &rarr; [ _____ ]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q4. Short Answer Questions (Answer in 2&ndash;3 complete sentences):</span>
+      <span class="marks-pill">[8 Marks]</span>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">a.</span> <strong>[Grandpa Tickles a Tiger]</strong> Why did Grandfather initially bring Timothy the tiger cub home, and why did the family eventually decide to send him to Lucknow Zoo? <span class="marks-pill">(2)</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">b.</span> <strong>[A Giant and His Magic Goat]</strong> How did the dishonest innkeeper try to cheat the young boy, and how was the magic goat recovered? <span class="marks-pill">(2)</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">c.</span> <strong>[The Locked Room]</strong> Why was the room at the end of the long corridor kept strictly locked, and what did the children discover when they finally turned the brass key? <span class="marks-pill">(2)</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">d.</span> <strong>[Workbook Reflection]</strong> What moral lesson or quality does the boy show when dealing with the giant in <em>A Giant and His Magic Goat</em>? <span class="marks-pill">(2)</span>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <!-- ================= SECTION C: GRAMMAR & STRUCTURE ================= -->
+  <div class="section-header">
+    <span>SECTION C: GRAMMAR &amp; LANGUAGE STRUCTURE</span>
+    <span class="badge">18 Marks</span>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q5. Forms of Verbs: Complete the following verb conjugation table:</span>
+      <span class="marks-pill">[5 Marks]</span>
+    </div>
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th>Base Form (V1)</th>
+          <th>Simple Past (V2)</th>
+          <th>Past Participle (V3)</th>
+          <th>Present Participle (V4 -ing)</th>
+          <th>3rd Person Singular (V5 -s/-es)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>freeze</strong></td>
+          <td>froze</td>
+          <td>frozen</td>
+          <td>freezing</td>
+          <td>freezes</td>
+        </tr>
+        <tr>
+          <td><strong>grow</strong></td>
+          <td>____________</td>
+          <td>grown</td>
+          <td>growing</td>
+          <td>grows</td>
+        </tr>
+        <tr>
+          <td><strong>hide</strong></td>
+          <td>hid</td>
+          <td>____________</td>
+          <td>hiding</td>
+          <td>hides</td>
+        </tr>
+        <tr>
+          <td><strong>speak</strong></td>
+          <td>spoke</td>
+          <td>spoken</td>
+          <td>____________</td>
+          <td>speaks</td>
+        </tr>
+        <tr>
+          <td><strong>catch</strong></td>
+          <td>____________</td>
+          <td>caught</td>
+          <td>catching</td>
+          <td>catches</td>
+        </tr>
+        <tr>
+          <td><strong>choose</strong></td>
+          <td>chose</td>
+          <td>chosen</td>
+          <td>choosing</td>
+          <td>____________</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q6. Fill in the blanks with the correct form of the verbs given in brackets:</span>
+      <span class="marks-pill">[4 Marks]</span>
+    </div>
+    <div class="sub-q">
+      <span class="sub-q-num">a.</span> Grandfather has _______________ (know) the tiger cub since it was only eighteen inches long.
+    </div>
+    <div class="sub-q">
+      <span class="sub-q-num">b.</span> Yesterday, the boy _______________ (bring) the magic goat to his village cottage.
+    </div>
+    <div class="sub-q">
+      <span class="sub-q-num">c.</span> While the wind was howling outside, the old door began _______________ (creak) loudly.
+    </div>
+    <div class="sub-q">
+      <span class="sub-q-num">d.</span> The mysterious key was _______________ (find) inside an antique rosewood drawer.
+    </div>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q7. Reported Speech: Convert the following sentences from Direct to Indirect Speech:</span>
+      <span class="marks-pill">[6 Marks]</span>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">a.</span> <strong>Direct:</strong> Grandfather said, "I know this tiger very well."<br>
+      <strong>Indirect:</strong> <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">b.</span> <strong>Direct:</strong> The keeper said to Grandfather, "Your Timothy died two months ago."<br>
+      <strong>Indirect:</strong> <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">c.</span> <strong>Direct:</strong> The giant said, "Do not betray my trust."<br>
+      <strong>Indirect:</strong> <div class="write-line"></div>
+    </div>
+
+    <div class="sub-q">
+      <span class="sub-q-num">d.</span> <strong>Direct:</strong> Mother asked Rohan, "Did you see anyone unlock that room?"<br>
+      <strong>Indirect:</strong> <div class="write-line"></div>
+    </div>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q8. Identify and correct the error in each of the following Reported Speech sentences:</span>
+      <span class="marks-pill">[3 Marks]</span>
+    </div>
+    <div class="sub-q">
+      <span class="sub-q-num">a.</span> <em>Ravi said that he is reading Ruskin Bond's story yesterday.</em><br>
+      <strong>Correction:</strong> ______________________________________________________________________________________
+    </div>
+    <div class="sub-q">
+      <span class="sub-q-num">b.</span> <em>The zookeeper told to Grandfather that the tiger was dangerous.</em><br>
+      <strong>Correction:</strong> ______________________________________________________________________________________
+    </div>
+    <div class="sub-q">
+      <span class="sub-q-num">c.</span> <em>He asked me that if I had found the brass key.</em><br>
+      <strong>Correction:</strong> ______________________________________________________________________________________
+    </div>
+  </div>
+
+  <!-- ================= SECTION D: CREATIVE WRITING & COMPOSITION ================= -->
+  <div class="section-header">
+    <span>SECTION D: CREATIVE WRITING &amp; EXPRESSION</span>
+    <span class="badge">8 Marks</span>
+  </div>
+
+  <div class="q-item">
+    <div class="q-text">
+      <span>Q9. Choose ANY ONE of the following writing tasks (Write in 70&ndash;90 words):</span>
+      <span class="marks-pill">[8 Marks]</span>
+    </div>
+    <p style="font-size: 8.8pt; color: #475569; margin-bottom: 6px;">
+      <strong>Option A (Diary Entry):</strong> Imagine you are Grandfather. Write a diary entry describing the evening after you returned from Lucknow Zoo. Express your fond memories of Timothy, the chill of realizing you had stroked a strange wild tiger, and your relief.<br>
+      <strong>Option B (Story Climax):</strong> Write a short paragraph describing the suspenseful moment the children pushed open <em>The Locked Room</em>. Describe what they heard, saw, and how their fear turned into wonder.
+    </p>
+
+    <div class="write-box">
+      <div style="font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">Selected Option: [ Option A / Option B ]</div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+      <div class="write-line"></div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 14px; font-weight: 700; color: #1e3a8a; font-size: 9pt; border-top: 1px solid #cbd5e1; padding-top: 6px;">
+    &star; &star; &star; END OF EXAMINATION &bull; GOOD LUCK! &star; &star; &star;
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 Computer Science - Terminal Mock Examination Paper</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Liberation Sans", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.45;
+      font-size: 9.5pt;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    /* Exam Header */
+    .header-box {
+      border: 2px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: #eff6ff;
+      margin-bottom: 8px;
+    }
+    .school-title {
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .exam-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-top: 2px;
+    }
+    .curriculum-tag {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .student-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px dashed #93c5fd;
+      font-size: 9pt;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .meta-fill {
+      border-bottom: 1px dotted #334155;
+      display: inline-block;
+      min-width: 130px;
+      height: 15px;
+    }
+    .marks-time-bar {
+      display: flex;
+      justify-content: space-between;
+      background: #dbeafe;
+      border: 1px solid #bfdbfe;
+      border-radius: 4px;
+      padding: 4px 10px;
+      margin-top: 6px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    /* Syllabus Ribbon */
+    .syllabus-ribbon {
+      background: #f1f5f9;
+      border-left: 4px solid #1e3a8a;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      font-size: 8.2pt;
+      color: #1e293b;
+      border-radius: 0 4px 4px 0;
+    }
+    .syllabus-ribbon strong {
+      color: #0f172a;
+    }
+
+    /* Section Headers */
+    .section-header {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-size: 10pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+    .badge {
+      background: #ffffff;
+      color: #1e3a8a;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-size: 8.5pt;
+      font-weight: 800;
+    }
+
+    /* Question Styles */
+    .question-block {
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .q-title {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+      font-size: 9.3pt;
+    }
+    .q-instruction {
+      font-size: 8.5pt;
+      color: #64748b;
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    /* MCQs */
+    .mcq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px 12px;
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+    .mcq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 5px 8px;
+      font-size: 8.8pt;
+    }
+    .mcq-prompt {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #1e293b;
+    }
+    .mcq-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 6px;
+      font-size: 8.4pt;
+      color: #334155;
+    }
+
+    /* Word Box */
+    .word-box {
+      border: 1px dashed #3b82f6;
+      background: #eff6ff;
+      border-radius: 6px;
+      padding: 6px 12px;
+      text-align: center;
+      font-weight: 700;
+      color: #1d4ed8;
+      font-size: 8.8pt;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    /* Fill in blanks */
+    .fib-list, .tf-list, .fullform-list {
+      list-style-type: none;
+      padding-left: 2px;
+    }
+    .fib-item, .tf-item {
+      margin-bottom: 5px;
+      font-size: 9pt;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .fib-blank {
+      border-bottom: 1px dotted #0f172a;
+      display: inline-block;
+      min-width: 90px;
+      text-align: center;
+      height: 14px;
+    }
+    .tf-box {
+      border: 1px solid #94a3b8;
+      width: 48px;
+      height: 18px;
+      text-align: center;
+      font-weight: 700;
+      border-radius: 3px;
+      background: #ffffff;
+      margin-left: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Matching Table */
+    .match-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+      font-size: 8.8pt;
+    }
+    .match-table th {
+      background: #e2e8f0;
+      border: 1px solid #cbd5e1;
+      padding: 4px 8px;
+      text-align: left;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .match-table td {
+      border: 1px solid #cbd5e1;
+      padding: 4px 8px;
+      color: #334155;
+    }
+    .match-ans-line {
+      display: inline-block;
+      border-bottom: 1px dotted #334155;
+      width: 45px;
+      text-align: center;
+    }
+
+    /* Write lines */
+    .line-answer {
+      border-bottom: 1px dotted #94a3b8;
+      height: 18px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      width: 100%;
+    }
+    .q-short-item {
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .q-short-text {
+      font-size: 9pt;
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: #0f172a;
+    }
+
+    /* Full Forms Grid */
+    .ff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 14px;
+      margin-bottom: 8px;
+    }
+    .ff-item {
+      font-size: 9pt;
+      display: flex;
+      align-items: baseline;
+    }
+    .ff-label {
+      font-weight: 700;
+      min-width: 65px;
+      color: #1e3a8a;
+    }
+    .ff-line {
+      border-bottom: 1px dotted #64748b;
+      flex-grow: 1;
+      height: 16px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    /* Table styling for differences */
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 4px 0 8px 0;
+      font-size: 8.8pt;
+    }
+    .diff-table th {
+      background: #dbeafe;
+      border: 1px solid #93c5fd;
+      padding: 4px 8px;
+      text-align: center;
+      font-weight: 700;
+      color: #1e3a8a;
+      width: 50%;
+    }
+    .diff-table td {
+      border: 1px solid #cbd5e1;
+      height: 52px;
+      vertical-align: top;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- EXAM HEADER -->
+  <div class="header-box">
+    <div class="school-title">Terminal Examination &bull; Academic Session 2026</div>
+    <div class="exam-title">Subject: Computer Science &bull; Grade: 5</div>
+    <div class="curriculum-tag">Prescribed Textbook: <strong>Innovative Computer Science</strong> &bull; Nepal Curriculum Aligned</div>
+    
+    <div class="student-meta">
+      <div>Student's Name: <span class="meta-fill"></span></div>
+      <div>Roll No: <span class="meta-fill" style="min-width:60px;"></span></div>
+      <div>Section: <span class="meta-fill" style="min-width:60px;"></span></div>
+      <div>Date: <span class="meta-fill" style="min-width:90px;"></span></div>
+    </div>
+
+    <div class="marks-time-bar">
+      <span>Time Allowed: 1 Hour 30 Minutes</span>
+      <span>Total Questions: 8 Groups</span>
+      <span>Full Marks: 50 &bull; Pass Marks: 20</span>
+    </div>
+  </div>
+
+  <!-- SYLLABUS COVERED -->
+  <div class="syllabus-ribbon">
+    <strong>Chapters Covered:</strong> 1. Computer Fundamental &bull; 2. Computer System &bull; 3. Computer Hardware &bull; 4. Computer Software &bull; 5. Types of Digital Computers &bull; 6. The Internet and its Services &bull; 7. Multimedia &bull; 8. Fun with Paint
+  </div>
+
+  <!-- SECTION A -->
+  <div class="section-header">
+    <span>SECTION A: OBJECTIVE EVALUATION</span>
+    <span class="badge">20 MARKS</span>
+  </div>
+
+  <!-- Q1: MCQs -->
+  <div class="question-block">
+    <div class="q-title">Q1. Choose and tick (&check;) the correct option from the brackets: <span style="float:right; font-weight:700;">[10 &times; 1 = 10]</span></div>
+    
+    <div class="mcq-grid">
+      <!-- 1 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">1. The basic working principle of any computer is:</div>
+        <div class="mcq-options">
+          <div>(A) O-P-I Cycle</div>
+          <div>(B) I-P-O Cycle</div>
+          <div>(C) P-I-O Cycle</div>
+          <div>(D) I-O-P Cycle</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">2. The "Brain of the Computer" that processes all data is:</div>
+        <div class="mcq-options">
+          <div>(A) Monitor</div>
+          <div>(B) CPU</div>
+          <div>(C) Keyboard</div>
+          <div>(D) Hard Disk</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">3. Which primary memory is volatile and loses data on power off?</div>
+        <div class="mcq-options">
+          <div>(A) ROM</div>
+          <div>(B) RAM</div>
+          <div>(C) Hard Disk</div>
+          <div>(D) Pen Drive</div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">4. Windows 11, macOS, and Linux are examples of:</div>
+        <div class="mcq-options">
+          <div>(A) Application Software</div>
+          <div>(B) Operating System</div>
+          <div>(C) Hardware</div>
+          <div>(D) Liveware</div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">5. The fastest and most expensive computers used by NASA are:</div>
+        <div class="mcq-options">
+          <div>(A) Microcomputers</div>
+          <div>(B) Supercomputers</div>
+          <div>(C) Laptops</div>
+          <div>(D) Minicomputers</div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">6. The unique web address of a website is called its:</div>
+        <div class="mcq-options">
+          <div>(A) ISP</div>
+          <div>(B) CPU</div>
+          <div>(C) URL</div>
+          <div>(D) HTML</div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">7. The two root words of "Multimedia" are Multi and:</div>
+        <div class="mcq-options">
+          <div>(A) Model</div>
+          <div>(B) Media</div>
+          <div>(C) Memory</div>
+          <div>(D) Modem</div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">8. In MS Paint, which key is held down to draw a perfect circle?</div>
+        <div class="mcq-options">
+          <div>(A) Ctrl key</div>
+          <div>(B) Shift key</div>
+          <div>(C) Alt key</div>
+          <div>(D) Spacebar</div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">9. Which printer sprays tiny droplets of liquid ink onto paper?</div>
+        <div class="mcq-options">
+          <div>(A) Dot Matrix</div>
+          <div>(B) Laser Printer</div>
+          <div>(C) Inkjet Printer</div>
+          <div>(D) Plotter</div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="mcq-item">
+        <div class="mcq-prompt">10. Software designed to detect and remove malicious viruses is:</div>
+        <div class="mcq-options">
+          <div>(A) Word Processor</div>
+          <div>(B) Antivirus Utility</div>
+          <div>(C) Web Browser</div>
+          <div>(D) Spreadsheet</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q2: Fill in the Blanks -->
+  <div class="question-block">
+    <div class="q-title">Q2. Fill in the blanks with the correct words from the box below: <span style="float:right; font-weight:700;">[5 &times; 1 = 5]</span></div>
+    
+    <div class="word-box">
+      [ GIGO &bull; Liveware &bull; Eyedropper &bull; World Wide Web &bull; Animation ]
+    </div>
+
+    <ul class="fib-list">
+      <li class="fib-item">
+        <span>a. The people who write computer programs or operate computers are called <span class="fib-blank"></span>.</span>
+      </li>
+      <li class="fib-item">
+        <span>b. The computer principle which states incorrect inputs yield incorrect results is <span class="fib-blank"></span>.</span>
+      </li>
+      <li class="fib-item">
+        <span>c. The full form of WWW stands for <span class="fib-blank" style="min-width:140px;"></span>.</span>
+      </li>
+      <li class="fib-item">
+        <span>d. The rapid display of still images to create an illusion of real movement is <span class="fib-blank"></span>.</span>
+      </li>
+      <li class="fib-item">
+        <span>e. In MS Paint, the Color Picker tool is also popularly known as the <span class="fib-blank"></span> tool.</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Q3: True or False -->
+  <div class="question-block">
+    <div class="q-title">Q3. Write 'T' for True and 'F' for False in the boxes provided: <span style="float:right; font-weight:700;">[5 &times; 1 = 5]</span></div>
+    
+    <ul class="tf-list">
+      <li class="tf-item">
+        <span>a. A computer has zero IQ and cannot take independent decisions without human instructions.</span>
+        <div class="tf-box"></div>
+      </li>
+      <li class="tf-item">
+        <span>b. A laser printer is an impact printer that uses ribbon and makes loud printing noise.</span>
+        <div class="tf-box"></div>
+      </li>
+      <li class="tf-item">
+        <span>c. Application software can run smoothly on a computer even without any Operating System installed.</span>
+        <div class="tf-box"></div>
+      </li>
+      <li class="tf-item">
+        <span>d. Brave, Google Chrome, and Mozilla Firefox are examples of web browsers.</span>
+        <div class="tf-box"></div>
+      </li>
+      <li class="tf-item">
+        <span>e. In MS Paint, Transparent Selection prevents the white background from hiding your drawing.</span>
+        <div class="tf-box"></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- PAGE BREAK FOR CLEAN PRINTING -->
+  <div class="page-break"></div>
+
+  <!-- SECTION B -->
+  <div class="section-header">
+    <span>SECTION B: TECHNICAL IDENTIFICATION &amp; MATCHING</span>
+    <span class="badge">10 MARKS</span>
+  </div>
+
+  <!-- Q4: Match the Following -->
+  <div class="question-block">
+    <div class="q-title">Q4. Match the items of Column 'A' with their correct pair in Column 'B': <span style="float:right; font-weight:700;">[5 &times; 1 = 5]</span></div>
+    
+    <table class="match-table">
+      <thead>
+        <tr>
+          <th style="width:30%;">Column 'A' (Terms)</th>
+          <th style="width:45%;">Column 'B' (Descriptions / Examples)</th>
+          <th style="width:25%; text-align:center;">Answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Plotter</td>
+          <td>A. Collection of related interlinked web pages</td>
+          <td style="text-align:center;">1 &rarr; [<span class="match-ans-line"></span>]</td>
+        </tr>
+        <tr>
+          <td>2. Website</td>
+          <td>B. High-quality vector printing for large maps and banners</td>
+          <td style="text-align:center;">2 &rarr; [<span class="match-ans-line"></span>]</td>
+        </tr>
+        <tr>
+          <td>3. ROM</td>
+          <td>C. Fills an entire enclosed shape with active color</td>
+          <td style="text-align:center;">3 &rarr; [<span class="match-ans-line"></span>]</td>
+        </tr>
+        <tr>
+          <td>4. Fill with Color Tool</td>
+          <td>D. Single-user portable computer with built-in battery</td>
+          <td style="text-align:center;">4 &rarr; [<span class="match-ans-line"></span>]</td>
+        </tr>
+        <tr>
+          <td>5. Laptop</td>
+          <td>E. Non-volatile permanent memory containing startup BIOS</td>
+          <td style="text-align:center;">5 &rarr; [<span class="match-ans-line"></span>]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Q5: Full Forms -->
+  <div class="question-block">
+    <div class="q-title">Q5. Write down the complete Full Forms for the following abbreviations: <span style="float:right; font-weight:700;">[5 &times; 1 = 5]</span></div>
+    
+    <div class="ff-grid">
+      <div class="ff-item">
+        <span class="ff-label">a. ALU :</span>
+        <div class="ff-line"></div>
+      </div>
+      <div class="ff-item">
+        <span class="ff-label">b. RAM :</span>
+        <div class="ff-line"></div>
+      </div>
+      <div class="ff-item">
+        <span class="ff-label">c. ISP :</span>
+        <div class="ff-line"></div>
+      </div>
+      <div class="ff-item">
+        <span class="ff-label">d. URL :</span>
+        <div class="ff-line"></div>
+      </div>
+      <div class="ff-item" style="grid-column: span 2;">
+        <span class="ff-label">e. GUI :</span>
+        <div class="ff-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION C -->
+  <div class="section-header">
+    <span>SECTION C: SHORT CONCEPTUAL QUESTIONS</span>
+    <span class="badge">10 MARKS</span>
+  </div>
+
+  <div class="q-instruction">Answer all questions neatly in two or three sentences each:</div>
+
+  <!-- Q6a -->
+  <div class="q-short-item">
+    <div class="q-short-text">Q6 (a). What is a Computer? Name the three steps of the IPO cycle. <span style="float:right; font-weight:700;">[2]</span></div>
+    <div class="line-answer"></div>
+    <div class="line-answer"></div>
+  </div>
+
+  <!-- Q6b -->
+  <div class="q-short-item">
+    <div class="q-short-text">Q6 (b). What is an Operating System? Give two common examples. <span style="float:right; font-weight:700;">[2]</span></div>
+    <div class="line-answer"></div>
+    <div class="line-answer"></div>
+  </div>
+
+  <!-- Q6c -->
+  <div class="q-short-item">
+    <div class="q-short-text">Q6 (c). Mention any four major types of Digital Computers based on size and power. <span style="float:right; font-weight:700;">[2]</span></div>
+    <div class="line-answer"></div>
+    <div class="line-answer"></div>
+  </div>
+
+  <!-- Q6d -->
+  <div class="q-short-item">
+    <div class="q-short-text">Q6 (d). Name the five core elements that make up Multimedia. <span style="float:right; font-weight:700;">[2]</span></div>
+    <div class="line-answer"></div>
+    <div class="line-answer"></div>
+  </div>
+
+  <!-- Q6e -->
+  <div class="q-short-item">
+    <div class="q-short-text">Q6 (e). In MS Paint, how does Free-form Selection differ from Rectangular Selection? <span style="float:right; font-weight:700;">[2]</span></div>
+    <div class="line-answer"></div>
+    <div class="line-answer"></div>
+  </div>
+
+  <!-- SECTION D -->
+  <div class="section-header">
+    <span>SECTION D: DIFFERENTIATION &amp; PRACTICAL APPLICATION</span>
+    <span class="badge">10 MARKS</span>
+  </div>
+
+  <!-- Q7: Differences -->
+  <div class="question-block">
+    <div class="q-title">Q7. Differentiate between the following pairs (Write any two distinct points each): <span style="float:right; font-weight:700;">[2 &times; 3 = 6]</span></div>
+    
+    <div style="font-weight:700; font-size:8.8pt; margin-top:3px; color:#1e3a8a;">(a) Hardware vs. Software</div>
+    <table class="diff-table">
+      <tr>
+        <th>Hardware</th>
+        <th>Software</th>
+      </tr>
+      <tr>
+        <td>1.<br><br>2.</td>
+        <td>1.<br><br>2.</td>
+      </tr>
+    </table>
+
+    <div style="font-weight:700; font-size:8.8pt; margin-top:4px; color:#1e3a8a;">(b) Web Browser vs. Search Engine</div>
+    <table class="diff-table">
+      <tr>
+        <th>Web Browser</th>
+        <th>Search Engine</th>
+      </tr>
+      <tr>
+        <td>1.<br><br>2.</td>
+        <td>1.<br><br>2.</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Q8: Practical Scenarios -->
+  <div class="question-block">
+    <div class="q-title">Q8. Practical &amp; Application-Based Questions: <span style="float:right; font-weight:700;">[2 &times; 2 = 4]</span></div>
+    
+    <div class="q-short-item">
+      <div class="q-short-text">a. Aarav drew a house in MS Paint and used the "Fill with Color" tool to paint the roof red. Suddenly, the entire screen turned red! What mistake did Aarav make, and how can he fix it immediately?</div>
+      <div class="line-answer"></div>
+      <div class="line-answer"></div>
+    </div>
+
+    <div class="q-short-item">
+      <div class="q-short-text">b. Prakriti wants to send a birthday greeting card file from Kathmandu to her cousin living in Pokhara across the internet. Name the internet service she should use, and mention two essential safety rules she must follow while using the internet.</div>
+      <div class="line-answer"></div>
+      <div class="line-answer"></div>
+    </div>
+  </div>
+
+  <div style="text-align:center; font-size:8.2pt; color:#64748b; margin-top:8px; border-top:1px dashed #cbd5e1; padding-top:4px;">
+    &bull;&bull;&bull; ALL THE BEST &bull; EXCELLENCE THROUGH UNDERSTANDING &bull;&bull;&bull;
+  </div>
+
+</body>
+</html>

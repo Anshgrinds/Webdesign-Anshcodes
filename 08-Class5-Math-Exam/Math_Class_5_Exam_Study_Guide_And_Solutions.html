@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 Mathematics Master Study Guide & Full Solutions - Perfect Mathematics</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Liberation Sans", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.44;
+      font-size: 9.3pt;
+      background: #ffffff;
+      padding: 2px;
+    }
+
+    /* Math fraction styling */
+    .frac {
+      display: inline-flex;
+      flex-direction: column;
+      vertical-align: middle;
+      text-align: center;
+      font-size: 0.92em;
+      padding: 0 2px;
+      line-height: 1.05;
+      font-weight: 600;
+    }
+    .frac .top {
+      border-bottom: 1.5px solid currentColor;
+      padding-bottom: 1px;
+    }
+    .frac .bottom {
+      padding-top: 1px;
+    }
+    .mixed-frac {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      font-weight: 600;
+      font-size: 1em;
+    }
+    .math-sym {
+      font-family: "Cambria Math", "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* Header */
+    .header-box {
+      border: 2px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: #eff6ff;
+      margin-bottom: 8px;
+    }
+    .school-title {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .exam-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-top: 2px;
+    }
+    .curriculum-tag {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #475569;
+      margin-top: 2px;
+    }
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+    .badge {
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 2px 10px;
+      border-radius: 4px;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* Section Titles */
+    .section-title {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-size: 9.5pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+
+    /* Cards */
+    .concept-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .concept-card h3 {
+      font-size: 9.5pt;
+      color: #1e3a8a;
+      margin-bottom: 4px;
+      border-bottom: 1.5px solid #bfdbfe;
+      padding-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .concept-card h3 .tag {
+      font-size: 8pt;
+      background: #e2e8f0;
+      color: #334155;
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    /* Solution card */
+    .sol-card {
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #10b981;
+      background: #ffffff;
+      border-radius: 0 6px 6px 0;
+      padding: 6px 10px;
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .sol-card.blue-left {
+      border-left-color: #2563eb;
+    }
+    .sol-card.amber-left {
+      border-left-color: #f59e0b;
+    }
+    .sol-header {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9pt;
+    }
+    .sol-header .points {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 8pt;
+    }
+    .step-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 4px;
+      padding: 5px 8px;
+      margin-top: 4px;
+      font-size: 8.8pt;
+    }
+    .ans-highlight {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .tip-box {
+      background: #fffbeb;
+      border: 1px solid #fef3c7;
+      color: #92400e;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      margin-top: 4px;
+    }
+
+    /* Grids */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 4px 0 6px 0;
+      font-size: 8.5pt;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 4px 6px;
+      text-align: left;
+    }
+    th {
+      background: #e2e8f0;
+      color: #1e293b;
+      font-weight: 700;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4px;
+      margin-top: 10px;
+      font-size: 7.5pt;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PAGE 1 ================= -->
+  <div class="header-box">
+    <div class="school-title">Nepali International School &bull; Japan</div>
+    <div class="exam-title">Master Study Guide & 100% Complete Worked Solutions</div>
+    <div class="curriculum-tag">Curriculum: CDC Nepal &bull; Textbook: Perfect Mathematics &bull; Class: 5 (Five)</div>
+    <div class="badge-bar">
+      <span class="badge">&check; Fractions Complete Theory</span>
+      <span class="badge">&check; Algebra & Equations Guide</span>
+      <span class="badge">&check; Step-by-Step Marking Scheme</span>
+      <span class="badge">&check; Parent/Tutor Cheat Sheet</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: MASTER REVISION SUMMARY -->
+  <div class="section-title">
+    <span>PART 1: High-Yield Theory & Golden Rules (Exam Cheatsheet)</span>
+    <span>Rapid Revision</span>
+  </div>
+
+  <div class="grid-2col">
+    <!-- Card 1: Fractions -->
+    <div class="concept-card">
+      <h3><span>&diams; Unit: Fractions (Golden Rules)</span> <span class="tag">Textbook Ch. Fractions</span></h3>
+      <table style="font-size: 8pt;">
+        <tr>
+          <th style="width: 25%;">Fraction Type</th>
+          <th>Definition</th>
+          <th style="width: 28%;">Examples</th>
+        </tr>
+        <tr>
+          <td><strong>Proper</strong></td>
+          <td>Numerator &lt; Denominator (Value &lt; 1)</td>
+          <td><span class="frac"><span class="top">2</span><span class="bottom">5</span></span>, <span class="frac"><span class="top">3</span><span class="bottom">7</span></span>, <span class="frac"><span class="top">9</span><span class="bottom">11</span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Improper</strong></td>
+          <td>Numerator &ge; Denominator (Value &ge; 1)</td>
+          <td><span class="frac"><span class="top">7</span><span class="bottom">4</span></span>, <span class="frac"><span class="top">15</span><span class="bottom">8</span></span>, <span class="frac"><span class="top">5</span><span class="bottom">5</span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Mixed</strong></td>
+          <td>Whole Number + Proper Fraction</td>
+          <td><span class="mixed-frac">2<span class="frac"><span class="top">1</span><span class="bottom">3</span></span></span>, <span class="mixed-frac">4<span class="frac"><span class="top">5</span><span class="bottom">6</span></span></span></td>
+        </tr>
+        <tr>
+          <td><strong>Like / Unlike</strong></td>
+          <td>Like: Same Denominator; Unlike: Different</td>
+          <td>Like: <span class="frac"><span class="top">2</span><span class="bottom">7</span></span>, <span class="frac"><span class="top">5</span><span class="bottom">7</span></span></td>
+        </tr>
+      </table>
+
+      <div style="font-size: 8pt; line-height: 1.35; margin-top: 4px;">
+        <strong>Crucial Calculation Rules:</strong><br>
+        &bull; <strong>Conversion:</strong> Improper to Mixed = <span class="math-sym">Quotient</span> <span class="frac"><span class="top"><span class="math-sym">Remainder</span></span><span class="bottom"><span class="math-sym">Divisor</span></span></span>. Mixed to Improper = <span class="frac"><span class="top"><span class="math-sym">Whole</span> &times; <span class="math-sym">Den</span> + <span class="math-sym">Num</span></span><span class="bottom"><span class="math-sym">Den</span></span></span>.<br>
+        &bull; <strong>Lowest Terms (Simplest):</strong> Divide both top and bottom by their <strong>HCF</strong> until no common factor remains except 1.<br>
+        &bull; <strong>Addition / Subtraction:</strong> Find <strong>LCM</strong> of denominators to make them like fractions, then add/subtract numerators only!<br>
+        &bull; <strong>Multiplication:</strong> <span class="frac"><span class="top">Product of Numerators</span><span class="bottom">Product of Denominators</span></span> (Cross-cancel common factors first!).<br>
+        &bull; <strong>Division (KCF Rule):</strong> <strong>K</strong>eep 1st fraction &rarr; <strong>C</strong>hange &divide; to &times; &rarr; <strong>F</strong>lip 2nd fraction (Reciprocal).
+      </div>
+    </div>
+
+    <!-- Card 2: Algebra -->
+    <div class="concept-card">
+      <h3><span>&diams; Unit: Algebra (Core Concepts)</span> <span class="tag">Textbook Ch. Algebra 4</span></h3>
+      <table style="font-size: 8pt;">
+        <tr>
+          <th style="width: 25%;">Concept</th>
+          <th>Definition</th>
+          <th style="width: 28%;">Examples</th>
+        </tr>
+        <tr>
+          <td><strong>Variable</strong></td>
+          <td>Letter/symbol representing unknown quantity</td>
+          <td><span class="math-sym">x</span>, <span class="math-sym">y</span>, <span class="math-sym">a</span>, <span class="math-sym">m</span></td>
+        </tr>
+        <tr>
+          <td><strong>Constant</strong></td>
+          <td>Fixed numerical value that does not change</td>
+          <td>5, &minus;12, 100</td>
+        </tr>
+        <tr>
+          <td><strong>Term</strong></td>
+          <td>Product of constant and variables</td>
+          <td>In <strong>&minus;7<span class="math-sym">x</span>&sup2;</strong>: Coeff=&minus;7, Var=<span class="math-sym">x</span></td>
+        </tr>
+        <tr>
+          <td><strong>Like Terms</strong></td>
+          <td>Terms with <em>exact same variables and powers</em></td>
+          <td>3<span class="math-sym">x</span><span class="math-sym">y</span> and &minus;8<span class="math-sym">y</span><span class="math-sym">x</span> (Order doesn't matter)</td>
+        </tr>
+        <tr>
+          <td><strong>Polynomials</strong></td>
+          <td>Monomial (1 term), Binomial (2), Trinomial (3)</td>
+          <td>Binomial: 3<span class="math-sym">x</span> + 5</td>
+        </tr>
+      </table>
+
+      <div style="font-size: 8pt; line-height: 1.35; margin-top: 4px;">
+        <strong>Algebraic Balancing Rules (Equations):</strong><br>
+        &bull; <strong>Golden Scale Rule:</strong> Whatever you do to Left Hand Side (LHS), do to Right Hand Side (RHS)!<br>
+        &bull; <strong>Transposition Rules:</strong><br>
+        &nbsp;&nbsp;&nbsp;&bull; <span class="math-sym">x</span> + <span class="math-sym">a</span> = <span class="math-sym">b</span> &implies; <span class="math-sym">x</span> = <span class="math-sym">b</span> &minus; <span class="math-sym">a</span> &nbsp;(Addition becomes Subtraction)<br>
+        &nbsp;&nbsp;&nbsp;&bull; <span class="math-sym">x</span> &minus; <span class="math-sym">a</span> = <span class="math-sym">b</span> &implies; <span class="math-sym">x</span> = <span class="math-sym">b</span> + <span class="math-sym">a</span> &nbsp;(Subtraction becomes Addition)<br>
+        &nbsp;&nbsp;&nbsp;&bull; <span class="math-sym">a</span> &middot; <span class="math-sym">x</span> = <span class="math-sym">b</span> &implies; <span class="math-sym">x</span> = <span class="math-sym">b</span> &divide; <span class="math-sym">a</span> &nbsp;(Multiplication becomes Division)<br>
+        &nbsp;&nbsp;&nbsp;&bull; <span class="frac"><span class="top"><span class="math-sym">x</span></span><span class="bottom"><span class="math-sym">a</span></span></span> = <span class="math-sym">b</span> &implies; <span class="math-sym">x</span> = <span class="math-sym">b</span> &times; <span class="math-sym">a</span> &nbsp;(Division becomes Multiplication)
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: 100% COMPLETE SOLUTIONS -->
+  <div class="section-title">
+    <span>PART 2: Complete Step-by-Step Solutions & Answer Key</span>
+    <span>Full Marks: 50</span>
+  </div>
+
+  <!-- SECTION A SOLUTIONS -->
+  <div class="sol-card blue-left">
+    <div class="sol-header">
+      <span>SECTION A: Objective & Concept Checks (Q1, Q2, Q3)</span>
+      <span class="points">12 / 12 Marks</span>
+    </div>
+    
+    <div class="grid-3col" style="font-size: 8.5pt;">
+      <div>
+        <strong>Q1. Multiple Choice Options:</strong><br>
+        &bull; <strong>(a) [B] Proper fraction</strong> <br>
+        <em>Reason:</em> By definition, when numerator &lt; denominator.<br>
+        &bull; <strong>(b) [A] <span class="frac"><span class="top">7</span><span class="bottom">4</span></span></strong> <br>
+        <em>Reason:</em> Reciprocal swaps numerator &amp; denominator.<br>
+        &bull; <strong>(c) [B] &minus;7</strong> <br>
+        <em>Reason:</em> The numerical factor multiplying <span class="math-sym">x</span>&sup2; is &minus;7.<br>
+        &bull; <strong>(d) [C] 4<span class="math-sym">x</span><span class="math-sym">y</span> and &minus;9<span class="math-sym">y</span><span class="math-sym">x</span></strong> <br>
+        <em>Reason:</em> <span class="math-sym">x</span><span class="math-sym">y</span> = <span class="math-sym">y</span><span class="math-sym">x</span> (commutative). Same variables &amp; degree!
+      </div>
+
+      <div>
+        <strong>Q2. Fill in the Blanks:</strong><br>
+        &bull; <strong>(a) Variable (or Literal number)</strong> <br>
+        <em>Reason:</em> It varies in value.<br>
+        &bull; <strong>(b) <span class="frac"><span class="top">17</span><span class="bottom">5</span></span></strong> <br>
+        <em>Working:</em> (3 &times; 5 + 2) / 5 = (15 + 2) / 5 = 17/5.<br>
+        &bull; <strong>(c) Binomial</strong> <br>
+        <em>Reason:</em> 'Bi' means two terms (e.g. 2<span class="math-sym">x</span> + 3).<br>
+        &bull; <strong>(d) <span class="frac"><span class="top">3</span><span class="bottom">4</span></span></strong> <br>
+        <em>Working:</em> HCF of 18 and 24 is 6. 18&divide;6 = 3, 24&divide;6 = 4.
+      </div>
+
+      <div>
+        <strong>Q3. True or False:</strong><br>
+        &bull; <strong>(a) TRUE</strong> <br>
+        <em>Rule:</em> <span class="frac"><span class="top"><span class="math-sym">a</span></span><span class="bottom"><span class="math-sym">b</span></span></span> &times; <span class="frac"><span class="top"><span class="math-sym">c</span></span><span class="bottom"><span class="math-sym">d</span></span></span> = <span class="frac"><span class="top"><span class="math-sym">a</span>&times;<span class="math-sym">c</span></span><span class="bottom"><span class="math-sym">b</span>&times;<span class="math-sym">d</span></span></span>.<br>
+        &bull; <strong>(b) FALSE</strong> <br>
+        <em>Reason:</em> 7<span class="math-sym">x</span> has variable <span class="math-sym">x</span>; 7 is a pure constant.<br>
+        &bull; <strong>(c) TRUE</strong> <br>
+        <em>Working:</em> <span class="math-sym">x</span> = 5 &times; 4 = 20.<br>
+        &bull; <strong>(d) FALSE</strong> <br>
+        <em>Reason:</em> Denominators are equal; 3 &lt; 5, so <span class="frac"><span class="top">3</span><span class="bottom">7</span></span> &lt; <span class="frac"><span class="top">5</span><span class="bottom">7</span></span>.
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Perfect Mathematics - Class 5 Master Study Guide & Full Solutions</span>
+    <span>Page 1 of 3</span>
+    <span>Nepali-Oriented School &bull; Japan</span>
+  </div>
+
+  <!-- ================= PAGE 2 ================= -->
+  <div class="page-break"></div>
+
+  <div class="header-box" style="padding: 6px 12px; margin-bottom: 8px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; font-weight: 700; color: #1e3a8a;">
+      <span>CLASS 5 MATHEMATICS &bull; WORKED SOLUTIONS</span>
+      <span>SECTIONS B & C FULL BREAKDOWN</span>
+      <span>PERFECT MATHEMATICS (CDC NEPAL)</span>
+    </div>
+  </div>
+
+  <!-- SECTION B SOLUTIONS -->
+  <div class="section-title">
+    <span>SECTION B: Fractions & Algebra Working Problems (Q4 to Q8)</span>
+    <span>[20 Marks]</span>
+  </div>
+
+  <!-- Q4 & Q5 -->
+  <div class="grid-2col">
+    <!-- Q4 -->
+    <div class="sol-card">
+      <div class="sol-header">
+        <span>Q4. Simplification &amp; Conversion</span>
+        <span class="points">4 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>(a) Convert <span class="frac"><span class="top">29</span><span class="bottom">6</span></span> into Mixed Fraction:</strong><br>
+        &bull; Divide 29 by 6: 29 &divide; 6 = 4 with a remainder of 5.<br>
+        &bull; Quotient = 4, Remainder = 5, Divisor = 6.<br>
+        <span class="ans-highlight">Answer: <span class="mixed-frac">4<span class="frac"><span class="top">5</span><span class="bottom">6</span></span></span></span>
+      </div>
+      <div class="step-box" style="margin-top: 6px;">
+        <strong>(b) Reduce <span class="frac"><span class="top">36</span><span class="bottom">48</span></span> to Lowest Terms:</strong><br>
+        &bull; Find HCF of 36 and 48:<br>
+        &nbsp;&nbsp;Factors of 36 = {1, 2, 3, 4, 6, 9, 12, 18, 36}<br>
+        &nbsp;&nbsp;Factors of 48 = {1, 2, 3, 4, 6, 8, 12, 16, 24, 48}<br>
+        &nbsp;&nbsp;Highest Common Factor (HCF) = 12.<br>
+        &bull; Divide both numerator and denominator by 12:<br>
+        &nbsp;&nbsp;<span class="frac"><span class="top">36 &divide; 12</span><span class="bottom">48 &divide; 12</span></span> = <span class="frac"><span class="top">3</span><span class="bottom">4</span></span>.<br>
+        <span class="ans-highlight">Answer: <span class="frac"><span class="top">3</span><span class="bottom">4</span></span></span>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="sol-card">
+      <div class="sol-header">
+        <span>Q5. Comparison &amp; Ascending Order</span>
+        <span class="points">4 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>(a) Compare <span class="frac"><span class="top">5</span><span class="bottom">8</span></span> and <span class="frac"><span class="top">7</span><span class="bottom">12</span></span>:</strong><br>
+        &bull; <em>Method 1 (LCM of 8 and 12 = 24):</em><br>
+        &nbsp;&nbsp;<span class="frac"><span class="top">5 &times; 3</span><span class="bottom">8 &times; 3</span></span> = <span class="frac"><span class="top">15</span><span class="bottom">24</span></span> &nbsp;&nbsp;|&nbsp;&nbsp; <span class="frac"><span class="top">7 &times; 2</span><span class="bottom">12 &times; 2</span></span> = <span class="frac"><span class="top">14</span><span class="bottom">24</span></span><br>
+        &nbsp;&nbsp;Since 15 &gt; 14, <span class="frac"><span class="top">15</span><span class="bottom">24</span></span> &gt; <span class="frac"><span class="top">14</span><span class="bottom">24</span></span>.<br>
+        &bull; <em>Method 2 (Cross-Multiplication):</em><br>
+        &nbsp;&nbsp;5 &times; 12 = 60 and 8 &times; 7 = 56. Since 60 &gt; 56:<br>
+        <span class="ans-highlight">Answer: <span class="frac"><span class="top">5</span><span class="bottom">8</span></span> &gt; <span class="frac"><span class="top">7</span><span class="bottom">12</span></span></span>
+      </div>
+      <div class="step-box" style="margin-top: 6px;">
+        <strong>(b) Ascending Order of <span class="frac"><span class="top">2</span><span class="bottom">3</span></span>, <span class="frac"><span class="top">5</span><span class="bottom">6</span></span>, <span class="frac"><span class="top">7</span><span class="bottom">12</span></span>:</strong><br>
+        &bull; LCM of denominators (3, 6, 12) = 12.<br>
+        &nbsp;&nbsp;<span class="frac"><span class="top">2</span><span class="bottom">3</span></span> = <span class="frac"><span class="top">2 &times; 4</span><span class="bottom">3 &times; 4</span></span> = <span class="frac"><span class="top">8</span><span class="bottom">12</span></span><br>
+        &nbsp;&nbsp;<span class="frac"><span class="top">5</span><span class="bottom">6</span></span> = <span class="frac"><span class="top">5 &times; 2</span><span class="bottom">6 &times; 2</span></span> = <span class="frac"><span class="top">10</span><span class="bottom">12</span></span><br>
+        &nbsp;&nbsp;<span class="frac"><span class="top">7</span><span class="bottom">12</span></span> = <span class="frac"><span class="top">7 &times; 1</span><span class="bottom">12 &times; 1</span></span> = <span class="frac"><span class="top">7</span><span class="bottom">12</span></span><br>
+        &bull; Comparing numerators: 7 &lt; 8 &lt; 10.<br>
+        <span class="ans-highlight">Answer: <span class="frac"><span class="top">7</span><span class="bottom">12</span></span> &lt; <span class="frac"><span class="top">2</span><span class="bottom">3</span></span> &lt; <span class="frac"><span class="top">5</span><span class="bottom">6</span></span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 & Q7 -->
+  <div class="grid-2col">
+    <!-- Q6 -->
+    <div class="sol-card">
+      <div class="sol-header">
+        <span>Q6. Addition &amp; Subtraction of Fractions</span>
+        <span class="points">4 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>(a) <span class="frac"><span class="top">3</span><span class="bottom">4</span></span> + <span class="frac"><span class="top">5</span><span class="bottom">6</span></span>:</strong><br>
+        &bull; LCM of 4 and 6 = 12.<br>
+        &bull; Convert: <span class="frac"><span class="top">3 &times; 3</span><span class="bottom">4 &times; 3</span></span> + <span class="frac"><span class="top">5 &times; 2</span><span class="bottom">6 &times; 2</span></span> = <span class="frac"><span class="top">9</span><span class="bottom">12</span></span> + <span class="frac"><span class="top">10</span><span class="bottom">12</span></span><br>
+        &bull; Add numerators: <span class="frac"><span class="top">9 + 10</span><span class="bottom">12</span></span> = <span class="frac"><span class="top">19</span><span class="bottom">12</span></span>.<br>
+        &bull; Mixed form: 19 &divide; 12 = 1 remainder 7.<br>
+        <span class="ans-highlight">Answer: <span class="mixed-frac">1<span class="frac"><span class="top">7</span><span class="bottom">12</span></span></span> (or <span class="frac"><span class="top">19</span><span class="bottom">12</span></span>)</span>
+      </div>
+      <div class="step-box" style="margin-top: 6px;">
+        <strong>(b) <span class="mixed-frac">4<span class="frac"><span class="top">1</span><span class="bottom">2</span></span></span> &minus; <span class="mixed-frac">1<span class="frac"><span class="top">3</span><span class="bottom">5</span></span></span>:</strong><br>
+        &bull; Improper fractions: <span class="frac"><span class="top">9</span><span class="bottom">2</span></span> &minus; <span class="frac"><span class="top">8</span><span class="bottom">5</span></span>.<br>
+        &bull; LCM of 2 and 5 = 10.<br>
+        &bull; Equivalent: <span class="frac"><span class="top">9 &times; 5</span><span class="bottom">2 &times; 5</span></span> &minus; <span class="frac"><span class="top">8 &times; 2</span><span class="bottom">5 &times; 2</span></span> = <span class="frac"><span class="top">45</span><span class="bottom">10</span></span> &minus; <span class="frac"><span class="top">16</span><span class="bottom">10</span></span>.<br>
+        &bull; Subtract: <span class="frac"><span class="top">45 &minus; 16</span><span class="bottom">10</span></span> = <span class="frac"><span class="top">29</span><span class="bottom">10</span></span>.<br>
+        &bull; Mixed form: 29 &divide; 10 = 2 remainder 9.<br>
+        <span class="ans-highlight">Answer: <span class="mixed-frac">2<span class="frac"><span class="top">9</span><span class="bottom">10</span></span></span> (or <span class="frac"><span class="top">29</span><span class="bottom">10</span></span>)</span>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="sol-card">
+      <div class="sol-header">
+        <span>Q7. Multiplication &amp; Division of Fractions</span>
+        <span class="points">4 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>(a) <span class="frac"><span class="top">15</span><span class="bottom">16</span></span> &times; <span class="frac"><span class="top">8</span><span class="bottom">25</span></span>:</strong><br>
+        &bull; Cross-cancel 8 and 16 by 8: 8&divide;8=1, 16&divide;8=2.<br>
+        &bull; Cross-cancel 15 and 25 by 5: 15&divide;5=3, 25&divide;5=5.<br>
+        &bull; Multiply remaining: <span class="frac"><span class="top">3 &times; 1</span><span class="bottom">2 &times; 5</span></span> = <span class="frac"><span class="top">3</span><span class="bottom">10</span></span>.<br>
+        <span class="ans-highlight">Answer: <span class="frac"><span class="top">3</span><span class="bottom">10</span></span></span>
+      </div>
+      <div class="step-box" style="margin-top: 6px;">
+        <strong>(b) <span class="mixed-frac">3<span class="frac"><span class="top">3</span><span class="bottom">4</span></span></span> &divide; <span class="frac"><span class="top">5</span><span class="bottom">8</span></span>:</strong><br>
+        &bull; Convert mixed number: <span class="mixed-frac">3<span class="frac"><span class="top">3</span><span class="bottom">4</span></span></span> = <span class="frac"><span class="top">3&times;4 + 3</span><span class="bottom">4</span></span> = <span class="frac"><span class="top">15</span><span class="bottom">4</span></span>.<br>
+        &bull; Apply KCF (Multiply by reciprocal of <span class="frac"><span class="top">5</span><span class="bottom">8</span></span> which is <span class="frac"><span class="top">8</span><span class="bottom">5</span></span>):<br>
+        &nbsp;&nbsp;<span class="frac"><span class="top">15</span><span class="bottom">4</span></span> &times; <span class="frac"><span class="top">8</span><span class="bottom">5</span></span><br>
+        &bull; Cross-cancel: 15 and 5 by 5 &rarr; 3 and 1; 8 and 4 by 4 &rarr; 2 and 1.<br>
+        &bull; Result = <span class="frac"><span class="top">3 &times; 2</span><span class="bottom">1 &times; 1</span></span> = 6.<br>
+        <span class="ans-highlight">Answer: 6 (Whole Number)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="sol-card">
+    <div class="sol-header">
+      <span>Q8. Algebraic Expressions: Combining Like Terms &amp; Subtraction</span>
+      <span class="points">4 Marks</span>
+    </div>
+    <div class="grid-2col">
+      <div class="step-box">
+        <strong>(a) Simplify: 7<span class="math-sym">x</span> + 5<span class="math-sym">y</span> &minus; 3<span class="math-sym">x</span> + 4<span class="math-sym">y</span> + 8</strong><br>
+        &bull; <em>Step 1: Group like terms together:</em><br>
+        &nbsp;&nbsp;= (7<span class="math-sym">x</span> &minus; 3<span class="math-sym">x</span>) + (5<span class="math-sym">y</span> + 4<span class="math-sym">y</span>) + 8<br>
+        &bull; <em>Step 2: Combine coefficients:</em><br>
+        &nbsp;&nbsp;= (7 &minus; 3)<span class="math-sym">x</span> + (5 + 4)<span class="math-sym">y</span> + 8<br>
+        &nbsp;&nbsp;= 4<span class="math-sym">x</span> + 9<span class="math-sym">y</span> + 8.<br>
+        <span class="ans-highlight">Answer: 4<span class="math-sym">x</span> + 9<span class="math-sym">y</span> + 8</span>
+      </div>
+
+      <div class="step-box">
+        <strong>(b) Subtract (3<span class="math-sym">a</span> &minus; 4<span class="math-sym">b</span>) from (8<span class="math-sym">a</span> + 2<span class="math-sym">b</span>):</strong><br>
+        &bull; <em>Step 1: Write expression with brackets:</em><br>
+        &nbsp;&nbsp;(8<span class="math-sym">a</span> + 2<span class="math-sym">b</span>) &minus; (3<span class="math-sym">a</span> &minus; 4<span class="math-sym">b</span>)<br>
+        &bull; <em>Step 2: Remove brackets (distribute minus sign):</em><br>
+        &nbsp;&nbsp;= 8<span class="math-sym">a</span> + 2<span class="math-sym">b</span> &minus; 3<span class="math-sym">a</span> + 4<span class="math-sym">b</span> &nbsp;&nbsp;<em>(&minus; &times; &minus; becomes +!)</em><br>
+        &bull; <em>Step 3: Combine like terms:</em><br>
+        &nbsp;&nbsp;= (8<span class="math-sym">a</span> &minus; 3<span class="math-sym">a</span>) + (2<span class="math-sym">b</span> + 4<span class="math-sym">b</span>) = 5<span class="math-sym">a</span> + 6<span class="math-sym">b</span>.<br>
+        <span class="ans-highlight">Answer: 5<span class="math-sym">a</span> + 6<span class="math-sym">b</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Perfect Mathematics - Class 5 Master Study Guide & Full Solutions</span>
+    <span>Page 2 of 3</span>
+    <span>Nepali-Oriented School &bull; Japan</span>
+  </div>
+
+  <!-- ================= PAGE 3 ================= -->
+  <div class="page-break"></div>
+
+  <div class="header-box" style="padding: 6px 12px; margin-bottom: 8px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 8.5pt; font-weight: 700; color: #1e3a8a;">
+      <span>CLASS 5 MATHEMATICS &bull; WORKED SOLUTIONS</span>
+      <span>SECTION C: EVALUATION, EQUATIONS & WORD PROBLEMS</span>
+      <span>PERFECT MATHEMATICS (CDC NEPAL)</span>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>SECTION C: Long Answer, Equations & Word Problems (Q9 to Q12)</span>
+    <span>[18 Marks]</span>
+  </div>
+
+  <!-- Q9 & Q10 -->
+  <div class="grid-2col">
+    <!-- Q9 -->
+    <div class="sol-card amber-left">
+      <div class="sol-header">
+        <span>Q9. Substitution and Evaluation</span>
+        <span class="points">5 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>(a) Evaluate 3<span class="math-sym">p</span>&sup2; &minus; 2<span class="math-sym">q</span> + 7 when <span class="math-sym">p</span> = 4, <span class="math-sym">q</span> = 3:</strong><br>
+        &bull; Substitute values: 3 &times; (4)&sup2; &minus; 2 &times; (3) + 7<br>
+        &bull; Powers first: (4)&sup2; = 16.<br>
+        &bull; Multiply: 3 &times; 16 = 48 &nbsp;&nbsp;|&nbsp;&nbsp; 2 &times; 3 = 6.<br>
+        &bull; Calculate: 48 &minus; 6 + 7 = 42 + 7 = 49.<br>
+        <span class="ans-highlight">Answer: 49</span>
+      </div>
+      <div class="step-box" style="margin-top: 6px;">
+        <strong>(b) Evaluate <span class="frac"><span class="top">4<span class="math-sym">x</span> + 6<span class="math-sym">y</span></span><span class="bottom">2<span class="math-sym">z</span></span></span> when <span class="math-sym">x</span> = 5, <span class="math-sym">y</span> = 2, <span class="math-sym">z</span> = 1:</strong><br>
+        &bull; Numerator: 4(5) + 6(2) = 20 + 12 = 32.<br>
+        &bull; Denominator: 2(1) = 2.<br>
+        &bull; Divide: <span class="frac"><span class="top">32</span><span class="bottom">2</span></span> = 16.<br>
+        <span class="ans-highlight">Answer: 16</span>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="sol-card amber-left">
+      <div class="sol-header">
+        <span>Q10. Solving Linear Equations</span>
+        <span class="points">5 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>(a) Solve &amp; Verify: 4<span class="math-sym">x</span> &minus; 7 = 17:</strong><br>
+        &bull; Transpose &minus;7 to RHS: 4<span class="math-sym">x</span> = 17 + 7 = 24.<br>
+        &bull; Transpose 4 to RHS: <span class="math-sym">x</span> = <span class="frac"><span class="top">24</span><span class="bottom">4</span></span> = 6.<br>
+        &bull; <em>Verification check:</em><br>
+        &nbsp;&nbsp;LHS = 4(6) &minus; 7 = 24 &minus; 7 = 17 = RHS (Verified &check;).<br>
+        <span class="ans-highlight">Answer: <span class="math-sym">x</span> = 6</span>
+      </div>
+      <div class="step-box" style="margin-top: 6px;">
+        <strong>(b) Solve: <span class="frac"><span class="top">3<span class="math-sym">m</span> + 5</span><span class="bottom">2</span></span> = 10:</strong><br>
+        &bull; Multiply both sides by 2: 3<span class="math-sym">m</span> + 5 = 10 &times; 2 = 20.<br>
+        &bull; Transpose +5 to RHS: 3<span class="math-sym">m</span> = 20 &minus; 5 = 15.<br>
+        &bull; Divide by 3: <span class="math-sym">m</span> = <span class="frac"><span class="top">15</span><span class="bottom">3</span></span> = 5.<br>
+        <span class="ans-highlight">Answer: <span class="math-sym">m</span> = 5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q11 & Q12 -->
+  <div class="grid-2col">
+    <!-- Q11 -->
+    <div class="sol-card">
+      <div class="sol-header">
+        <span>Q11. Word Problem: Age Problem in Algebra</span>
+        <span class="points">4 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>Question Summary:</strong> Mother is 3 times as old as son. Sum of ages = 48.<br>
+        &bull; <em>Step 1: Let the unknown variable:</em><br>
+        &nbsp;&nbsp;Let son's present age = <span class="math-sym">x</span> years.<br>
+        &nbsp;&nbsp;Then mother's age = 3 &times; <span class="math-sym">x</span> = 3<span class="math-sym">x</span> years.<br>
+        &bull; <em>Step 2: Form equation from condition:</em><br>
+        &nbsp;&nbsp;Son's age + Mother's age = 48<br>
+        &nbsp;&nbsp;<span class="math-sym">x</span> + 3<span class="math-sym">x</span> = 48<br>
+        &bull; <em>Step 3: Solve for x:</em><br>
+        &nbsp;&nbsp;4<span class="math-sym">x</span> = 48 &implies; <span class="math-sym">x</span> = <span class="frac"><span class="top">48</span><span class="bottom">4</span></span> = 12.<br>
+        &bull; <em>Step 4: Find both ages:</em><br>
+        &nbsp;&nbsp;Son's age = <span class="math-sym">x</span> = <strong>12 years</strong>.<br>
+        &nbsp;&nbsp;Mother's age = 3<span class="math-sym">x</span> = 3 &times; 12 = <strong>36 years</strong>.<br>
+        &bull; <em>Check:</em> 12 + 36 = 48 &check;.<br>
+        <span class="ans-highlight">Answer: Son = 12 years, Mother = 36 years</span>
+      </div>
+    </div>
+
+    <!-- Q12 -->
+    <div class="sol-card">
+      <div class="sol-header">
+        <span>Q12. Real-Life Problem: Tokyo Pocket Money Fractions</span>
+        <span class="points">4 Marks</span>
+      </div>
+      <div class="step-box">
+        <strong>Total Money: &yen;6,000</strong>. Spent <span class="frac"><span class="top">2</span><span class="bottom">5</span></span> on books &amp; <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> on travel/manga.<br>
+        &bull; <strong>(i) Total fraction spent:</strong><br>
+        &nbsp;&nbsp;= <span class="frac"><span class="top">2</span><span class="bottom">5</span></span> + <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> (LCM of 5 and 3 = 15)<br>
+        &nbsp;&nbsp;= <span class="frac"><span class="top">2 &times; 3</span><span class="bottom">15</span></span> + <span class="frac"><span class="top">1 &times; 5</span><span class="bottom">15</span></span> = <span class="frac"><span class="top">6 + 5</span><span class="bottom">15</span></span> = <span class="frac"><span class="top">11</span><span class="bottom">15</span></span>.<br>
+        <span class="ans-highlight">(i) Fraction spent = <span class="frac"><span class="top">11</span><span class="bottom">15</span></span></span><br><br>
+
+        &bull; <strong>(ii) Fraction left with him:</strong><br>
+        &nbsp;&nbsp;Total allowance is 1 whole (<span class="frac"><span class="top">15</span><span class="bottom">15</span></span>).<br>
+        &nbsp;&nbsp;Remaining = 1 &minus; <span class="frac"><span class="top">11</span><span class="bottom">15</span></span> = <span class="frac"><span class="top">15 &minus; 11</span><span class="bottom">15</span></span> = <span class="frac"><span class="top">4</span><span class="bottom">15</span></span>.<br>
+        <span class="ans-highlight">(ii) Fraction left = <span class="frac"><span class="top">4</span><span class="bottom">15</span></span></span><br><br>
+
+        &bull; <strong>(iii) Actual money saved in Yen:</strong><br>
+        &nbsp;&nbsp;Amount saved = <span class="frac"><span class="top">4</span><span class="bottom">15</span></span> of &yen;6,000<br>
+        &nbsp;&nbsp;= <span class="frac"><span class="top">4</span><span class="bottom">15</span></span> &times; 6,000 = 4 &times; (6,000 &divide; 15) = 4 &times; 400 = <strong>&yen;1,600</strong>.<br>
+        <span class="ans-highlight">(iii) Money Saved = &yen;1,600</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 3: PARENT & TUTOR COACHING TIPS -->
+  <div class="concept-card" style="margin-top: 6px;">
+    <h3><span>&starf; Parent &amp; Tutor Teaching Master Tips (Class 5 Math in Japan)</span> <span class="tag">Teacher's Note</span></h3>
+    <div class="grid-2col" style="font-size: 8pt; line-height: 1.35;">
+      <div>
+        <strong>&bull; Top Mistake in Fractions:</strong> Students often add numerators and denominators straight across (e.g. thinking <span class="frac"><span class="top">1</span><span class="bottom">2</span></span> + <span class="frac"><span class="top">1</span><span class="bottom">3</span></span> = <span class="frac"><span class="top">2</span><span class="bottom">5</span></span>). Remind them: <em>"You cannot add slices of pizza unless they are the same size! LCM makes the slices equal first."</em><br>
+        <strong>&bull; Division of Fractions:</strong> Remind them the catchy phrase: <em>"Keep the first, change to multiply, flip the second upside down!"</em>
+      </div>
+      <div>
+        <strong>&bull; Top Mistake in Algebra:</strong> In subtraction, students forget to change the sign of the second term: e.g. &minus;(3<span class="math-sym">a</span> &minus; 4<span class="math-sym">b</span>) becomes &minus;3<span class="math-sym">a</span> <strong>+ 4<span class="math-sym">b</span></strong>.<br>
+        <strong>&bull; Linear Equations:</strong> Teach the "Bridge Rule" across the equal sign (=): <em>"Whenever a number jumps over the bridge (=), it changes its outfit (sign): + becomes &minus;, &times; becomes &divide;."</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>&copy; Perfect Mathematics &bull; Class 5 Study Guide & Complete Solutions</span>
+    <span>Page 3 of 3 &bull; COMPLETE MASTER RESOURCE</span>
+    <span>Nepali-Oriented School &bull; Japan</span>
+  </div>
+
+</body>
+</html>

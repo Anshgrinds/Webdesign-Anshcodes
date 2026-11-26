@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 Computer Science - Master Study Guide & Complete Solutions</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Liberation Sans", Arial, sans-serif;
+      color: #0f172a;
+      line-height: 1.45;
+      font-size: 9.2pt;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    /* Header */
+    .header-box {
+      border: 2px solid #047857;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: #ecfdf5;
+      margin-bottom: 8px;
+    }
+    .guide-title {
+      font-size: 14pt;
+      font-weight: 800;
+      color: #065f46;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .guide-subtitle {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #047857;
+      margin-top: 2px;
+    }
+    .guide-tagline {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #064e3b;
+      margin-top: 2px;
+    }
+
+    /* Section Banner */
+    .section-header {
+      background: #047857;
+      color: #ffffff;
+      font-size: 10pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+    .badge {
+      background: #ffffff;
+      color: #047857;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-size: 8.5pt;
+      font-weight: 800;
+    }
+
+    /* Chapter Card */
+    .chap-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #059669;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .chap-title {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 10pt;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .chap-content {
+      font-size: 8.8pt;
+      color: #1e293b;
+      line-height: 1.45;
+    }
+    .chap-content ul {
+      padding-left: 18px;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
+    .chap-content li {
+      margin-bottom: 2px;
+    }
+
+    /* Solution Box */
+    .sol-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 6px 10px;
+      margin-bottom: 6px;
+      page-break-inside: avoid;
+    }
+    .sol-q {
+      font-weight: 700;
+      color: #1e3a8a;
+      font-size: 9pt;
+      margin-bottom: 2px;
+    }
+    .sol-ans {
+      font-size: 8.8pt;
+      color: #0f172a;
+    }
+    .highlight {
+      background: #fef08a;
+      padding: 0 4px;
+      border-radius: 2px;
+      font-weight: 700;
+      color: #854d0e;
+    }
+    .mark-tag {
+      font-weight: 700;
+      color: #047857;
+      font-size: 8.2pt;
+      float: right;
+    }
+
+    /* Tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0;
+      font-size: 8.5pt;
+    }
+    .data-table th {
+      background: #d1fae5;
+      border: 1px solid #6ee7b7;
+      padding: 4px 6px;
+      text-align: left;
+      font-weight: 700;
+      color: #064e3b;
+    }
+    .data-table td {
+      border: 1px solid #a7f3d0;
+      padding: 4px 6px;
+      color: #1e293b;
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) {
+      background: #f0fdf4;
+    }
+
+    /* Key Callout */
+    .callout {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 6px 10px;
+      margin: 6px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 8.6pt;
+    }
+    .callout-title {
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-bottom: 2px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header-box">
+    <div class="guide-title">Master Study Guide & Complete Solutions &bull; Grade 5 Computers</div>
+    <div class="guide-subtitle">Textbook: Innovative Computer Science &bull; 8 Core Chapters Masterclass</div>
+    <div class="guide-tagline">Comprehensive Chapter Revisions, Comparison Tables, Marking Keys & Model Exam Solutions</div>
+  </div>
+
+  <!-- SECTION 1: MASTER REVISION SUMMARY -->
+  <div class="section-header">
+    <span>PART 1: CHAPTER-BY-CHAPTER REVISION MASTERCLASS</span>
+    <span class="badge">SYLLABUS CORE</span>
+  </div>
+
+  <!-- CHAP 1 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 1: Computer Fundamental</span>
+      <span>IPO Cycle &amp; Characteristics</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>Definition:</strong> A computer is an electronic device that accepts raw <em>Data</em> as input, processes it according to stored instructions, and produces meaningful <em>Information</em> as output.</li>
+        <li><strong>IPO Cycle:</strong> <strong>Input</strong> (Data entered via keyboard/mouse) &rarr; <strong>Process</strong> (CPU performs arithmetic/logic) &rarr; <strong>Output</strong> (Result displayed on monitor or printed on paper).</li>
+        <li><strong>Key Characteristics:</strong>
+          <ul>
+            <li><em>Speed:</em> Performs millions of calculations in fractions of a second (nanoseconds/microseconds).</li>
+            <li><em>Accuracy:</em> Gives 100% accurate results. Errors occur only if wrong input is provided (<strong>GIGO</strong> = <em>Garbage In, Garbage Out</em>).</li>
+            <li><em>Diligence:</em> Never gets tired, bored, or loses concentration even after continuous hours of work.</li>
+            <li><em>Versatility:</em> Can perform diverse tasks (typing essays, playing games, playing music, drawing).</li>
+            <li><em>Storage:</em> Can store huge volumes of data permanently in secondary storage.</li>
+            <li><em>Limitations:</em> Zero IQ (No Intelligence Quotient), cannot think on its own, and has no human feelings or emotions.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHAP 2 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 2: Computer System</span>
+      <span>Hardware, Software &amp; Liveware</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>Definition:</strong> A computer system is an integrated set of functional components working harmoniously to process data into information.</li>
+        <li><strong>Five Essential Components of a Computer System:</strong>
+          <ol>
+            <li><strong>Hardware:</strong> Tangible physical components you can see and touch (Keyboard, CPU box, Monitor, Mouse).</li>
+            <li><strong>Software:</strong> Intangible set of programs and instructions that tell the hardware what to do (Windows, MS Paint).</li>
+            <li><strong>Data:</strong> Raw, unorganized facts, letters, symbols, or numbers fed into the computer.</li>
+            <li><strong>Liveware (Humanware):</strong> The people who operate, program, or manage the computer system (Users, Programmers).</li>
+            <li><strong>Procedures:</strong> Step-by-step rules and guidelines governing the usage and operations of the computer system.</li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHAP 3 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 3: Computer Hardware</span>
+      <span>Input, Processing (CPU), Output &amp; Memory</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>Input Devices:</strong> Keyboard (104+ keys, Function F1-F12), Optical Mouse (Left/Right click, Scroll), Scanner (flatbed, converts hardcopy to digital image), Microphone (audio voice input), Web Camera (live video input), Barcode Reader, Light Pen.</li>
+        <li><strong>Central Processing Unit (CPU) — "Brain of the Computer":</strong>
+          <ul>
+            <li><strong>ALU (Arithmetic Logic Unit):</strong> Carries out arithmetic operations (+, -, &times;, &divide;) and logical decisions (&lt;, &gt;, =).</li>
+            <li><strong>CU (Control Unit):</strong> Acts as the "Traffic Police" of the system; directs and coordinates all hardware activities.</li>
+            <li><strong>MU (Memory Unit / Registers):</strong> Holds data and instructions currently being processed by the CPU.</li>
+          </ul>
+        </li>
+        <li><strong>Output Devices:</strong>
+          <ul>
+            <li><strong>Monitor (VDU):</strong> Displays soft copy. Types: CRT (bulky vacuum tubes), LCD (flat, energy-saving), LED (sharper, modern).</li>
+            <li><strong>Printer:</strong> Produces permanent hard copy on paper.
+              <ul>
+                <li><em>Impact Printers:</em> Strike ribbon physically against paper (e.g., <strong>Dot Matrix Printer</strong> — noisy, low cost).</li>
+                <li><em>Non-Impact Printers:</em> No physical strike. <strong>Inkjet Printer</strong> (sprays liquid ink droplets) and <strong>Laser Printer</strong> (uses laser beam &amp; dry toner powder; fastest and crispest).</li>
+              </ul>
+            </li>
+            <li><strong>Plotter:</strong> Prints high-precision, large-format engineering blueprints, architectural maps, and giant banners.</li>
+            <li><strong>Speakers &amp; Headphones:</strong> Audio/sound output.</li>
+          </ul>
+        </li>
+        <li><strong>Computer Memory Architecture:</strong>
+          <ul>
+            <li><strong>Primary Memory (Main Memory):</strong> Directly accessible by CPU.
+              <ul>
+                <li><strong>RAM (Random Access Memory):</strong> Read and Write, <em>Volatile</em> (erased when electricity turns off).</li>
+                <li><strong>ROM (Read Only Memory):</strong> Permanent, <em>Non-Volatile</em>, contains startup booting instructions (BIOS).</li>
+              </ul>
+            </li>
+            <li><strong>Secondary Storage:</strong> Permanent external storage. Hard Disk Drive (HDD), Solid State Drive (SSD), USB Pen Drive, Compact Disc (CD: 700 MB), Digital Versatile Disc (DVD: 4.7 GB), Blu-ray (25&ndash;50 GB), Memory Card.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHAP 4 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 4: Computer Software</span>
+      <span>System Software vs. Application Software</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>System Software:</strong> Controls the internal operations of computer hardware.
+          <ul>
+            <li><strong>Operating System (OS):</strong> The master software that acts as a bridge/interface between the user and hardware (Windows 11, macOS, Linux, Android). Manages memory, processor, files, and connected devices.</li>
+            <li><strong>Device Drivers:</strong> Special programs that allow the OS to communicate with specific hardware (printer drivers, sound drivers).</li>
+            <li><strong>Utility Software:</strong> Maintenance and health tools: <em>Antivirus</em> (Windows Defender, Quick Heal, Norton), <em>Disk Cleanup</em>, <em>Disk Defragmenter</em>, <em>Compression tools</em> (WinRAR).</li>
+          </ul>
+        </li>
+        <li><strong>Application Software:</strong> Designed to perform specific user-requested tasks.
+          <ul>
+            <li><strong>General-Purpose Software:</strong> Packaged software used by the public: Word Processors (MS Word), Spreadsheets (MS Excel), Graphics (MS Paint, Photoshop), Presentation (MS PowerPoint).</li>
+            <li><strong>Customized / Specific-Purpose Software:</strong> Specially built for specific organizations: School billing software, Hospital patient management, Airline ticket reservation systems.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- CHAP 5 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 5: Types of Digital Computers</span>
+      <span>Classification by Size, Speed &amp; Capacity</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>1. Supercomputer:</strong> The largest, fastest, and most expensive computers on Earth. Can execute billions of calculations per second. Used for weather forecasting, space exploration (NASA/ISRO), satellite tracking, and atomic simulations. Examples: <em>Frontier, Fugaku, PARAM Shivay</em>.</li>
+        <li><strong>2. Mainframe Computer:</strong> Very large and powerful multi-user computers. Can support thousands of users simultaneously. Used by commercial banks, airline booking centers, and government census departments. Example: <em>IBM Z-Series</em>.</li>
+        <li><strong>3. Minicomputer:</strong> Mid-sized multi-user computer, more powerful than a PC but smaller than a mainframe. Used in university laboratories and manufacturing factories. Examples: <em>PDP-11, VAX</em>.</li>
+        <li><strong>4. Microcomputer (Personal Computer / PC):</strong> The most widely used single-user computer powered by a single microprocessor chip. Types:
+          <ul>
+            <li><em>Desktop Computer:</em> Placed on a desk; has separate monitor, CPU box, keyboard, and mouse.</li>
+            <li><em>Laptop (Notebook):</em> Lightweight, portable computer with integrated screen, keyboard, touchpad, and rechargeable battery.</li>
+            <li><em>Tablet PC:</em> Slate-like device operated by finger touch or digital stylus.</li>
+            <li><em>Smartphone:</em> Handheld pocket device combining cellular telephone with high-speed internet and computing apps.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHAP 6 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 6: The Internet and its Services</span>
+      <span>Networking, Terminology &amp; Cyber Safety</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>Definition of Internet:</strong> The global network of millions of interconnected computers across the world ("Network of Networks").</li>
+        <li><strong>Essential Terminology:</strong>
+          <ul>
+            <li><strong>WWW (World Wide Web):</strong> A vast collection of linked multimedia documents and pages on the internet. Invented by <em>Tim Berners-Lee</em> in 1989.</li>
+            <li><strong>Web Page:</strong> A digital electronic page written in HTML containing text, pictures, videos, and links.</li>
+            <li><strong>Website:</strong> A collection of related web pages under a shared address (e.g., <code>www.google.com</code>).</li>
+            <li><strong>Home Page:</strong> The introductory or main first page of any website.</li>
+            <li><strong>URL (Uniform Resource Locator):</strong> The unique web address of a specific page or site.</li>
+            <li><strong>Web Browser:</strong> Software program used to open and navigate web pages (Brave, Chrome, Edge, Firefox, Safari).</li>
+            <li><strong>Search Engine:</strong> A website tool used to search information using keywords (Google, Bing, Yahoo).</li>
+            <li><strong>ISP (Internet Service Provider):</strong> Company providing internet connections (WorldLink, Nepal Telecom, Subisu).</li>
+          </ul>
+        </li>
+        <li><strong>Major Services:</strong> E-mail (Electronic Mail: To, Cc, Bcc, Subject, Attachment), E-Commerce (Online shopping: Daraz, Amazon), E-Banking (eSewa, Khalti), Video Calling (Zoom, Google Meet), Cloud Storage (Google Drive).</li>
+        <li><strong>Netiquette &amp; Cyber Safety for Grade 5:</strong> Never share real passwords, home address, or phone number with strangers online; be polite in chat; inform parents/teachers if someone makes you uncomfortable online.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHAP 7 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 7: Multimedia</span>
+      <span>Elements, Applications &amp; Hardware</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>Definition:</strong> Formed from <em>Multi</em> (many) and <em>Media</em> (medium of communication). Multimedia is the computer-controlled combination of multiple media elements into a unified interactive presentation.</li>
+        <li><strong>Five Essential Elements of Multimedia:</strong>
+          <ol>
+            <li><strong>Text:</strong> Words, numbers, headings, and character descriptions.</li>
+            <li><strong>Audio (Sound):</strong> Music, speech, narration, and audio sound effects.</li>
+            <li><strong>Graphics (Images):</strong> Photographs, diagrams, drawings, and charts (JPEG, PNG).</li>
+            <li><strong>Video:</strong> Continuous photographic frames recorded in real life with audio (MP4).</li>
+            <li><strong>Animation:</strong> Illusion of movement created by playing a rapid sequence of drawn still pictures.</li>
+          </ol>
+        </li>
+        <li><strong>Key Applications:</strong>
+          <ul>
+            <li><em>Education:</em> Smart classes, interactive animated science CD-ROMs, virtual encyclopedias.</li>
+            <li><em>Entertainment:</em> 3D cartoon movies (Disney/Pixar), video games, music streaming.</li>
+            <li><em>Advertising:</em> TV commercials, interactive digital product banners.</li>
+            <li><em>Medicine:</em> 3D surgery simulations and human anatomy modeling for training doctors.</li>
+          </ul>
+        </li>
+        <li><strong>Multimedia Hardware:</strong> Fast CPU, Color Monitor, Graphics Card, Sound Card, Speakers/Headphones, Microphone, Web Camera.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CHAP 8 -->
+  <div class="chap-card">
+    <div class="chap-title">
+      <span>Chapter 8: Fun with Paint (MS Paint)</span>
+      <span>Tools, Brushes, Selection &amp; Transformations</span>
+    </div>
+    <div class="chap-content">
+      <ul>
+        <li><strong>Introduction:</strong> A drawing and painting program included in Microsoft Windows.</li>
+        <li><strong>Main Window Components:</strong> Title Bar, Quick Access Toolbar, Ribbon (Home and View Tabs), Canvas (Drawing Area), Color Palette (Color 1 = Foreground, Color 2 = Background), Status Bar.</li>
+        <li><strong>Key Tools:</strong>
+          <ul>
+            <li><em>Pencil:</em> Freehand thin line drawing.</li>
+            <li><em>Fill with Color (Paint Bucket):</em> Fills an enclosed shape with Color 1. (<strong>Note:</strong> If the shape has any tiny gap or leak, the color spills over the whole canvas!).</li>
+            <li><em>Text Tool (A):</em> Adds typed words with font styles.</li>
+            <li><em>Eraser:</em> Cleans drawing area with Color 2. (Shortcut: <code>Ctrl</code> + <code>+</code> enlarges eraser, <code>Ctrl</code> + <code>-</code> shrinks eraser).</li>
+            <li><em>Color Picker (Eyedropper):</em> Samples and selects an exact color from any part of the canvas.</li>
+            <li><em>Magnifier:</em> Zooms in on a specific area to inspect fine details.</li>
+          </ul>
+        </li>
+        <li><strong>Shapes &amp; Modifiers:</strong> Holding the <code>Shift</code> key while drawing forces shapes to form perfect squares, circles, or straight horizontal/vertical lines. Curve tool bends a line twice.</li>
+        <li><strong>Selection Tools:</strong>
+          <ul>
+            <li><em>Rectangular Selection:</em> Selects a neat box/rectangle.</li>
+            <li><em>Free-form Selection:</em> Selects an irregular, hand-drawn outline.</li>
+            <li><em>Transparent Selection:</em> Makes the white background transparent so underlying artwork remains visible.</li>
+          </ul>
+        </li>
+        <li><strong>Image Transformations:</strong> Rotate (90&deg;, 180&deg;), Flip Horizontal (mirror reflection left-right), Flip Vertical (upside-down), Resize &amp; Skew, Crop.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- SECTION 2: COMPLETE MODEL SOLUTIONS -->
+  <div class="section-header">
+    <span>PART 2: COMPLETE MODEL SOLUTIONS &amp; MARKING SCHEME</span>
+    <span class="badge">FULL MARKS: 50</span>
+  </div>
+
+  <!-- SOL Q1 -->
+  <div class="sol-card">
+    <div class="sol-q">Q1. Multiple Choice Solutions <span class="mark-tag">[10 &times; 1 = 10 Marks]</span></div>
+    <div class="sol-ans">
+      1. <strong>(B) I-P-O Cycle</strong> &bull; 
+      2. <strong>(B) CPU</strong> &bull; 
+      3. <strong>(B) RAM</strong> &bull; 
+      4. <strong>(B) Operating System</strong> &bull; 
+      5. <strong>(B) Supercomputers</strong><br>
+      6. <strong>(C) URL</strong> &bull; 
+      7. <strong>(B) Media</strong> &bull; 
+      8. <strong>(B) Shift key</strong> &bull; 
+      9. <strong>(C) Inkjet Printer</strong> &bull; 
+      10. <strong>(B) Antivirus Utility</strong>
+    </div>
+  </div>
+
+  <!-- SOL Q2 -->
+  <div class="sol-card">
+    <div class="sol-q">Q2. Fill in the Blanks Solutions <span class="mark-tag">[5 &times; 1 = 5 Marks]</span></div>
+    <div class="sol-ans">
+      a. The people who write computer programs or operate computers are called <span class="highlight">Liveware</span>.<br>
+      b. The computer principle which states incorrect inputs yield incorrect results is <span class="highlight">GIGO</span>.<br>
+      c. The full form of WWW stands for <span class="highlight">World Wide Web</span>.<br>
+      d. The rapid display of still images to create an illusion of real movement is <span class="highlight">Animation</span>.<br>
+      e. In MS Paint, the Color Picker tool is also popularly known as the <span class="highlight">Eyedropper</span> tool.
+    </div>
+  </div>
+
+  <!-- SOL Q3 -->
+  <div class="sol-card">
+    <div class="sol-q">Q3. True or False Solutions <span class="mark-tag">[5 &times; 1 = 5 Marks]</span></div>
+    <div class="sol-ans">
+      a. A computer has zero IQ and cannot take independent decisions without human instructions. &rarr; <span class="highlight">TRUE (T)</span><br>
+      b. A laser printer is an impact printer that uses ribbon and makes loud printing noise. &rarr; <span class="highlight">FALSE (F)</span> <em>(Explanation: Laser printer is a non-impact printer using dry toner)</em><br>
+      c. Application software can run smoothly on a computer even without any Operating System installed. &rarr; <span class="highlight">FALSE (F)</span> <em>(Explanation: Operating System is mandatory to run any application software)</em><br>
+      d. Brave, Google Chrome, and Mozilla Firefox are examples of web browsers. &rarr; <span class="highlight">TRUE (T)</span><br>
+      e. In MS Paint, Transparent Selection prevents the white background from hiding your drawing. &rarr; <span class="highlight">TRUE (T)</span>
+    </div>
+  </div>
+
+  <!-- SOL Q4 -->
+  <div class="sol-card">
+    <div class="sol-q">Q4. Matching Table Solutions <span class="mark-tag">[5 &times; 1 = 5 Marks]</span></div>
+    <div class="sol-ans">
+      1. <strong>Plotter</strong> &rarr; <strong>B.</strong> High-quality vector printing for large maps and banners<br>
+      2. <strong>Website</strong> &rarr; <strong>A.</strong> Collection of related interlinked web pages<br>
+      3. <strong>ROM</strong> &rarr; <strong>E.</strong> Non-volatile permanent memory containing startup BIOS<br>
+      4. <strong>Fill with Color Tool</strong> &rarr; <strong>C.</strong> Fills an entire enclosed shape with active color<br>
+      5. <strong>Laptop</strong> &rarr; <strong>D.</strong> Single-user portable computer with built-in battery
+    </div>
+  </div>
+
+  <!-- SOL Q5 -->
+  <div class="sol-card">
+    <div class="sol-q">Q5. Full Forms Solutions <span class="mark-tag">[5 &times; 1 = 5 Marks]</span></div>
+    <div class="sol-ans">
+      a. <strong>ALU</strong> : <span class="highlight">Arithmetic Logic Unit</span><br>
+      b. <strong>RAM</strong> : <span class="highlight">Random Access Memory</span><br>
+      c. <strong>ISP</strong> : <span class="highlight">Internet Service Provider</span><br>
+      d. <strong>URL</strong> : <span class="highlight">Uniform Resource Locator</span><br>
+      e. <strong>GUI</strong> : <span class="highlight">Graphical User Interface</span>
+    </div>
+  </div>
+
+  <!-- SOL Q6 -->
+  <div class="sol-card">
+    <div class="sol-q">Q6. Short Answers &amp; Marking Key <span class="mark-tag">[5 &times; 2 = 10 Marks]</span></div>
+    <div class="sol-ans">
+      <p style="margin-bottom:4px;"><strong>(a) What is a Computer? Name the three steps of the IPO cycle.</strong><br>
+      <em>Answer:</em> A computer is an electronic data processing machine that accepts raw data, processes it according to instructions, and generates meaningful information. The three steps of the IPO cycle are: <strong>Input</strong>, <strong>Process</strong>, and <strong>Output</strong>. <span class="mark-tag">[1 Mark Definition + 1 Mark Steps]</span></p>
+
+      <p style="margin-bottom:4px;"><strong>(b) What is an Operating System? Give two common examples.</strong><br>
+      <em>Answer:</em> An Operating System (OS) is the master system software that acts as an interface between the user and computer hardware, managing all hardware and software resources. Examples: <strong>Microsoft Windows 11</strong> and <strong>Google Android</strong> (or macOS/Linux). <span class="mark-tag">[1 Mark Definition + 1 Mark Examples]</span></p>
+
+      <p style="margin-bottom:4px;"><strong>(c) Mention any four major types of Digital Computers based on size and power.</strong><br>
+      <em>Answer:</em> The four major types of digital computers are: 1. <strong>Supercomputer</strong>, 2. <strong>Mainframe Computer</strong>, 3. <strong>Minicomputer</strong>, and 4. <strong>Microcomputer (PC)</strong>. <span class="mark-tag">[0.5 Mark each = 2 Marks]</span></p>
+
+      <p style="margin-bottom:4px;"><strong>(d) Name the five core elements that make up Multimedia.</strong><br>
+      <em>Answer:</em> The five core elements of multimedia are: 1. <strong>Text</strong>, 2. <strong>Audio (Sound)</strong>, 3. <strong>Graphics (Images)</strong>, 4. <strong>Video</strong>, and 5. <strong>Animation</strong>. <span class="mark-tag">[2 Marks for all 5 correct]</span></p>
+
+      <p><strong>(e) In MS Paint, how does Free-form Selection differ from Rectangular Selection?</strong><br>
+      <em>Answer:</em> <strong>Rectangular Selection</strong> selects an area in a straight, box-shaped rectangular boundary, whereas <strong>Free-form Selection</strong> allows the user to draw an irregular, custom curved outline around any specific object to select it. <span class="mark-tag">[1 Mark each definition = 2 Marks]</span></p>
+    </div>
+  </div>
+
+  <!-- SOL Q7 -->
+  <div class="sol-card">
+    <div class="sol-q">Q7. Differentiation Tables <span class="mark-tag">[2 &times; 3 = 6 Marks]</span></div>
+    <div class="sol-ans">
+      <strong>(a) Hardware vs. Software:</strong>
+      <table class="data-table">
+        <tr>
+          <th>Basis</th>
+          <th>Hardware</th>
+          <th>Software</th>
+        </tr>
+        <tr>
+          <td><strong>Physical Nature</strong></td>
+          <td>Physical and tangible parts of a computer that you can see and touch.</td>
+          <td>Set of programs and electronic instructions that cannot be physically touched.</td>
+        </tr>
+        <tr>
+          <td><strong>Examples</strong></td>
+          <td>Keyboard, Mouse, CPU, Monitor, Hard Disk, RAM.</td>
+          <td>Windows 11, MS Paint, MS Word, Web Browser, Antivirus.</td>
+        </tr>
+      </table>
+
+      <strong>(b) Web Browser vs. Search Engine:</strong>
+      <table class="data-table">
+        <tr>
+          <th>Basis</th>
+          <th>Web Browser</th>
+          <th>Search Engine</th>
+        </tr>
+        <tr>
+          <td><strong>Nature &amp; Purpose</strong></td>
+          <td>An application software installed on your computer used to open and view web pages.</td>
+          <td>A web-based service/website used to search and locate information across the internet.</td>
+        </tr>
+        <tr>
+          <td><strong>Examples</strong></td>
+          <td>Brave Browser, Google Chrome, Microsoft Edge, Firefox.</td>
+          <td>Google, Microsoft Bing, Yahoo Search, DuckDuckGo.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SOL Q8 -->
+  <div class="sol-card">
+    <div class="sol-q">Q8. Application &amp; Practical Problem Solutions <span class="mark-tag">[2 &times; 2 = 4 Marks]</span></div>
+    <div class="sol-ans">
+      <p style="margin-bottom:4px;"><strong>(a) Aarav's Paint Spillage Problem:</strong><br>
+      <em>Reason:</em> Aarav's roof drawing was not a completely closed shape; it had a tiny opening or leak, causing the color to spill out over the entire canvas.<br>
+      <em>Fix:</em> Aarav should immediately press <strong>Undo (Ctrl + Z)</strong> to reverse the spill, zoom in using the <strong>Magnifier tool</strong>, close the gap using the <strong>Pencil or Line tool</strong>, and then re-apply the Fill with Color tool. <span class="mark-tag">[1 Mark Reason + 1 Mark Fix]</span></p>
+
+      <p><strong>(b) Prakriti's Internet Service &amp; Safety:</strong><br>
+      <em>Service:</em> She should use <strong>Electronic Mail (E-mail)</strong> with an attachment (or cloud sharing).<br>
+      <em>Two Safety Rules:</em> 1. Never share sensitive personal details or passwords with unknown persons. 2. Never open email attachments or click links sent by strangers. <span class="mark-tag">[1 Mark Service + 1 Mark Safety]</span></p>
+    </div>
+  </div>
+
+  <!-- FAST REFERENCE TABLES -->
+  <div class="callout" style="margin-top:10px;">
+    <div class="callout-title">&star; Quick Memory Sheet: Essential Computer Abbreviations for Class 5</div>
+    <div style="font-size:8.3pt; color:#1e293b; display:grid; grid-template-columns: repeat(3, 1fr); gap:4px;">
+      <div>&bull; <strong>CPU:</strong> Central Processing Unit</div>
+      <div>&bull; <strong>ALU:</strong> Arithmetic Logic Unit</div>
+      <div>&bull; <strong>CU:</strong> Control Unit</div>
+      <div>&bull; <strong>RAM:</strong> Random Access Memory</div>
+      <div>&bull; <strong>ROM:</strong> Read Only Memory</div>
+      <div>&bull; <strong>VDU:</strong> Visual Display Unit</div>
+      <div>&bull; <strong>CRT:</strong> Cathode Ray Tube</div>
+      <div>&bull; <strong>LCD:</strong> Liquid Crystal Display</div>
+      <div>&bull; <strong>LED:</strong> Light Emitting Diode</div>
+      <div>&bull; <strong>HDD:</strong> Hard Disk Drive</div>
+      <div>&bull; <strong>SSD:</strong> Solid State Drive</div>
+      <div>&bull; <strong>CD:</strong> Compact Disc</div>
+      <div>&bull; <strong>DVD:</strong> Digital Versatile Disc</div>
+      <div>&bull; <strong>IPO:</strong> Input-Process-Output</div>
+      <div>&bull; <strong>GIGO:</strong> Garbage In, Garbage Out</div>
+      <div>&bull; <strong>OS:</strong> Operating System</div>
+      <div>&bull; <strong>GUI:</strong> Graphical User Interface</div>
+      <div>&bull; <strong>WWW:</strong> World Wide Web</div>
+      <div>&bull; <strong>URL:</strong> Uniform Resource Locator</div>
+      <div>&bull; <strong>ISP:</strong> Internet Service Provider</div>
+      <div>&bull; <strong>PC:</strong> Personal Computer</div>
+    </div>
+  </div>
+
+</body>
+</html>

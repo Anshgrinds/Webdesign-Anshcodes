@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 Vitamin & Mineral Master Chart - Diseases, Symptoms & Sources</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.35;
+      font-size: 9pt;
+      background: #ffffff;
+      padding: 2px;
+    }
+
+    /* Header */
+    .header-card {
+      border: 2px solid #0284c7;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      margin-bottom: 10px;
+    }
+    .header-badge {
+      display: inline-block;
+      background: #0284c7;
+      color: #ffffff;
+      font-size: 8pt;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-bottom: 4px;
+    }
+    .header-title {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #0369a1;
+      letter-spacing: 0.3px;
+    }
+    .header-sub {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #0284c7;
+      margin-top: 2px;
+    }
+
+    /* Grid for Vitamin Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .v-card {
+      border-radius: 6px;
+      border: 1.5px solid #cbd5e1;
+      padding: 7px 9px;
+      background: #ffffff;
+      page-break-inside: avoid;
+    }
+    .v-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-bottom: 5px;
+    }
+    .v-name {
+      font-size: 10.5pt;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .v-badge {
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* Specific Vitamin Card Accents */
+    .card-vit-a { border-color: #f97316; background: #fffaf5; }
+    .card-vit-a .v-name { color: #c2410c; }
+    .card-vit-a .v-badge { background: #ffedd5; color: #9a3412; }
+
+    .card-vit-b { border-color: #eab308; background: #fefce8; }
+    .card-vit-b .v-name { color: #a16207; }
+    .card-vit-b .v-badge { background: #fef9c3; color: #854d0e; }
+
+    .card-vit-c { border-color: #10b981; background: #f0fdf4; }
+    .card-vit-c .v-name { color: #047857; }
+    .card-vit-c .v-badge { background: #dcfce7; color: #166534; }
+
+    .card-vit-d { border-color: #3b82f6; background: #eff6ff; }
+    .card-vit-d .v-name { color: #1d4ed8; }
+    .card-vit-d .v-badge { background: #dbeafe; color: #1e40af; }
+
+    .card-vit-e { border-color: #ec4899; background: #fdf2f8; }
+    .card-vit-e .v-name { color: #be185d; }
+    .card-vit-e .v-badge { background: #fce7f3; color: #9d174d; }
+
+    .card-vit-k { border-color: #8b5cf6; background: #faf5ff; }
+    .card-vit-k .v-name { color: #6d28d9; }
+    .card-vit-k .v-badge { background: #ede9fe; color: #5b21b6; }
+
+    /* Card Details */
+    .detail-row {
+      margin-bottom: 4px;
+      font-size: 8.5pt;
+    }
+    .detail-label {
+      font-weight: 700;
+      color: #334155;
+      display: inline-block;
+      min-width: 85px;
+    }
+    .disease-tag {
+      font-weight: 800;
+      color: #b91c1c;
+      background: #fee2e2;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 8.5pt;
+    }
+    .sources-list {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Master Table */
+    .table-section-title {
+      background: #0369a1;
+      color: #ffffff;
+      font-size: 9.5pt;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      margin-bottom: 8px;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 7px;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* Bonus Minerals Card */
+    .minerals-box {
+      border: 1.5px solid #0f766e;
+      background: #f0fdfa;
+      border-radius: 6px;
+      padding: 7px 10px;
+      margin-bottom: 8px;
+    }
+    .minerals-title {
+      font-size: 9.5pt;
+      font-weight: 800;
+      color: #0f766e;
+      margin-bottom: 4px;
+    }
+
+    /* Memory Tricks Banner */
+    .tips-box {
+      background: #fffbeb;
+      border: 1px dashed #f59e0b;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 8pt;
+      color: #78350f;
+    }
+    .tips-title {
+      font-weight: 800;
+      color: #b45309;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Header -->
+  <div class="header-card">
+    <div class="header-badge">Class 5 &bull; Health, Physical &amp; Creative Arts (HPCA)</div>
+    <div class="header-title">&#129367; Complete Vitamin &amp; Nutrition Study Chart</div>
+    <div class="header-sub">Diseases Caused, Major Symptoms &amp; Food Sources You Must Eat Every Day</div>
+  </div>
+
+  <!-- 6 Vitamin Cards in 2-Column Grid -->
+  <div class="cards-grid">
+
+    <!-- VITAMIN A -->
+    <div class="v-card card-vit-a">
+      <div class="v-header">
+        <div class="v-name">&#128065; Vitamin A <span style="font-size: 7.5pt; font-weight: normal; color: #64748b;">(Retinol)</span></div>
+        <div class="v-badge">Eye &amp; Vision</div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#9888; Disease Caused:</span>
+        <span class="disease-tag">Night Blindness (रतोन्धो)</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#128269; Symptoms:</span>
+        <span>Cannot see properly in dim light or after sunset, severe dryness of the eyes, dry and rough skin.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#129365; How to Get It:</span>
+        <span class="sources-list">Carrots, ripe papaya, ripe mango, pumpkin, spinach (palungo), egg yolk, milk, butter, fish oil.</span>
+      </div>
+    </div>
+
+    <!-- VITAMIN B -->
+    <div class="v-card card-vit-b">
+      <div class="v-header">
+        <div class="v-name">&#9889; Vitamin B-Complex <span style="font-size: 7.5pt; font-weight: normal; color: #64748b;">(B1, B2, B12)</span></div>
+        <div class="v-badge">Energy &amp; Nerves</div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#9888; Disease Caused:</span>
+        <span class="disease-tag">Beriberi &bull; Mouth Sores</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#128269; Symptoms:</span>
+        <span>Extreme tiredness, weak muscles, loss of appetite, swollen feet, cracks at the corners of the lips.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#127834; How to Get It:</span>
+        <span class="sources-list">Whole wheat roti, brown rice, pulses/daal, peanuts, green peas, eggs, bananas, dairy milk.</span>
+      </div>
+    </div>
+
+    <!-- VITAMIN C -->
+    <div class="v-card card-vit-c">
+      <div class="v-header">
+        <div class="v-name">&#127818; Vitamin C <span style="font-size: 7.5pt; font-weight: normal; color: #64748b;">(Ascorbic Acid)</span></div>
+        <div class="v-badge">Gums &amp; Immunity</div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#9888; Disease Caused:</span>
+        <span class="disease-tag">Scurvy (स्कर्भी)</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#128269; Symptoms:</span>
+        <span>Bleeding and swollen gums, loose teeth, cuts take a very long time to heal, frequent colds and infections.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#127819; How to Get It:</span>
+        <span class="sources-list">Amla (super-rich!), oranges, lemons, sweet lime, guava (amba), tomatoes, green chilies, strawberries.</span>
+      </div>
+    </div>
+
+    <!-- VITAMIN D -->
+    <div class="v-card card-vit-d">
+      <div class="v-header">
+        <div class="v-name">&#9728;&#65039; Vitamin D <span style="font-size: 7.5pt; font-weight: normal; color: #64748b;">(Sunshine Vitamin)</span></div>
+        <div class="v-badge">Bones &amp; Teeth</div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#9888; Disease Caused:</span>
+        <span class="disease-tag">Rickets (रिकेट्स)</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#128269; Symptoms:</span>
+        <span>Soft and weak bones, bent legs (bow-legs or knock-knees), delayed growth of teeth, weak spine.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#9728;&#65039; How to Get It:</span>
+        <span class="sources-list">15-20 mins in morning sunlight, cow's milk, cheese, curd, egg yolks, fish, fortified butter.</span>
+      </div>
+    </div>
+
+    <!-- VITAMIN E -->
+    <div class="v-card card-vit-e">
+      <div class="v-header">
+        <div class="v-name">&#129309; Vitamin E <span style="font-size: 7.5pt; font-weight: normal; color: #64748b;">(Tocopherol)</span></div>
+        <div class="v-badge">Skin &amp; Cell Shield</div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#9888; Disease Caused:</span>
+        <span class="disease-tag">Muscle Weakness &amp; Poor Skin</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#128269; Symptoms:</span>
+        <span>Lack of muscle strength, walking clumsiness, dull dry skin, low resistance to sickness.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#129372; How to Get It:</span>
+        <span class="sources-list">Almonds, peanuts, sunflower seeds, vegetable oils (mustard/sunflower), green leafy spinach, whole grain cereals.</span>
+      </div>
+    </div>
+
+    <!-- VITAMIN K -->
+    <div class="v-card card-vit-k">
+      <div class="v-header">
+        <div class="v-name">&#129656; Vitamin K <span style="font-size: 7.5pt; font-weight: normal; color: #64748b;">(Phylloquinone)</span></div>
+        <div class="v-badge">Blood Clotting</div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#9888; Disease Caused:</span>
+        <span class="disease-tag">Excessive Bleeding (Hemorrhage)</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#128269; Symptoms:</span>
+        <span>Blood does not clot quickly after minor cuts, frequent nosebleeds, easy dark bruises under the skin.</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">&#129382; How to Get It:</span>
+        <span class="sources-list">Cabbage (banda), cauliflower, broccoli, spinach, lettuce, green beans, soybean, green peas.</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BONUS ESSENTIAL MINERALS SECTION (Vital for Class 5 HPCA) -->
+  <div class="minerals-box">
+    <div class="minerals-title">&#128142; Also in Class 5 Syllabus: 3 Essential Body Minerals</div>
+    <table style="margin: 0; background: #ffffff;">
+      <thead>
+        <tr>
+          <th style="width: 14%;">Mineral</th>
+          <th style="width: 18%;">Disease Caused</th>
+          <th style="width: 32%;">Symptoms to Look For</th>
+          <th style="width: 36%;">How to Get It (Foods)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Iron (फलाम)</strong></td>
+          <td><span class="disease-tag">Anaemia (रक्तअल्पता)</span></td>
+          <td>Pale skin and pale fingernails, tiredness, dizziness, breathlessness when playing.</td>
+          <td>Spinach (palungo), apples, pomegranate, lentils/beans, jaggery (gund), green veg.</td>
+        </tr>
+        <tr>
+          <td><strong>Iodine (आयोडिन)</strong></td>
+          <td><span class="disease-tag">Goitre (गण्डमाला)</span></td>
+          <td>Swelling in front of the neck (thyroid gland), slow physical and mental growth in children.</td>
+          <td><strong>Iodized table salt</strong> (two-child logo salt), seafood, sea fish.</td>
+        </tr>
+        <tr>
+          <td><strong>Calcium (क्याल्सियम)</strong></td>
+          <td><span class="disease-tag">Weak Bones &amp; Tooth Decay</span></td>
+          <td>Fragile brittle bones, painful muscle cramps, poor enamel, teeth cavity.</td>
+          <td>Milk, yogurt/curd, cheese, sesame seeds (til), ragi/finger millet (kodo).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- QUICK MEMORY TRICKS & EXAM TIPS -->
+  <div class="tips-box">
+    <div class="tips-title">&#128161; Class 5 Exam Memory Formula &amp; Super-Tips:</div>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;">
+      <span>&bull; <strong>Vit A:</strong> Eye / <strong>Night Blindness</strong> &rarr; Carrots &amp; Yellow fruits</span>
+      <span>&bull; <strong>Vit B:</strong> <strong>Beriberi</strong> &rarr; Brown rice &amp; Beans</span>
+      <span>&bull; <strong>Vit C:</strong> <strong>Scurvy</strong> (Gums) &rarr; Citrus fruits &amp; Amla</span>
+      <span>&bull; <strong>Vit D:</strong> <strong>Rickets</strong> (Bones) &rarr; Sunlight &amp; Milk</span>
+      <span>&bull; <strong>Iron:</strong> <strong>Anaemia</strong> &rarr; Green spinach</span>
+      <span>&bull; <strong>Iodine:</strong> <strong>Goitre</strong> &rarr; Iodized Salt</span>
+    </div>
+  </div>
+
+</body>
+</html>

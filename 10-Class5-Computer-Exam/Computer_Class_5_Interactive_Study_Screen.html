@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class 5 Computer Science Interactive Study &amp; Teaching Hub &bull; Innovative Computer Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #10b981;
+      --accent-light: #ecfdf5;
+      --warning: #f59e0b;
+      --warning-light: #fef3c7;
+      --danger: #ef4444;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.09), 0 4px 6px -4px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #f1f5f9;
+      color: var(--slate-800);
+      line-height: 1.5;
+      padding-bottom: 60px;
+    }
+
+    /* TOP NAVBAR */
+    .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--slate-200);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      box-shadow: 0 2px 5px rgba(2, 132, 199, 0.3);
+    }
+    .logo-text h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.2;
+    }
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--slate-700);
+      font-weight: 600;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--slate-100);
+      padding: 4px;
+      border-radius: 10px;
+    }
+    .nav-btn {
+      background: transparent;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--slate-700);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .nav-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+
+    /* HERO BANNER */
+    .hero {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero-content h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .hero-content p {
+      font-size: 0.9rem;
+      opacity: 0.95;
+      max-width: 650px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 16px;
+    }
+    .stat-chip {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 10px 16px;
+      text-align: center;
+    }
+    .stat-chip .val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .stat-chip .lbl {
+      font-size: 0.72rem;
+      opacity: 0.85;
+      font-weight: 600;
+    }
+
+    /* TAB CONTENT */
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+      animation: fadeIn 0.25s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* CARDS & GRIDS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 16px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 18px;
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow);
+    }
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .badge-pill {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 20px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      text-transform: uppercase;
+    }
+
+    /* FLASHCARDS */
+    .flashcard-wrapper {
+      max-width: 600px;
+      margin: 20px auto;
+      perspective: 1000px;
+    }
+    .flashcard {
+      background: #ffffff;
+      border-radius: 16px;
+      min-height: 260px;
+      padding: 30px;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid var(--slate-200);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .flashcard:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 24px -4px rgba(0,0,0,0.1);
+    }
+    .flash-category {
+      position: absolute;
+      top: 14px;
+      left: 18px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .flash-count {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 0.8rem;
+      color: var(--slate-700);
+      font-weight: 700;
+    }
+    .flash-prompt {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 12px;
+    }
+    .flash-reveal {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 700;
+      line-height: 1.45;
+      display: none;
+      padding: 10px 14px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      width: 100%;
+    }
+    .flash-hint {
+      font-size: 0.78rem;
+      color: var(--slate-700);
+      margin-top: 14px;
+    }
+    .flash-controls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .btn-action {
+      background: #ffffff;
+      border: 1px solid var(--slate-300);
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--slate-800);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-action:hover {
+      background: var(--slate-100);
+      border-color: var(--slate-700);
+    }
+    .btn-action.primary {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+    .btn-action.primary:hover {
+      background: var(--primary-dark);
+    }
+
+    /* QUIZ SECTION */
+    .quiz-container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      background: #ffffff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .quiz-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--slate-200);
+      margin-bottom: 16px;
+    }
+    .quiz-q-num {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .quiz-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 16px;
+    }
+    .opt-grid {
+      display: grid;
+      gap: 10px;
+    }
+    .opt-btn {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .opt-btn:hover:not(:disabled) {
+      background: var(--slate-100);
+      border-color: var(--primary);
+    }
+    .opt-btn.correct {
+      background: #dcfce7;
+      border-color: #22c55e;
+      color: #15803d;
+      font-weight: 700;
+    }
+    .opt-btn.wrong {
+      background: #fee2e2;
+      border-color: #ef4444;
+      color: #b91c1c;
+      font-weight: 700;
+    }
+    .quiz-feedback {
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: none;
+    }
+
+    /* SHORTCUT KEYBOARD GRID */
+    .shortcut-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .shortcut-table th {
+      background: var(--slate-100);
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 2px solid var(--slate-200);
+    }
+    .shortcut-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .kbd {
+      background: var(--slate-100);
+      border: 1px solid var(--slate-300);
+      border-bottom: 2px solid var(--slate-700);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo-badge">
+        <div class="logo-icon">&#128187;</div>
+        <div class="logo-text">
+          <h1>Grade 5 Computer Science Studio</h1>
+          <p>Textbook: Innovative Computer Science &bull; 8 Core Chapters</p>
+        </div>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-btn active" onclick="switchTab('notes')">&#128214; Master Notes</button>
+        <button class="nav-btn" onclick="switchTab('flash')">&#128161; Flashcards</button>
+        <button class="nav-btn" onclick="switchTab('quiz')">&#127919; Quick Quiz</button>
+        <button class="nav-btn" onclick="switchTab('paint')">&#127912; Paint &amp; Shortcuts</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Terminal Exam Study &amp; Practice Arena</h2>
+        <p>Master all 8 chapters: Computer Fundamental, System, Hardware, Software, Types of Digital Computers, Internet Services, Multimedia, and Fun with Paint with instant interactive tools.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-chip">
+          <div class="val">8</div>
+          <div class="lbl">Chapters</div>
+        </div>
+        <div class="stat-chip">
+          <div class="val">50</div>
+          <div class="lbl">Full Marks</div>
+        </div>
+        <div class="stat-chip">
+          <div class="val">100%</div>
+          <div class="lbl">Exam Aligned</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 1: MASTER NOTES -->
+    <div id="pane-notes" class="tab-pane active">
+      <div class="grid-2">
+        
+        <!-- CARD 1 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#9881; Ch 1: Computer Fundamental</span>
+            <span class="badge-pill">IPO Cycle</span>
+          </div>
+          <p style="font-size:0.88rem; margin-bottom:8px;">A computer is an electronic machine that processes raw <strong>Data</strong> into meaningful <strong>Information</strong> using the <strong>IPO (Input-Process-Output)</strong> cycle.</p>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>Speed:</strong> Operates in microseconds and nanoseconds.</li>
+            <li><strong>Accuracy &amp; GIGO:</strong> 100% accurate (<em>Garbage In, Garbage Out</em>).</li>
+            <li><strong>Diligence:</strong> Never tires or gets distracted.</li>
+            <li><strong>Limitations:</strong> Zero IQ, no independent thinking, no feelings.</li>
+          </ul>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#128187; Ch 2: Computer System</span>
+            <span class="badge-pill">Components</span>
+          </div>
+          <p style="font-size:0.88rem; margin-bottom:8px;">A complete computer system consists of five essential pillars:</p>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>Hardware:</strong> Physical tangible parts (Keyboard, CPU box, Monitor).</li>
+            <li><strong>Software:</strong> Electronic programs giving instructions (OS, Paint).</li>
+            <li><strong>Data:</strong> Raw unorganized input facts and numbers.</li>
+            <li><strong>Liveware (Humanware):</strong> Users and programmers operating it.</li>
+            <li><strong>Procedures:</strong> Rules and operational instructions.</li>
+          </ul>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#128421; Ch 3: Hardware &amp; Memory</span>
+            <span class="badge-pill">Architecture</span>
+          </div>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>CPU:</strong> ALU (Arithmetic/Logic) + CU (Control Traffic) + MU (Registers).</li>
+            <li><strong>Printers:</strong> <em>Impact</em> (Dot Matrix — noisy) vs <em>Non-Impact</em> (Inkjet — liquid spray; Laser — dry toner &amp; laser).</li>
+            <li><strong>Plotter:</strong> Large architectural maps and giant banners.</li>
+            <li><strong>RAM vs ROM:</strong> RAM is volatile (lost on power off); ROM is permanent (holds boot BIOS).</li>
+          </ul>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#128190; Ch 4: Software Types</span>
+            <span class="badge-pill">OS &amp; Apps</span>
+          </div>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>System Software:</strong> Controls hardware. Includes <em>Operating System</em> (Windows 11, macOS, Linux, Android) and <em>Utilities</em> (Antivirus, Disk Defrag).</li>
+            <li><strong>Application Software:</strong> Performs user tasks. Includes <em>General Purpose</em> (MS Word, MS Excel, Paint) and <em>Customized</em> (School fee software, Hospital billing).</li>
+          </ul>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#127758; Ch 5: Digital Computer Types</span>
+            <span class="badge-pill">Classification</span>
+          </div>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>Supercomputer:</strong> Fastest, costliest. NASA, weather forecasting (Frontier, Fugaku).</li>
+            <li><strong>Mainframe:</strong> Massive multi-user servers for banks, airline bookings.</li>
+            <li><strong>Minicomputer:</strong> Midrange servers for university labs.</li>
+            <li><strong>Microcomputer (PC):</strong> Desktop, Laptop, Tablet, Smartphone.</li>
+          </ul>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#127760; Ch 6: Internet &amp; Services</span>
+            <span class="badge-pill">Network of Networks</span>
+          </div>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>WWW:</strong> World Wide Web (Invented 1989 by Tim Berners-Lee).</li>
+            <li><strong>URL:</strong> Uniform Resource Locator (Unique web address).</li>
+            <li><strong>Browser vs Search Engine:</strong> Browser is app (Brave, Chrome); Search Engine is site (Google, Bing).</li>
+            <li><strong>Cyber Safety:</strong> Never share real passwords, home address, or phone numbers online.</li>
+          </ul>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#127916; Ch 7: Multimedia</span>
+            <span class="badge-pill">5 Elements</span>
+          </div>
+          <p style="font-size:0.88rem; margin-bottom:6px;">Derived from <em>Multi</em> (many) + <em>Media</em> (medium of communication).</p>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>5 Elements:</strong> 1. Text &bull; 2. Audio &bull; 3. Graphics &bull; 4. Video &bull; 5. Animation.</li>
+            <li><strong>Animation:</strong> Rapid sequence of drawings creating the illusion of movement.</li>
+            <li><strong>Uses:</strong> Smart classes, 3D video games, animated movies, medical surgery models.</li>
+          </ul>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="card">
+          <div class="card-title">
+            <span>&#127912; Ch 8: Fun with Paint</span>
+            <span class="badge-pill">Tools &amp; Tricks</span>
+          </div>
+          <ul style="font-size:0.85rem; padding-left:18px; color:var(--slate-700);">
+            <li><strong>Shift Key Trick:</strong> Hold <span class="kbd">Shift</span> to draw perfect circles and squares.</li>
+            <li><strong>Eraser Resize:</strong> <span class="kbd">Ctrl</span> + <span class="kbd">+</span> enlarges eraser, <span class="kbd">Ctrl</span> + <span class="kbd">-</span> shrinks it.</li>
+            <li><strong>Color Leak Fix:</strong> If color spills over, press <span class="kbd">Ctrl</span> + <span class="kbd">Z</span> (Undo) and close gaps.</li>
+            <li><strong>Transparent Selection:</strong> Keeps background transparent when moving objects.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 2: FLASHCARDS -->
+    <div id="pane-flash" class="tab-pane">
+      <div class="flashcard-wrapper">
+        <div class="flashcard" id="active-card" onclick="toggleFlashReveal()">
+          <span class="flash-category" id="f-cat">Computer Fundamental</span>
+          <span class="flash-count" id="f-idx">1 / 10</span>
+          <div class="flash-prompt" id="f-prompt">What does GIGO stand for, and what does it mean?</div>
+          <div class="flash-reveal" id="f-reveal">GIGO stands for "Garbage In, Garbage Out". It means if you give wrong input to a computer, it will give you a wrong output.</div>
+          <div class="flash-hint">Tap card to reveal answer &#128070;</div>
+        </div>
+        <div class="flash-controls">
+          <button class="btn-action" onclick="prevFlash()">&#8592; Previous</button>
+          <button class="btn-action primary" onclick="nextFlash()">Next Card &#8594;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: QUIZ -->
+    <div id="pane-quiz" class="tab-pane">
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <div><strong>Exam Practice Test</strong> &bull; Question <span id="q-curr">1</span> of 10</div>
+          <div>Score: <strong id="q-score" style="color:var(--accent);">0</strong> / 10</div>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-q-num" id="quiz-chap-label">CHAPTER 1: FUNDAMENTALS</div>
+          <div class="quiz-question" id="quiz-question-text">The basic working principle of any computer follows which cycle?</div>
+          <div class="opt-grid" id="quiz-options-container">
+            <!-- options injected via js -->
+          </div>
+          <div class="quiz-feedback" id="quiz-feedback-box"></div>
+        </div>
+
+        <div style="text-align:right;">
+          <button class="btn-action primary" id="quiz-next-btn" onclick="nextQuizQuestion()" style="display:none;">Next Question &#8594;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: PAINT & SHORTCUTS -->
+    <div id="pane-paint" class="tab-pane">
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">&#9000; Windows &amp; MS Paint Hotkeys</div>
+          <table class="shortcut-table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Shortcut Key</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Enlarge Eraser in Paint</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">+</span></td>
+              </tr>
+              <tr>
+                <td>Shrink Eraser in Paint</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">-</span></td>
+              </tr>
+              <tr>
+                <td>Draw Perfect Circle / Square</td>
+                <td>Hold <span class="kbd">Shift</span> while dragging</td>
+              </tr>
+              <tr>
+                <td>Undo Last Mistake</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">Z</span></td>
+              </tr>
+              <tr>
+                <td>Redo Action</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">Y</span></td>
+              </tr>
+              <tr>
+                <td>Cut Selected Item</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">X</span></td>
+              </tr>
+              <tr>
+                <td>Copy Selected Item</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">C</span></td>
+              </tr>
+              <tr>
+                <td>Paste Item</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">V</span></td>
+              </tr>
+              <tr>
+                <td>Save File</td>
+                <td><span class="kbd">Ctrl</span> + <span class="kbd">S</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="card-title">&#128221; Master Full Forms Directory</div>
+          <table class="shortcut-table">
+            <thead>
+              <tr>
+                <th>Acronym</th>
+                <th>Complete Full Form</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CPU</strong></td>
+                <td>Central Processing Unit</td>
+              </tr>
+              <tr>
+                <td><strong>ALU</strong></td>
+                <td>Arithmetic Logic Unit</td>
+              </tr>
+              <tr>
+                <td><strong>CU</strong></td>
+                <td>Control Unit</td>
+              </tr>
+              <tr>
+                <td><strong>RAM</strong></td>
+                <td>Random Access Memory</td>
+              </tr>
+              <tr>
+                <td><strong>ROM</strong></td>
+                <td>Read Only Memory</td>
+              </tr>
+              <tr>
+                <td><strong>WWW</strong></td>
+                <td>World Wide Web</td>
+              </tr>
+              <tr>
+                <td><strong>URL</strong></td>
+                <td>Uniform Resource Locator</td>
+              </tr>
+              <tr>
+                <td><strong>ISP</strong></td>
+                <td>Internet Service Provider</td>
+              </tr>
+              <tr>
+                <td><strong>GUI</strong></td>
+                <td>Graphical User Interface</td>
+              </tr>
+              <tr>
+                <td><strong>GIGO</strong></td>
+                <td>Garbage In, Garbage Out</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // TAB SWITCHING
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('pane-' + tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // AUDIO CHIME
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playBeep(isGood) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      if (isGood) {
+        osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+        osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1); // A5
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.3);
+      } else {
+        osc.frequency.setValueAtTime(220, audioCtx.currentTime); // A3
+        gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.25);
+      }
+    }
+
+    // FLASHCARDS DATA
+    const flashcards = [
+      {
+        cat: "Chapter 1: Computer Fundamental",
+        q: "What does GIGO stand for, and what does it mean?",
+        a: "GIGO stands for 'Garbage In, Garbage Out'. It means if wrong inputs are given to a computer, it will produce wrong output."
+      },
+      {
+        cat: "Chapter 2: Computer System",
+        q: "Who or what is 'Liveware' in a computer system?",
+        a: "Liveware (or Humanware) refers to the human beings who operate, program, and manage the computer."
+      },
+      {
+        cat: "Chapter 3: Computer Hardware",
+        q: "What is the difference between RAM and ROM?",
+        a: "RAM is volatile read/write memory erased on power off. ROM is permanent non-volatile memory storing startup booting instructions."
+      },
+      {
+        cat: "Chapter 3: Computer Hardware",
+        q: "Which printer type uses liquid ink spray, and which uses a laser beam and dry powder?",
+        a: "Inkjet printers spray tiny liquid ink droplets. Laser printers use a laser beam and dry toner powder."
+      },
+      {
+        cat: "Chapter 4: Computer Software",
+        q: "Give two examples of System Software and two of Application Software.",
+        a: "System Software: Windows 11 and Antivirus Utility. Application Software: MS Word and MS Paint."
+      },
+      {
+        cat: "Chapter 5: Digital Computers",
+        q: "What are Supercomputers used for?",
+        a: "Supercomputers are used for high-speed scientific simulations, weather forecasting, space exploration, and satellite tracking."
+      },
+      {
+        cat: "Chapter 6: Internet Services",
+        q: "Who invented the World Wide Web (WWW) and in which year?",
+        a: "Sir Tim Berners-Lee invented the World Wide Web in the year 1989."
+      },
+      {
+        cat: "Chapter 6: Internet Services",
+        q: "What is the difference between a Web Browser and a Search Engine?",
+        a: "A Web Browser is an application program that opens web pages (e.g. Brave, Chrome). A Search Engine is a website used to search information (e.g. Google, Bing)."
+      },
+      {
+        cat: "Chapter 7: Multimedia",
+        q: "Name the five basic elements of Multimedia.",
+        a: "1. Text, 2. Audio (Sound), 3. Graphics (Images), 4. Video, and 5. Animation."
+      },
+      {
+        cat: "Chapter 8: Fun with Paint",
+        q: "How can you draw a perfect circle or square in MS Paint?",
+        a: "Select the Oval or Rectangle shape, then hold down the 'Shift' key while dragging the mouse."
+      }
+    ];
+
+    let currentFlash = 0;
+    function renderFlash() {
+      const item = flashcards[currentFlash];
+      document.getElementById('f-cat').innerText = item.cat;
+      document.getElementById('f-idx').innerText = (currentFlash + 1) + " / " + flashcards.length;
+      document.getElementById('f-prompt').innerText = item.q;
+      document.getElementById('f-reveal').innerText = item.a;
+      document.getElementById('f-reveal').style.display = 'none';
+    }
+    function toggleFlashReveal() {
+      const rev = document.getElementById('f-reveal');
+      rev.style.display = (rev.style.display === 'block') ? 'none' : 'block';
+    }
+    function nextFlash() {
+      currentFlash = (currentFlash + 1) % flashcards.length;
+      renderFlash();
+    }
+    function prevFlash() {
+      currentFlash = (currentFlash - 1 + flashcards.length) % flashcards.length;
+      renderFlash();
+    }
+    renderFlash();
+
+    // QUIZ DATA
+    const quizData = [
+      {
+        chap: "CHAPTER 1: FUNDAMENTALS",
+        q: "The basic working principle of any computer is which cycle?",
+        opts: ["O-P-I Cycle", "I-P-O Cycle", "P-I-O Cycle", "I-O-P Cycle"],
+        ans: 1,
+        exp: "IPO stands for Input-Process-Output, the core cycle of every computing device."
+      },
+      {
+        chap: "CHAPTER 2: COMPUTER SYSTEM",
+        q: "The physical, touchable components of a computer are classified as:",
+        opts: ["Software", "Hardware", "Liveware", "Firmware"],
+        ans: 1,
+        exp: "Hardware represents all physical machinery you can see and touch (keyboard, monitor, CPU)."
+      },
+      {
+        chap: "CHAPTER 3: HARDWARE",
+        q: "Which part of the CPU directs and coordinates all hardware operations like traffic police?",
+        opts: ["ALU", "Control Unit (CU)", "Memory Unit", "Hard Disk"],
+        ans: 1,
+        exp: "The Control Unit (CU) coordinates and directs all operations across hardware devices."
+      },
+      {
+        chap: "CHAPTER 3: MEMORY",
+        q: "Which memory loses all its stored contents when electrical power is switched off?",
+        opts: ["ROM", "Hard Disk", "RAM", "CD-ROM"],
+        ans: 2,
+        exp: "RAM (Random Access Memory) is volatile, meaning data is erased immediately when power goes off."
+      },
+      {
+        chap: "CHAPTER 4: SOFTWARE",
+        q: "Which software provides the primary interface between the user and computer hardware?",
+        opts: ["Operating System", "MS Paint", "Calculator", "Spreadsheet"],
+        ans: 0,
+        exp: "The Operating System (like Windows, macOS) manages system resources and lets users communicate with hardware."
+      },
+      {
+        chap: "CHAPTER 5: DIGITAL COMPUTERS",
+        q: "The fastest, most powerful, and costliest computers on Earth are:",
+        opts: ["Microcomputers", "Minicomputers", "Supercomputers", "Mainframes"],
+        ans: 2,
+        exp: "Supercomputers are specialized ultra-fast machines used in weather forecasting and space research."
+      },
+      {
+        chap: "CHAPTER 6: INTERNET",
+        q: "The unique web address of a specific website (such as https://www.google.com) is called its:",
+        opts: ["ISP", "URL", "HTML", "CPU"],
+        ans: 1,
+        exp: "URL stands for Uniform Resource Locator, the unique web address of an internet resource."
+      },
+      {
+        chap: "CHAPTER 6: INTERNET",
+        q: "Brave, Google Chrome, and Mozilla Firefox are examples of:",
+        opts: ["Search Engines", "Operating Systems", "Web Browsers", "Antivirus software"],
+        ans: 2,
+        exp: "Web Browsers are software applications used to view and navigate web pages."
+      },
+      {
+        chap: "CHAPTER 7: MULTIMEDIA",
+        q: "The rapid playing of a sequence of still drawings to simulate live movement is called:",
+        opts: ["Video", "Audio", "Animation", "Text"],
+        ans: 2,
+        exp: "Animation creates the illusion of movement by rapidly flashing a series of 2D or 3D drawings."
+      },
+      {
+        chap: "CHAPTER 8: FUN WITH PAINT",
+        q: "In MS Paint, which tool is used to sample and copy a color from one part of the drawing?",
+        opts: ["Pencil", "Magnifier", "Color Picker (Eyedropper)", "Eraser"],
+        ans: 2,
+        exp: "The Color Picker (Eyedropper) tool allows you to pick any exact color from the canvas."
+      }
+    ];
+
+    let quizIdx = 0;
+    let quizScore = 0;
+    let answered = false;
+
+    function renderQuiz() {
+      answered = false;
+      const q = quizData[quizIdx];
+      document.getElementById('q-curr').innerText = quizIdx + 1;
+      document.getElementById('quiz-chap-label').innerText = q.chap;
+      document.getElementById('quiz-question-text').innerText = q.q;
+      document.getElementById('quiz-feedback-box').style.display = 'none';
+      document.getElementById('quiz-next-btn').style.display = 'none';
+
+      const optBox = document.getElementById('quiz-options-container');
+      optBox.innerHTML = '';
+      q.opts.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.innerHTML = `<span><strong>${String.fromCharCode(65 + idx)}.</strong> ${opt}</span>`;
+        btn.onclick = () => selectQuizAnswer(idx);
+        optBox.appendChild(btn);
+      });
+    }
+
+    function selectQuizAnswer(chosenIdx) {
+      if (answered) return;
+      answered = true;
+      const q = quizData[quizIdx];
+      const buttons = document.querySelectorAll('.opt-btn');
+      buttons.forEach(b => b.disabled = true);
+
+      const fBox = document.getElementById('quiz-feedback-box');
+      fBox.style.display = 'block';
+
+      if (chosenIdx === q.ans) {
+        buttons[chosenIdx].classList.add('correct');
+        quizScore++;
+        document.getElementById('q-score').innerText = quizScore;
+        fBox.style.background = '#dcfce7';
+        fBox.style.color = '#15803d';
+        fBox.innerHTML = `&#10004; <strong>Excellent!</strong> Correct answer. ${q.exp}`;
+        playBeep(true);
+      } else {
+        buttons[chosenIdx].classList.add('wrong');
+        buttons[q.ans].classList.add('correct');
+        fBox.style.background = '#fee2e2';
+        fBox.style.color = '#b91c1c';
+        fBox.innerHTML = `&#10008; <strong>Not quite!</strong> Correct answer is: <strong>${q.opts[q.ans]}</strong>. ${q.exp}`;
+        playBeep(false);
+      }
+      document.getElementById('quiz-next-btn').style.display = 'inline-block';
+    }
+
+    function nextQuizQuestion() {
+      if (quizIdx < quizData.length - 1) {
+        quizIdx++;
+        renderQuiz();
+      } else {
+        const container = document.querySelector('.quiz-container');
+        container.innerHTML = `
+          <div class="card" style="text-align:center; padding:40px 20px;">
+            <div style="font-size:3rem; margin-bottom:12px;">&#127881;</div>
+            <h2 style="font-size:1.6rem; color:var(--primary); margin-bottom:8px;">Quiz Completed!</h2>
+            <p style="font-size:1.1rem; margin-bottom:16px;">You scored <strong>${quizScore}</strong> out of <strong>${quizData.length}</strong> marks!</p>
+            <p style="color:var(--slate-700); margin-bottom:20px;">${quizScore >= 8 ? 'Outstanding achievement! You are 100% prepared to ace the Computer Science exam!' : 'Good effort! Review the master notes and flashcards, then try again!'}</p>
+            <button class="btn-action primary" onclick="location.reload()">Restart Quiz &#8634;</button>
+          </div>
+        `;
+      }
+    }
+    renderQuiz();
+  </script>
+</body>
+</html>

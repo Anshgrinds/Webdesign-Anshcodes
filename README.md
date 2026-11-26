@@ -13,6 +13,11 @@
 | **03** | **Slides by Sander Morph Showcase** | [`03-PowerPoint-Morph-Showcase/`](./03-PowerPoint-Morph-Showcase) | `HTML5` `CSS3 Transforms` `PowerPoint COM` | Keynote-caliber interactive 16:9 slide demonstration simulating PowerPoint Morph transition, 45° compound pill cutouts, and tactile inner shadows. |
 | **04** | **PHLEARN Photoshop Masterclass** | [`04-Photoshop-Masterclass-Dashboard/`](./04-Photoshop-Masterclass-Dashboard) | `HTML5` `CSS Grid` `ExtendScript (JSX)` | Interactive curriculum dashboard and cheatsheet for the 30 Days of Photoshop series, featuring frequency separation math and ExtendScript automation. |
 | **05** | **Class 5 Social Studies Exam System** | [`05-Class5-Social-Studies-Exam/`](./05-Class5-Social-Studies-Exam) | `HTML5` `Print CSS (A4)` `PDF Generation` | A4 print-optimized exam question bank and complete model answer guide based on the Ekta Social Studies & Creative Arts Grade 5 curriculum. |
+| **06** | **Class 5 HPCA Exam Suite & Vitamin Chart** | [`06-Class5-HPCA-Exam/`](./06-Class5-HPCA-Exam) | `HTML5` `Print CSS` `PDF Generation` | Comprehensive examination papers and visual clinical nutrition deficiency chart for Class 5 HPCA. |
+| **07** | **Class 5 GK Exam Suite & Cultural Review** | [`07-Class5-GK-Exam/`](./07-Class5-GK-Exam) | `HTML5` `Interactive Crossword` `PDF Generation` | Goodwill's General Knowledge mock test paper with crossword puzzle and study guide covering Nepali culture, literature, and sports. |
+| **08** | **Class 5 Mathematics Exam Suite** | [`08-Class5-Math-Exam/`](./08-Class5-Math-Exam) | `HTML5` `Math Formatting` `PDF Generation` | Perfect Mathematics examination sheets, study guide, and Tokyo allowance fraction applications. |
+| **09** | **Class 5 English Exam Suite & Study Screen** | [`09-Class5-English-Exam/`](./09-Class5-English-Exam) | `HTML5` `Interactive UI` `Brave PDF` | Oxford New Learning to Communicate mock paper, solutions guide, and live screen-sharing interactive teaching screen. |
+| **10** | **Class 5 Computer Science Exam Suite** | [`10-Class5-Computer-Exam/`](./10-Class5-Computer-Exam) | `HTML5` `Print CSS` `PDF Generation` | Comprehensive Computer Science examination paper, study solutions guide, and interactive study screen covering Generations of Computers, Windows 10, Word, and Excel basics. |
 
 ---
 

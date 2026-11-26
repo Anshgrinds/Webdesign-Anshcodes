@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class 5 GK Intensive Revision: Culture, Ethnicity, Music & Films</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 12mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.4;
+      font-size: 9.5pt;
+      background: #ffffff;
+      padding: 2px;
+    }
+    .header-box {
+      border: 2px solid #7c3aed;
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      background: #f5f3ff;
+      margin-bottom: 10px;
+    }
+    .header-title {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #5b21b6;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header-sub {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #7c3aed;
+      margin-top: 2px;
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px dashed #c4b5fd;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #475569;
+    }
+    .meta-fill {
+      border-bottom: 1px dotted #64748b;
+      display: inline-block;
+      min-width: 110px;
+      height: 14px;
+    }
+    .section-banner {
+      background: #7c3aed;
+      color: #ffffff;
+      font-size: 10pt;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 4px;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+    }
+    .revision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .card {
+      background: #fbfbfe;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 7px 9px;
+      font-size: 8.5pt;
+      page-break-inside: avoid;
+    }
+    .card.purple-border {
+      border-left: 4px solid #7c3aed;
+    }
+    .card.amber-border {
+      border-left: 4px solid #d97706;
+    }
+    .card.emerald-border {
+      border-left: 4px solid #059669;
+    }
+    .card.blue-border {
+      border-left: 4px solid #2563eb;
+    }
+    .card-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 3px;
+    }
+    table.compact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+    table.compact-table th {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 4px 6px;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+      font-weight: 700;
+    }
+    table.compact-table td {
+      border: 1px solid #cbd5e1;
+      padding: 4px 6px;
+      vertical-align: top;
+    }
+    .highlight-pill {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 7.5pt;
+      font-weight: 700;
+      background: #ede9fe;
+      color: #6d28d9;
+      margin-right: 3px;
+    }
+    .drill-box {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-top: 6px;
+      margin-bottom: 8px;
+      page-break-inside: avoid;
+    }
+    .drill-title {
+      font-weight: 700;
+      color: #1e1b4b;
+      margin-bottom: 6px;
+      font-size: 9.5pt;
+      border-bottom: 1px dashed #cbd5e1;
+      padding-bottom: 3px;
+    }
+    .blank-space {
+      display: inline-block;
+      min-width: 130px;
+      border-bottom: 1.5px solid #64748b;
+      margin: 0 4px;
+      height: 15px;
+    }
+    .q-list {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    .q-list li {
+      margin-bottom: 6px;
+      padding-left: 18px;
+      text-indent: -18px;
+    }
+    .word-bank {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 8.5pt;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .match-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+    }
+    .match-table th {
+      background: #f8fafc;
+      padding: 4px 6px;
+      border: 1px solid #cbd5e1;
+    }
+    .match-table td {
+      border: 1px solid #cbd5e1;
+      padding: 4px 6px;
+    }
+    .input-box {
+      border: 1px solid #94a3b8;
+      border-radius: 3px;
+      width: 38px;
+      height: 19px;
+      display: inline-block;
+      text-align: center;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .answer-key-box {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-top: 10px;
+      font-size: 8.5pt;
+    }
+    .answer-key-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #15803d;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #bbf7d0;
+      padding-bottom: 2px;
+    }
+    .footer-note {
+      text-align: center;
+      font-size: 8pt;
+      color: #64748b;
+      margin-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: REVISION STUDY CORE -->
+  <div class="header-box">
+    <div class="header-title">Goodwill's GK — Intensive Revision Guide</div>
+    <div class="header-sub">Sections B & C: Culture, Ethnicity, Festivals, Music & Films</div>
+    <div class="meta-bar">
+      <div><strong>Student:</strong> <span class="meta-fill"></span></div>
+      <div><strong>Date:</strong> <span class="meta-fill" style="min-width: 80px;"></span></div>
+      <div><strong>Focus:</strong> Class 5 Final Exam Mastery Drill</div>
+    </div>
+  </div>
+
+  <!-- SECTION B REVISION CORE -->
+  <div class="section-banner">
+    <span>PART 1: SECTION B REVISION — Culture, Ethnicity & Festivals</span>
+    <span>Cheat Sheet & Flash Notes</span>
+  </div>
+
+  <table class="compact-table">
+    <thead>
+      <tr>
+        <th style="width: 20%;">Ethnic Group</th>
+        <th style="width: 25%;">Primary Homeland / Region</th>
+        <th style="width: 28%;">Major Festivals & Celebrations</th>
+        <th style="width: 27%;">Distinct Traditions & Dances</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sherpa</strong></td>
+        <td>Solukhumbu (High Himalayan region)</td>
+        <td><strong>Gyalpo Lhosar</strong> (Tibetan New Year), Mani Rimdu</td>
+        <td>Buddhism, mountaineering heroes, chuba dress, play <em>Tungna</em>.</td>
+      </tr>
+      <tr>
+        <td><strong>Newar</strong></td>
+        <td>Kathmandu Valley (original settlers)</td>
+        <td><strong>Indra Jatra</strong>, <strong>Gai Jatra</strong>, <strong>Mha Puja</strong>, Bisket</td>
+        <td>Lakhey dance, Kumari (living goddess), woodcarving, <em>Dhime</em> & <em>Bhusya</em>.</td>
+      </tr>
+      <tr>
+        <td><strong>Tharu</strong></td>
+        <td>Terai plains & inner Terai valleys</td>
+        <td><strong>Maghi</strong> (1st Magh), Jitiya, Faguwa</td>
+        <td>Maghi dance, colourful Dhakiya baskets, indigenous clay art.</td>
+      </tr>
+      <tr>
+        <td><strong>Tamang</strong></td>
+        <td>Hills surrounding Kathmandu Valley</td>
+        <td><strong>Sonam Lhosar</strong></td>
+        <td>Tamang Selo songs, circular <em>Damphu</em> drum, traditional dance.</td>
+      </tr>
+      <tr>
+        <td><strong>Gurung (Tamu)</strong></td>
+        <td>Gandaki & Annapurna hills (Lamjung, Kaski)</td>
+        <td><strong>Tamu Lhosar</strong> (15th Poush)</td>
+        <td>Rodhi cultural gatherings, sacred <em>Ghatu</em> & <em>Sorathi</em> dances.</td>
+      </tr>
+      <tr>
+        <td><strong>Kirat (Rai & Limbu)</strong></td>
+        <td>Eastern Hills (Sankhuwasabha, Bhojpur)</td>
+        <td><strong>Udhauli</strong> (winter descent) & <strong>Ubhauli</strong> (summer ascent)</td>
+        <td>Nature worshippers (Paruhang & Sumnima), energetic <em>Chandi Dance</em> (Sakela).</td>
+      </tr>
+      <tr>
+        <td><strong>Pan-Nepali Festivals</strong></td>
+        <td>Celebrated across all communities</td>
+        <td><strong>Dashain:</strong> 15 days, Goddess Durga, Jamara & Tika.<br><strong>Tihar:</strong> 5 days (Yama Panchak), Laxmi Puja, Bhai Tika.</td>
+        <td><strong>Chhath:</strong> Terai/Mithila festival honoring Sun God Surya & Chhathi Maiya.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION C REVISION CORE -->
+  <div class="section-banner" style="background: #2563eb;">
+    <span>PART 2: SECTION C REVISION — Traditional Music & Nepali Films</span>
+    <span>Cheat Sheet & Milestones</span>
+  </div>
+
+  <div class="revision-grid">
+    <div class="card purple-border">
+      <div class="card-title">🪕 Traditional Musical Instruments</div>
+      <p>• <strong>Madal:</strong> The most popular two-headed wooden hand drum wrapped in leather; played in folk songs & dances across Nepal.</p>
+      <p>• <strong>Sarangi:</strong> 4-string bowed instrument played exclusively by the <em>Gandharva (Gaine)</em> community to recite news & folk tales.</p>
+      <p>• <strong>Bansuri & Murali:</strong> Transverse flutes carved from high-quality bamboo; heart of traditional folk tunes.</p>
+      <p>• <strong>Damphu:</strong> Round frame drum held in hand and played during Tamang Selo ceremonies.</p>
+      <p>• <strong>Panche Baja:</strong> Traditional ensemble of 5 instruments: <em>Damaha, Tyanko, Dholak, Sahanai,</em> and <em>Khyali/Jhyali</em>.</p>
+      <p>• <strong>Dhime:</strong> Large, thunderous wooden drum played during Newari Jatras.</p>
+    </div>
+
+    <div class="card emerald-border">
+      <div class="card-title">🎬 Golden Milestones of Nepali Cinema & Icons</div>
+      <p>• <strong>Satya Harishchandra (1951):</strong> First-ever Nepali language film (produced in Kolkata, India by D.B. Pariyar).</p>
+      <p>• <strong>Aama (Mother - 1964):</strong> First feature film produced <em>inside Nepal</em> by the Government Information Dept (Dir: Hira Singh Khatri).</p>
+      <p>• <strong>Maitighar (1966):</strong> First film produced under a private studio banner (Sumonanjali Films).</p>
+      <p>• <strong>Kumari (1982):</strong> The first full-length Nepali <strong>color film</strong>.</p>
+      <p>• <strong>Narayan Gopal:</strong> Revering title <em>'Swor Samrat'</em> (King of Voice).</p>
+      <p>• <strong>Tara Devi:</strong> <em>'Swor Kinnari'</em> (recorded over 4,000 evergreen songs).</p>
+      <p>• <strong>Aruna Lama:</strong> <em>'Nightingale of the Hills'</em>.</p>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK FOR PRACTICE DRILLS -->
+  <div class="page-break"></div>
+
+  <!-- PART 3: HIGH-YIELD PRACTICE DRILLS -->
+  <div class="section-banner" style="background: #0f766e;">
+    <span>PART 3: Intensive Revision Practice Drills</span>
+    <span>Live Student Testing Section</span>
+  </div>
+
+  <!-- DRILL 1: Matching Ethnicity & Festivals -->
+  <div class="drill-box">
+    <div class="drill-title">DRILL 1: Match the Community with their Distinct Festival or Tradition</div>
+    <table class="match-table">
+      <thead>
+        <tr>
+          <th style="width: 36%;">Column A (Community)</th>
+          <th style="width: 14%; text-align: center;">Answer</th>
+          <th style="width: 50%;">Column B (Festival / Cultural Identity)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. Sherpa</strong></td>
+          <td style="text-align: center;"><span class="input-box"></span></td>
+          <td>A. Maghi festival celebrated on 1st Magh with special feasts</td>
+        </tr>
+        <tr>
+          <td><strong>2. Gurung</strong></td>
+          <td style="text-align: center;"><span class="input-box"></span></td>
+          <td>B. Udhauli and Ubhauli festivals with Sakela Chandi dance</td>
+        </tr>
+        <tr>
+          <td><strong>3. Newar</strong></td>
+          <td style="text-align: center;"><span class="input-box"></span></td>
+          <td>C. Gyalpo Lhosar celebrated in high mountain regions</td>
+        </tr>
+        <tr>
+          <td><strong>4. Tharu</strong></td>
+          <td style="text-align: center;"><span class="input-box"></span></td>
+          <td>D. Tamu Lhosar celebrated on 15th Poush</td>
+        </tr>
+        <tr>
+          <td><strong>5. Kirat Rai</strong></td>
+          <td style="text-align: center;"><span class="input-box"></span></td>
+          <td>E. Mha Puja (worship of inner self) and Indra Jatra</td>
+        </tr>
+        <tr>
+          <td><strong>6. Tamang</strong></td>
+          <td style="text-align: center;"><span class="input-box"></span></td>
+          <td>F. Sonam Lhosar celebrated with the Damphu drum</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- DRILL 2: Fill in the Blanks (Culture & Festivals) -->
+  <div class="drill-box">
+    <div class="drill-title">DRILL 2: Quick-Fire Fill in the Blanks (Culture & Festivals)</div>
+    <div class="word-bank">
+      <strong>Word Bank:</strong> [ Chhath | Yama Panchak | Gai Jatra | Durga | Maghi | Bhai Tika ]
+    </div>
+    <ul class="q-list">
+      <li><strong>a)</strong> The festival of Dashain commemorates the ultimate victory of Goddess <span class="blank-space"></span> over the demon Mahishasura.</li>
+      <li><strong>b)</strong> Tihar is also known as <span class="blank-space"></span> because it is celebrated continuously over five days.</li>
+      <li><strong>c)</strong> On the final day of Tihar, sisters put seven-colored tika and garland of dubo/sayapatri on their brothers during <span class="blank-space"></span>.</li>
+      <li><strong>d)</strong> The Sun God (Surya) is worshipped with great reverence during the festival of <span class="blank-space"></span>.</li>
+      <li><strong>e)</strong> The Newar community of Kathmandu Valley commemorates deceased family members in the procession of <span class="blank-space"></span>.</li>
+      <li><strong>f)</strong> The Tharu people celebrate their biggest festival called <span class="blank-space"></span> as their official New Year.</li>
+    </ul>
+  </div>
+
+  <!-- DRILL 3: "Who Am I?" Musical Instruments & Movies -->
+  <div class="drill-box">
+    <div class="drill-title">DRILL 3: "Who Am I?" Mystery Clues (Music, Instruments & Films)</div>
+    <ul class="q-list">
+      <li>
+        <strong>a)</strong> "I am a 4-string bowed musical instrument played by traveling Gandharva musicians to tell folklore across villages."<br>
+        <strong>Who am I?</strong> <span class="blank-space" style="min-width: 250px;"></span>
+      </li>
+      <li>
+        <strong>b)</strong> "I am the two-headed folk hand drum tightened with leather strings that is played at almost every Nepali festival."<br>
+        <strong>Who am I?</strong> <span class="blank-space" style="min-width: 250px;"></span>
+      </li>
+      <li>
+        <strong>c)</strong> "I am the circular wooden frame drum associated closely with the Tamang community and Selo songs."<br>
+        <strong>Who am I?</strong> <span class="blank-space" style="min-width: 250px;"></span>
+      </li>
+      <li>
+        <strong>d)</strong> "I was directed by Hira Singh Khatri in 1964 and became the first feature film produced inside the border of Nepal."<br>
+        <strong>What film am I?</strong> <span class="blank-space" style="min-width: 250px;"></span>
+      </li>
+      <li>
+        <strong>e)</strong> "I am honored as 'Swor Samrat' (King of Voice) and sang timeless classics like <em>Euta Manchhe Ko Mayale</em>."<br>
+        <strong>Who am I?</strong> <span class="blank-space" style="min-width: 250px;"></span>
+      </li>
+      <li>
+        <strong>f)</strong> "Released in 1982, I made history as the very first color feature film in Nepali cinema."<br>
+        <strong>What film am I?</strong> <span class="blank-space" style="min-width: 250px;"></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- DRILL 4: True or False Lightning Round -->
+  <div class="drill-box">
+    <div class="drill-title">DRILL 4: True or False Lightning Round</div>
+    <ul class="q-list">
+      <li><strong>a)</strong> Gyalpo Lhosar is celebrated primarily by the Tharu community in the Terai region. [ <span class="blank-space" style="min-width:40px;"></span> ]</li>
+      <li><strong>b)</strong> Tara Devi was honored with the loving title of 'Swor Kinnari'. [ <span class="blank-space" style="min-width:40px;"></span> ]</li>
+      <li><strong>c)</strong> 'Panche Baja' is a traditional group composed of exactly five musical instruments. [ <span class="blank-space" style="min-width:40px;"></span> ]</li>
+      <li><strong>d)</strong> The Kirat community performs the Sakela Chandi dance during Udhauli and Ubhauli. [ <span class="blank-space" style="min-width:40px;"></span> ]</li>
+      <li><strong>e)</strong> The first Nepali film ever made was 'Kumari'. [ <span class="blank-space" style="min-width:40px;"></span> ]</li>
+      <li><strong>f)</strong> Newars celebrate Mha Puja on the evening of Govardhan Puja to worship their own soul. [ <span class="blank-space" style="min-width:40px;"></span> ]</li>
+    </ul>
+  </div>
+
+  <!-- ANSWER KEY BOX -->
+  <div class="answer-key-box">
+    <div class="answer-key-title">Teacher & Parent Quick Solution Key</div>
+    <p><strong>Drill 1:</strong> 1-C, 2-D, 3-E, 4-A, 5-B, 6-F</p>
+    <p><strong>Drill 2:</strong> a) Durga, b) Yama Panchak, c) Bhai Tika, d) Chhath, e) Gai Jatra, f) Maghi</p>
+    <p><strong>Drill 3:</strong> a) Sarangi, b) Madal, c) Damphu, d) Aama (Mother), e) Narayan Gopal, f) Kumari</p>
+    <p><strong>Drill 4:</strong> a) False (Sherpa celebrate Gyalpo Lhosar), b) True, c) True, d) True, e) False (Satya Harishchandra was 1st; Aama 1st in Nepal), f) True</p>
+  </div>
+
+  <div class="footer-note">
+    ★ Goodwill's General Knowledge Intensive Revision Worksheet • Sections B & C Complete Revision Guide ★
+  </div>
+
+</body>
+</html>
